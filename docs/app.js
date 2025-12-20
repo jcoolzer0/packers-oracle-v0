@@ -11,14 +11,6 @@ function bars(score) {
   return "▮".repeat(n) + "▯".repeat(5 - n);
 }
 
-function wlExpectation(oracle) {
-  const hm = oracle?.historical_map;
-  if (!hm || !hm.n) return null;
-  const w = hm.W ?? 0;
-  const t = hm.T ?? 0;
-  return w + 0.5 * t;
-}
-
 function outcomeLabel(result) {
   if (result === "W") return "Win";
   if (result === "L") return "Loss";
@@ -26,40 +18,106 @@ function outcomeLabel(result) {
   return "Upcoming";
 }
 
+function renderNextGame() {
+  const next = (DATA.games || []).find(g => g.result == null);
+  const el = document.getElementById("next");
+  if (!el) return;
+
+  if (!next) {
+    el.textContent = "No upcoming games found.";
+    return;
+  }
+
+  const o = next.oracle || {};
+  const pick = o.pregame_pick ?? "—";
+  const conf = o.pregame_confidence == null ? "—" : `${Math.round(o.pregame_confidence)}/100`;
+  const pwin = o.pregame_expected_win_rate == null ? "—" : pct(o.pregame_expected_win_rate);
+  const expl = o.explain_pregame ?? "";
+
+  el.innerHTML = `
+    <div style="font-size:18px; font-weight:700; margin-bottom:6px;">
+      Week ${next.week} vs ${next.opponent} — Upcoming
+    </div>
+    <div style="margin:6px 0;">Pregame pick: <b>${pick}</b></div>
+    <div style="margin:6px 0;">Expected win rate: <b>${pwin}</b></div>
+    <div style="margin:6px 0;">Confidence: <b>${conf}</b></div>
+    <div style="margin-top:10px; color:#333;">${expl}</div>
+  `;
+}
+
+function renderSeasonTable() {
+  const host = document.getElementById("season");
+  if (!host) return;
+
+  const rows = (DATA.games || []).map(g => {
+    const o = g.oracle || {};
+    const pick = o.pregame_pick ?? "—";
+    const conf = o.pregame_confidence == null ? "—" : Math.round(o.pregame_confidence);
+    const pwin = o.pregame_expected_win_rate == null ? "—" : Math.round(o.pregame_expected_win_rate * 100);
+    const lock = o.reality_lock ?? "—";
+    const coh = o.coherence == null ? "—" : Math.round(o.coherence);
+    return `
+      <tr>
+        <td style="padding:6px 8px;">${g.week}</td>
+        <td style="padding:6px 8px;">${g.opponent}</td>
+        <td style="padding:6px 8px;">${pick}</td>
+        <td style="padding:6px 8px;">${pwin === "—" ? "—" : pwin + "%"}</td>
+        <td style="padding:6px 8px;">${conf === "—" ? "—" : conf + "/100"}</td>
+        <td style="padding:6px 8px;">${g.result ?? "TBD"}</td>
+        <td style="padding:6px 8px;">${lock}</td>
+        <td style="padding:6px 8px;">${coh}</td>
+      </tr>
+    `;
+  }).join("");
+
+  host.innerHTML = `
+    <table style="border-collapse:collapse; width:100%; min-width:760px;">
+      <thead>
+        <tr style="background:#f6f6f6;">
+          <th style="text-align:left; padding:6px 8px;">Wk</th>
+          <th style="text-align:left; padding:6px 8px;">Opp</th>
+          <th style="text-align:left; padding:6px 8px;">Pick</th>
+          <th style="text-align:left; padding:6px 8px;">Exp Win%</th>
+          <th style="text-align:left; padding:6px 8px;">Conf</th>
+          <th style="text-align:left; padding:6px 8px;">Result</th>
+          <th style="text-align:left; padding:6px 8px;">Reality</th>
+          <th style="text-align:left; padding:6px 8px;">Coherence</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
 function renderGame(g) {
   document.getElementById("gameout").textContent = JSON.stringify(g, null, 2);
 
-  const oracle = g.oracle || {};
-  const exp = wlExpectation(oracle);
-  const expText =
-    exp === null
-      ? "No similar-history yet (Oracle makes no claim)."
-      : `Expected win rate in similar states: ${pct(exp)} (n=${oracle.historical_map.n})`;
+  const o = g.oracle || {};
+  const pick = o.pregame_pick ?? "—";
+  const conf = o.pregame_confidence == null ? "—" : `${Math.round(o.pregame_confidence)}/100`;
+  const exp = o.pregame_expected_win_rate == null ? "—" : pct(o.pregame_expected_win_rate);
 
-  const coh = oracle.coherence;
-  const cohText =
-    coh == null
-      ? "Coherence: —"
-      : `Coherence: ${coh}  ${bars(coh)}  (internal consistency of performance)`;
+  const coh = o.coherence;
+  const cohText = coh == null ? "Coherence: —" : `Coherence: ${coh}  ${bars(coh)}  (postgame internal consistency)`;
 
-  const wlc = oracle.win_loss_coherence;
-  const wlcText =
-    wlc == null
-      ? "Win/Loss coherence: —"
-      : `Win/Loss coherence: ${wlc.grade} (${wlc.label})`;
+  const wlc = o.win_loss_coherence;
+  const wlcText = wlc == null ? "Win/Loss coherence: —" : `Win/Loss coherence: ${wlc.grade} (${wlc.label}; predicted ${wlc.predicted})`;
 
-  const lock = oracle.reality_lock ? `Reality lock: ${oracle.reality_lock}` : "Reality lock: —";
-  const expl = oracle.explain ?? "";
+  const lock = o.reality_lock ? `Reality lock: ${o.reality_lock}` : "Reality lock: —";
+
+  const explPre = o.explain_pregame ?? "";
+  const explPost = o.explain ?? "";
 
   document.getElementById("read").innerHTML = `
     <div style="font-size:18px; font-weight:700; margin-bottom:6px;">
       Week ${g.week} vs ${g.opponent} — ${outcomeLabel(g.result)} ${g.score ? `(${g.score})` : ""}
     </div>
+    <div style="margin:6px 0;">Pregame pick: <b>${pick}</b> · Expected win rate: <b>${exp}</b> · Confidence: <b>${conf}</b></div>
     <div style="margin:6px 0;">${cohText}</div>
-    <div style="margin:6px 0;">${expText}</div>
     <div style="margin:6px 0;">${lock}</div>
     <div style="margin:6px 0;">${wlcText}</div>
-    <div style="margin-top:10px; color:#333;">${expl}</div>
+    <div style="margin-top:10px; color:#333;"><b>Pregame:</b> ${explPre}</div>
+    <div style="margin-top:6px; color:#333;"><b>Postgame:</b> ${explPost}</div>
   `;
 }
 
@@ -73,7 +131,7 @@ async function loadTeam(teamKey) {
   const sel = document.getElementById("game");
   sel.innerHTML = "";
 
-  DATA.games.forEach((g, i) => {
+  (DATA.games || []).forEach((g, i) => {
     const opt = document.createElement("option");
     opt.value = i;
     opt.textContent = `Week ${g.week} vs ${g.opponent} — ${g.result ?? "TBD"}`;
@@ -81,7 +139,32 @@ async function loadTeam(teamKey) {
   });
 
   sel.onchange = () => renderGame(DATA.games[Number(sel.value)]);
+
+  renderNextGame();
+  renderSeasonTable();
   renderGame(DATA.games[0]);
+}
+
+async function loadTeamsDropdown() {
+  const teamSelect = document.getElementById("team");
+  if (!teamSelect) return;
+
+  // If teams.json exists, populate dropdown with all teams.
+  try {
+    const res = await fetch("./teams.json", { cache: "no-store" });
+    const t = await res.json();
+    if (t && Array.isArray(t.teams)) {
+      teamSelect.innerHTML = "";
+      t.teams.forEach(x => {
+        const opt = document.createElement("option");
+        opt.value = x.key;
+        opt.textContent = `${x.team} (${x.team})`;
+        teamSelect.appendChild(opt);
+      });
+    }
+  } catch (_) {
+    // fallback: keep existing static options
+  }
 }
 
 // Wire UI events once
@@ -91,7 +174,15 @@ document.getElementById("refresh").addEventListener("click", () => {
   loadTeam(teamKey);
 });
 
-// Initial load
-loadTeam("gb").catch(err => {
+// Init
+(async () => {
+  await loadTeamsDropdown();
+
+  // Prefer GB if present
+  const teamSelect = document.getElementById("team");
+  const preferred = (teamSelect && [...teamSelect.options].some(o => o.value === "gb")) ? "gb" : teamSelect.value;
+
+  await loadTeam(preferred);
+})().catch(err => {
   document.getElementById("status").textContent = "Failed ❌ " + err;
 });
