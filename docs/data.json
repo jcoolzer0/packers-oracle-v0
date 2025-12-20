@@ -1,1 +1,21 @@
 
+{
+  "summary": {
+    "team": "GB",
+    "season": 2025,
+    "record": "9-4-1",
+    "win_pct": 0.679
+  },
+  "games": [
+    {
+      "week": 1,
+      "opponent": "CHI",
+      "result": "W",
+      "oracle": {
+        "coherence": 82,
+        "historical_map": {"n": 3, "W": 0.67, "L": 0.33},
+        "reality_lock": "MATCH"
+      }
+    }
+  ]
+}
