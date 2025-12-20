@@ -3,20 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Packers Oracle v0</title>
+  <title>Oracle Sports v0</title>
 </head>
-<body style="font-family:system-ui; max-width:900px; margin:20px auto; padding:0 16px;">
-  <h1>Packers Oracle v0</h1>
+<body style="font-family:system-ui; max-width:980px; margin:20px auto; padding:0 16px;">
+  <h1>Oracle Sports v0</h1>
   <p id="status">Loading...</p>
+
+  <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin:12px 0 18px;">
+    <label>
+      Team:
+      <select id="team">
+        <option value="gb">Packers (GB)</option>
+        <option value="phi">Eagles (PHI)</option>
+      </select>
+    </label>
+
+    <label>
+      Game:
+      <select id="game"></select>
+    </label>
+  </div>
 
   <h2>Summary</h2>
   <pre id="summary"></pre>
 
-  <h2>Games</h2>
-  <select id="game"></select>
+  <h2>Game Read</h2>
+  <div id="read" style="padding:12px; border:1px solid #ddd; border-radius:10px; margin-bottom:10px;"></div>
+
+  <h2>Raw Game JSON</h2>
   <pre id="gameout"></pre>
 
   <script src="app.js"></script>
 </body>
 </html>
-
