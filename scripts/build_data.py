@@ -1,16 +1,17 @@
-
 import json
 from pathlib import Path
 from datetime import datetime, timezone
 
 import numpy as np
-import pandas as pd
 import nflreadpy as nfl
 
-OUT = Path("docs/data.json")
-
-TEAM = "GB"
 SEASON = 2025
+OUT_DIR = Path("docs")
+
+TEAMS = {
+    "GB": "gb.json",
+    "PHI": "phi.json"
+}
 
 def zscore(x):
     x = np.asarray(x, dtype=float)
@@ -19,132 +20,178 @@ def zscore(x):
     return (x - mu) / sd
 
 def to_score(z):
-    # soft map z -> 0..100
     s = 1 / (1 + np.exp(-z))
-    return float(30 + 70*s)
+    return float(30 + 70 * s)
 
-def main():
+def win_loss_coherence(coh, result, expected):
+    if coh is None or result is None:
+        return None
+
+    if expected is None:
+        label = "Uncalibrated"
+    elif result == "W" and expected >= 0.6:
+        label = "Aligned Win"
+    elif result == "L" and expected <= 0.4:
+        label = "Aligned Loss"
+    elif result == "W":
+        label = "Scrappy Win"
+    elif result == "L":
+        label = "Coherent Loss"
+    else:
+        label = "Neutral"
+
+    if coh >= 85:
+        grade = "A"
+    elif coh >= 75:
+        grade = "B"
+    elif coh >= 65:
+        grade = "C"
+    elif coh >= 55:
+        grade = "D"
+    else:
+        grade = "F"
+
+    return {
+        "grade": grade,
+        "label": label
+    }
+
+def explain_game(coh, result, expected):
+    if result is None:
+        return "Upcoming game. Oracle has not evaluated performance yet."
+
+    parts = []
+    parts.append(f"Performance coherence was {round(coh)}.")
+
+    if expected is None:
+        parts.append("Oracle had no similar historical games to form an expectation.")
+    else:
+        parts.append(f"Historically similar games won about {round(expected * 100)}% of the time.")
+
+    if result == "W":
+        parts.append("The team won this game.")
+    elif result == "L":
+        parts.append("The team lost this game.")
+    else:
+        parts.append("The game ended in a tie.")
+
+    return " ".join(parts)
+
+def build_team(team, out_name):
     sched = nfl.load_schedules([SEASON]).to_pandas()
 
-    # games involving TEAM
-    g = sched[(sched["home_team"] == TEAM) | (sched["away_team"] == TEAM)].copy()
-    g["is_home"] = g["home_team"] == TEAM
+    g = sched[(sched["home_team"] == team) | (sched["away_team"] == team)].copy()
+    g["is_home"] = g["home_team"] == team
     g["opponent"] = np.where(g["is_home"], g["away_team"], g["home_team"])
 
-    # score cols can vary; try common ones
-    home_score_col = "home_score" if "home_score" in g.columns else ("home_points" if "home_points" in g.columns else None)
-    away_score_col = "away_score" if "away_score" in g.columns else ("away_points" if "away_points" in g.columns else None)
-
-    def get_score(row, which):
-        col = home_score_col if which == "home" else away_score_col
-        if col is None or col not in g.columns:
-            return None
-        v = row.get(col)
-        if v is None or (isinstance(v, float) and np.isnan(v)):
-            return None
-        return int(v)
+    home_col = "home_score" if "home_score" in g.columns else "home_points"
+    away_col = "away_score" if "away_score" in g.columns else "away_points"
 
     rows = []
     for _, r in g.sort_values("week").iterrows():
-        hs = get_score(r, "home")
-        aw = get_score(r, "away")
+        hs = r.get(home_col)
+        aw = r.get(away_col)
 
-        if hs is None or aw is None:
-            pf = pa = None
-            res = None
-            score = None
+        if np.isnan(hs) or np.isnan(aw):
+            rows.append({
+                "week": int(r["week"]),
+                "opponent": str(r["opponent"]),
+                "result": None,
+                "score": None
+            })
         else:
-            if r["is_home"]:
-                pf, pa = hs, aw
+            pf = int(hs if r["is_home"] else aw)
+            pa = int(aw if r["is_home"] else hs)
+            if pf > pa:
+                res = "W"
+            elif pf < pa:
+                res = "L"
             else:
-                pf, pa = aw, hs
-            score = f"{pf}-{pa}"
-            if pf > pa: res = "W"
-            elif pf < pa: res = "L"
-            else: res = "T"
+                res = "T"
 
-        rows.append({
-            "week": int(r["week"]),
-            "opponent": str(r["opponent"]),
-            "result": res,
-            "score": score
-        })
+            rows.append({
+                "week": int(r["week"]),
+                "opponent": str(r["opponent"]),
+                "result": res,
+                "score": f"{pf}-{pa}"
+            })
 
-    # compute simple Oracle fields using only points for/against (v0)
-    played = [x for x in rows if x["result"] is not None]
-    pf = np.array([int(x["score"].split("-")[0]) for x in played], dtype=float)
-    pa = np.array([int(x["score"].split("-")[1]) for x in played], dtype=float)
+    played = [r for r in rows if r["result"] is not None]
+    pf = np.array([int(r["score"].split("-")[0]) for r in played])
+    pa = np.array([int(r["score"].split("-")[1]) for r in played])
 
-    off_z = zscore(pf)
-    def_z = zscore(-pa)  # fewer allowed = better
-
-    off = np.array([to_score(z) for z in off_z])
-    deff = np.array([to_score(z) for z in def_z])
-
-    # coherence: distance from baseline in (off,def) space
+    off = [to_score(z) for z in zscore(pf)]
+    deff = [to_score(z) for z in zscore(-pa)]
     sig = np.vstack([off, deff]).T
+
     mean = sig.mean(axis=0)
     std = sig.std(axis=0) + 1e-6
 
-    def coherence(i):
-        z = (sig[i] - mean) / std
-        dist = float(np.sqrt(np.mean(z**2)))
-        return float(max(0, min(100, 95 - 25*dist)))
-
-    # historical map: bucket by coarse bins
-    bins = [tuple(int(np.floor(v/10)) for v in sig[i]) for i in range(len(sig))]
-    outs = [played[i]["result"] for i in range(len(sig))]
+    bins = [tuple(int(v // 10) for v in s) for s in sig]
+    outcomes = [r["result"] for r in played]
 
     cal = 0
     cal_trail = []
 
-    for i in range(len(played)):
-        coh = coherence(i)
+    for i, r in enumerate(played):
+        dist = np.sqrt(np.mean(((sig[i] - mean) / std) ** 2))
+        coh = max(0, min(100, 95 - 25 * dist))
 
         past = [j for j in range(i) if bins[j] == bins[i]]
-        n = len(past)
-        if n == 0:
-            hm = None
-            lock = None
+        if past:
+            w = sum(1 for j in past if outcomes[j] == "W")
+            l = sum(1 for j in past if outcomes[j] == "L")
+            t = sum(1 for j in past if outcomes[j] == "T")
+            n = len(past)
+            hist = {"n": n, "W": round(w / n, 3), "L": round(l / n, 3), "T": round(t / n, 3)}
+            expected = hist["W"] + 0.5 * hist["T"]
+            predicted = "W" if expected >= 0.5 else "L"
+            lock = "MATCH" if r["result"] == predicted else "DIVERGE"
+            cal += 1 if lock == "MATCH" else -1
         else:
-            w = sum(1 for j in past if outs[j] == "W")
-            l = sum(1 for j in past if outs[j] == "L")
-            t = sum(1 for j in past if outs[j] == "T")
-            hm = {"n": n, "W": round(w/n, 3), "L": round(l/n, 3), "T": round(t/n, 3)}
-
-            expected = max([("W", hm["W"]), ("L", hm["L"]), ("T", hm["T"])], key=lambda kv: kv[1])[0]
-            lock = "MATCH" if outs[i] == expected else "DIVERGE"
-            cal += (1 if lock == "MATCH" else -1)
+            hist = None
+            expected = None
+            lock = None
 
         cal_trail.append(cal)
 
-        played[i]["oracle"] = {
+        r["oracle"] = {
             "coherence": round(coh, 1),
-            "historical_map": hm,
-            "reality_lock": lock
+            "historical_map": hist,
+            "reality_lock": lock,
+            "win_loss_coherence": win_loss_coherence(coh, r["result"], expected),
+            "explain": explain_game(coh, r["result"], expected)
         }
 
-    # merge oracle back into full list
     it = iter(played)
     games_out = []
-    for x in rows:
-        if x["result"] is None:
-            games_out.append({**x, "oracle": {"coherence": None, "historical_map": None, "reality_lock": None}})
+    for r in rows:
+        if r["result"] is None:
+            games_out.append({
+                **r,
+                "oracle": {
+                    "coherence": None,
+                    "historical_map": None,
+                    "reality_lock": None,
+                    "win_loss_coherence": None,
+                    "explain": "Upcoming game. Oracle has not evaluated performance yet."
+                }
+            })
         else:
             games_out.append(next(it))
 
-    w = sum(1 for x in played if x["result"] == "W")
-    l = sum(1 for x in played if x["result"] == "L")
-    t = sum(1 for x in played if x["result"] == "T")
+    w = sum(1 for r in played if r["result"] == "W")
+    l = sum(1 for r in played if r["result"] == "L")
+    t = sum(1 for r in played if r["result"] == "T")
     n = len(played)
-    win_pct = (w + 0.5*t)/n if n else None
+    win_pct = (w + 0.5 * t) / n if n else None
 
     payload = {
         "summary": {
-            "team": TEAM,
+            "team": team,
             "season": SEASON,
             "record": f"{w}-{l}-{t}",
-            "win_pct": round(win_pct, 3) if win_pct is not None else None,
+            "win_pct": round(win_pct, 3),
             "calibration_score": cal,
             "calibration_trail": cal_trail
         },
@@ -152,8 +199,12 @@ def main():
         "games": games_out
     }
 
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    OUT_DIR.mkdir(exist_ok=True)
+    (OUT_DIR / out_name).write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+def main():
+    for team, out in TEAMS.items():
+        build_team(team, out)
 
 if __name__ == "__main__":
     main()
