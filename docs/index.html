@@ -1,45 +1,87 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Oracle Sports v0</title>
-</head>
-  </div>
+let DATA = null;
 
-<body style="font-family:system-ui; max-width:980px; margin:20px auto; padding:0 16px;">
-  <h1>Oracle Sports v0</h1>
-  <p id="status">Loading...</p>
-<div id="app" style="display:none;">
+function pct(x) {
+  if (x === null || x === undefined) return "—";
+  return Math.round(x * 100) + "%";
+}
 
-  <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin:12px 0 18px;">
-    <label>
-      Team:
-      <select id="team">
-        <option value="gb">Packers (GB)</option>
-        <option value="phi">Eagles (PHI)</option>
-      </select>
-    </label>
-<button id="refresh" style="padding:8px 10px; border-radius:10px; border:1px solid #ccc; cursor:pointer;">
-  Refresh data
-</button>
+function bars(score) {
+  if (score === null || score === undefined) return "—";
+  const n = Math.max(0, Math.min(5, Math.round(score / 20)));
+  return "▮".repeat(n) + "▯".repeat(5 - n);
+}
 
-    <label>
-      Game:
-      <select id="game"></select>
-    </label>
-  </div>
+function wlExpectation(oracle) {
+  const hm = oracle?.historical_map;
+  if (!hm || !hm.n) return null;
+  // Choose win% as expectation (ties included as half-credit if present)
+  const w = hm.W ?? 0;
+  const t = hm.T ?? 0;
+  return w + 0.5 * t;
+}
 
-  <h2>Summary</h2>
-  <pre id="summary"></pre>
+function outcomeLabel(result) {
+  if (result === "W") return "Win";
+  if (result === "L") return "Loss";
+  if (result === "T") return "Tie";
+  return "Upcoming";
+}
 
-  <h2>Game Read</h2>
-  <div id="read" style="padding:12px; border:1px solid #ddd; border-radius:10px; margin-bottom:10px;"></div>
+function renderGame(g) {
+  document.getElementById("gameout").textContent = JSON.stringify(g, null, 2);
+document.getElementById("refresh").onclick = () => {
+  const teamKey = document.getElementById("team").value;
+  loadTeam(teamKey);
+};
 
-  <h2>Raw Game JSON</h2>
-  <pre id="gameout"></pre>
-  
-  <script src="gate.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+  const oracle = g.oracle || {};
+  const exp = wlExpectation(oracle);
+  const expText = exp === null ? "No similar-history yet (Oracle makes no claim)." : `Expected win rate in similar states: ${pct(exp)} (n=${oracle.historical_map.n})`;
+
+  const coh = oracle.coherence;
+  const cohText = coh == null ? "Coherence: —" : `Coherence: ${coh}  ${bars(coh)}  (internal consistency of performance)`;
+
+  const wlc = oracle.win_loss_coherence;
+  const wlcText = wlc == null ? "Win/Loss coherence: —" : `Win/Loss coherence: ${wlc.grade} (${wlc.label})`;
+
+  const lock = oracle.reality_lock ? `Reality lock: ${oracle.reality_lock}` : "Reality lock: —";
+
+  const expl = oracle.explain ?? "";
+
+  document.getElementById("read").innerHTML = `
+    <div style="font-size:18px; font-weight:700; margin-bottom:6px;">
+      Week ${g.week} vs ${g.opponent} — ${outcomeLabel(g.result)} ${g.score ? `(${g.score})` : ""}
+    </div>
+    <div style="margin:6px 0;">${cohText}</div>
+    <div style="margin:6px 0;">${expText}</div>
+    <div style="margin:6px 0;">${lock}</div>
+    <div style="margin:6px 0;">${wlcText}</div>
+    <div style="margin-top:10px; color:#333;">${expl}</div>
+  `;
+}
+
+async function loadTeam(teamKey) {
+  const res = await fetch(`./${teamKey}.json`, { cache: "no-store" });
+  DATA = await res.json();
+  document.getElementById("status").textContent = `Loaded ✅ ${DATA.summary.team} ${DATA.summary.season}`;
+
+  document.getElementById("summary").textContent = JSON.stringify(DATA.summary, null, 2);
+
+  const sel = document.getElementById("game");
+  sel.innerHTML = "";
+  DATA.games.forEach((g, i) => {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = `Week ${g.week} vs ${g.opponent} — ${g.result ?? "TBD"}`;
+    sel.appendChild(opt);
+  });
+
+  sel.onchange = () => renderGame(DATA.games[Number(sel.value)]);
+  renderGame(DATA.games[0]);
+}
+
+document.getElementById("team").addEventListener("change", (e) => loadTeam(e.target.value));
+
+loadTeam("gb").catch(err => {
+  document.getElementById("status").textContent = "Failed ❌ " + err;
+});
