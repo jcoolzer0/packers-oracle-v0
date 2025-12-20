@@ -14,7 +14,6 @@ function bars(score) {
 function wlExpectation(oracle) {
   const hm = oracle?.historical_map;
   if (!hm || !hm.n) return null;
-  // Choose win% as expectation (ties included as half-credit if present)
   const w = hm.W ?? 0;
   const t = hm.T ?? 0;
   return w + 0.5 * t;
@@ -29,23 +28,27 @@ function outcomeLabel(result) {
 
 function renderGame(g) {
   document.getElementById("gameout").textContent = JSON.stringify(g, null, 2);
-document.getElementById("refresh").onclick = () => {
-  const teamKey = document.getElementById("team").value;
-  loadTeam(teamKey);
-};
 
   const oracle = g.oracle || {};
   const exp = wlExpectation(oracle);
-  const expText = exp === null ? "No similar-history yet (Oracle makes no claim)." : `Expected win rate in similar states: ${pct(exp)} (n=${oracle.historical_map.n})`;
+  const expText =
+    exp === null
+      ? "No similar-history yet (Oracle makes no claim)."
+      : `Expected win rate in similar states: ${pct(exp)} (n=${oracle.historical_map.n})`;
 
   const coh = oracle.coherence;
-  const cohText = coh == null ? "Coherence: —" : `Coherence: ${coh}  ${bars(coh)}  (internal consistency of performance)`;
+  const cohText =
+    coh == null
+      ? "Coherence: —"
+      : `Coherence: ${coh}  ${bars(coh)}  (internal consistency of performance)`;
 
   const wlc = oracle.win_loss_coherence;
-  const wlcText = wlc == null ? "Win/Loss coherence: —" : `Win/Loss coherence: ${wlc.grade} (${wlc.label})`;
+  const wlcText =
+    wlc == null
+      ? "Win/Loss coherence: —"
+      : `Win/Loss coherence: ${wlc.grade} (${wlc.label})`;
 
   const lock = oracle.reality_lock ? `Reality lock: ${oracle.reality_lock}` : "Reality lock: —";
-
   const expl = oracle.explain ?? "";
 
   document.getElementById("read").innerHTML = `
@@ -63,12 +66,13 @@ document.getElementById("refresh").onclick = () => {
 async function loadTeam(teamKey) {
   const res = await fetch(`./${teamKey}.json`, { cache: "no-store" });
   DATA = await res.json();
-  document.getElementById("status").textContent = `Loaded ✅ ${DATA.summary.team} ${DATA.summary.season}`;
 
+  document.getElementById("status").textContent = `Loaded ✅ ${DATA.summary.team} ${DATA.summary.season}`;
   document.getElementById("summary").textContent = JSON.stringify(DATA.summary, null, 2);
 
   const sel = document.getElementById("game");
   sel.innerHTML = "";
+
   DATA.games.forEach((g, i) => {
     const opt = document.createElement("option");
     opt.value = i;
@@ -80,8 +84,14 @@ async function loadTeam(teamKey) {
   renderGame(DATA.games[0]);
 }
 
+// Wire UI events once
 document.getElementById("team").addEventListener("change", (e) => loadTeam(e.target.value));
+document.getElementById("refresh").addEventListener("click", () => {
+  const teamKey = document.getElementById("team").value;
+  loadTeam(teamKey);
+});
 
+// Initial load
 loadTeam("gb").catch(err => {
   document.getElementById("status").textContent = "Failed ❌ " + err;
 });
