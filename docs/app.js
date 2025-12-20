@@ -39,6 +39,8 @@ function findNextGameIndex(games) {
 
 function renderNextGame() {
   const box = document.getElementById("nextgame");
+  box.textContent = "Loading next game…";
+
   if (!box) return;
 
   if (!DATA || !Array.isArray(DATA.games) || DATA.games.length === 0) {
