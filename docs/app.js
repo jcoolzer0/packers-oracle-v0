@@ -56,6 +56,7 @@ function renderSeasonTable() {
     const pwin = o.pregame_expected_win_rate == null ? "—" : Math.round(o.pregame_expected_win_rate * 100);
     const lock = o.reality_lock ?? "—";
     const coh = o.coherence == null ? "—" : Math.round(o.coherence);
+
     return `
       <tr>
         <td style="padding:6px 8px;">${g.week}</td>
@@ -149,7 +150,6 @@ async function loadTeamsDropdown() {
   const teamSelect = document.getElementById("team");
   if (!teamSelect) return;
 
-  // If teams.json exists, populate dropdown with all teams.
   try {
     const res = await fetch("./teams.json", { cache: "no-store" });
     const t = await res.json();
@@ -163,7 +163,7 @@ async function loadTeamsDropdown() {
       });
     }
   } catch (_) {
-    // fallback: keep existing static options
+    // If teams.json isn't present yet, keep the static dropdown options in index.html
   }
 }
 
@@ -178,7 +178,6 @@ document.getElementById("refresh").addEventListener("click", () => {
 (async () => {
   await loadTeamsDropdown();
 
-  // Prefer GB if present
   const teamSelect = document.getElementById("team");
   const preferred = (teamSelect && [...teamSelect.options].some(o => o.value === "gb")) ? "gb" : teamSelect.value;
 
