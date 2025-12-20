@@ -167,30 +167,49 @@ function renderGame(g) {
   `;
 }
 
-async function loadTeams() {
-  // teams.json is optional; if missing, fallback to your hardcoded options
-  try {
-    const res = await fetch("./teams.json", { cache: "no-store" });
-    if (!res.ok) throw new Error("teams.json not found");
-    const tj = await res.json();
-    TEAMS = tj.teams || [];
+async function loadTeam(teamKey) {
+  const res = await fetch(`./${teamKey}.json`, { cache: "no-store" });
+  DATA = await res.json();
 
-    // Populate dropdown
-    const teamSel = document.getElementById("team");
-    if (teamSel && TEAMS.length) {
-      teamSel.innerHTML = "";
-      TEAMS.forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t.key; // e.g. "gb"
-        opt.textContent = `${t.team} (${t.key.toUpperCase()})`;
-        teamSel.appendChild(opt);
-      });
-    }
-  } catch (e) {
-    // leave dropdown as-is (gb/phi)
-    TEAMS = null;
-  }
+  // Make app visible (if you are hiding it until data loads)
+  const app = document.getElementById("app");
+  if (app) app.style.display = "block";
+
+  document.getElementById("status").textContent =
+    `Loaded ✅ ${DATA.summary.team} ${DATA.summary.season}`;
+
+  document.getElementById("summary").textContent =
+    JSON.stringify(DATA.summary, null, 2);
+
+  // Build game dropdown
+  const sel = document.getElementById("game");
+  sel.innerHTML = "";
+  DATA.games.forEach((g, i) => {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = `Week ${g.week} vs ${g.opponent} — ${g.result ?? "TBD"}`;
+    sel.appendChild(opt);
+  });
+
+  sel.onchange = () => renderGame(DATA.games[Number(sel.value)]);
+
+  // Auto spotlight next game + auto-select it
+  const nextIdx = findNextGameIndex(DATA.games);
+  sel.value = String(nextIdx);
+
+  // ✅ Force Next Game render AFTER dropdown is built and DATA is set
+  try { renderNextGame(); } catch (e) { console.error("renderNextGame failed", e); }
+
+  // Render selected game
+  renderGame(DATA.games[nextIdx]);
+
+  // ✅ Optional: also re-render next game after the selected game renders
+  // (sometimes helps if fonts/layout settle late)
+  setTimeout(() => {
+    try { renderNextGame(); } catch (e) {}
+  }, 0);
 }
+
 
 async function loadTeam(teamKey) {
   const res = await fetch(`./${teamKey}.json`, { cache: "no-store" });
