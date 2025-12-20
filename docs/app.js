@@ -29,6 +29,10 @@ function outcomeLabel(result) {
 
 function renderGame(g) {
   document.getElementById("gameout").textContent = JSON.stringify(g, null, 2);
+document.getElementById("refresh").onclick = () => {
+  const teamKey = document.getElementById("team").value;
+  loadTeam(teamKey);
+};
 
   const oracle = g.oracle || {};
   const exp = wlExpectation(oracle);
