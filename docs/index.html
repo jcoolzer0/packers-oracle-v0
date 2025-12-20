@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Oracle Sports v0</title>
 </head>
+  </div>
+
 <body style="font-family:system-ui; max-width:980px; margin:20px auto; padding:0 16px;">
   <h1>Oracle Sports v0</h1>
   <p id="status">Loading...</p>
+<div id="app" style="display:none;">
 
   <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin:12px 0 18px;">
     <label>
@@ -17,6 +20,9 @@
         <option value="phi">Eagles (PHI)</option>
       </select>
     </label>
+<button id="refresh" style="padding:8px 10px; border-radius:10px; border:1px solid #ccc; cursor:pointer;">
+  Refresh data
+</button>
 
     <label>
       Game:
@@ -32,7 +38,8 @@
 
   <h2>Raw Game JSON</h2>
   <pre id="gameout"></pre>
-
+  
+  <script src="gate.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
