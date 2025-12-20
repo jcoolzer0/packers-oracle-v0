@@ -1,4 +1,3 @@
-
 {
   "summary": {
     "team": "GB",
@@ -7,15 +6,24 @@
     "win_pct": 0.679
   },
   "games": [
-    {
-      "week": 1,
-      "opponent": "CHI",
-      "result": "W",
-      "oracle": {
-        "coherence": 82,
-        "historical_map": {"n": 3, "W": 0.67, "L": 0.33},
-        "reality_lock": "MATCH"
-      }
-    }
+    { "week": 1,  "opponent": "DET", "result": "W", "score": "27-13", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 2,  "opponent": "WAS", "result": "W", "score": "27-18", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 3,  "opponent": "CLE", "result": "L", "score": "10-13", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 4,  "opponent": "DAL", "result": "T", "score": "40-40", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+
+    { "week": 6,  "opponent": "CIN", "result": "W", "score": "27-18", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 7,  "opponent": "ARI", "result": "W", "score": "27-23", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 8,  "opponent": "PIT", "result": "W", "score": "35-25", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 9,  "opponent": "CAR", "result": "L", "score": "13-16", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 10, "opponent": "PHI", "result": "L", "score": "7-10",  "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+
+    { "week": 11, "opponent": "NYG", "result": "W", "score": "27-20", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 12, "opponent": "MIN", "result": "W", "score": "23-6",  "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 13, "opponent": "DET", "result": "W", "score": "31-24", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 14, "opponent": "CHI", "result": "W", "score": "28-21", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 15, "opponent": "DEN", "result": "L", "score": "26-34", "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+
+    { "week": 16, "opponent": "CHI", "result": null, "score": null, "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } },
+    { "week": 17, "opponent": "BAL", "result": null, "score": null, "oracle": { "coherence": null, "historical_map": null, "reality_lock": null } }
   ]
 }
