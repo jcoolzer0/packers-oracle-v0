@@ -1,12 +1,4 @@
 let DATA = null;
-let TEAMS = null;
-
-function $(id) { return document.getElementById(id); }
-
-function setStatus(msg) {
-  const el = $("status");
-  if (el) el.textContent = msg;
-}
 
 function pct(x) {
   if (x === null || x === undefined) return "—";
@@ -19,6 +11,14 @@ function bars(score) {
   return "▮".repeat(n) + "▯".repeat(5 - n);
 }
 
+function wlExpectation(oracle) {
+  const hm = oracle?.pregame_historical_map || oracle?.historical_map;
+  if (!hm || !hm.n) return null;
+  const w = hm.W ?? 0;
+  const t = hm.T ?? 0;
+  return w + 0.5 * t;
+}
+
 function outcomeLabel(result) {
   if (result === "W") return "Win";
   if (result === "L") return "Loss";
@@ -26,245 +26,153 @@ function outcomeLabel(result) {
   return "Upcoming";
 }
 
-function pickFromPwin(pWin) {
-  if (pWin === null || pWin === undefined) return null;
-  return pWin >= 0.5 ? "W" : "L";
+function safeText(x) {
+  return (x === null || x === undefined || x === "") ? "—" : String(x);
 }
 
-function findNextGameIndex(games) {
-  const idx = games.findIndex(g => g.result === null || g.result === undefined);
-  return idx >= 0 ? idx : 0;
-}
-
-function teamLabel(t) {
-  // teams.json items look like: { team: "GB", key: "gb" }
-  const code = (t.team || "").toUpperCase();
-  return `${code} (${code})`;
-}
-
-async function loadTeams() {
-  // expects docs/teams.json
-  const res = await fetch("./teams.json", { cache: "no-store" });
-  TEAMS = await res.json();
-  return TEAMS;
-}
-
-function populateTeamDropdown(selectedKey) {
-  const sel = $("team");
-  if (!sel) return;
-
-  sel.innerHTML = "";
-
-  const list = (TEAMS && TEAMS.teams) ? TEAMS.teams : [
-    { team: "GB", key: "gb" },
-    { team: "PHI", key: "phi" }
-  ];
-
-  list.forEach(t => {
-    const opt = document.createElement("option");
-    opt.value = t.key;
-    opt.textContent = teamLabel(t);
-    sel.appendChild(opt);
-  });
-
-  if (selectedKey) sel.value = selectedKey;
-  if (!sel.value && sel.options.length) sel.value = sel.options[0].value;
-}
-
-function renderSeasonTable() {
-  const box = $("season");
-  if (!box) return;
-
-  if (!DATA || !Array.isArray(DATA.games)) {
-    box.innerHTML = `<div style="padding:12px; opacity:.75;">No season data loaded yet.</div>`;
+function renderSeasonView() {
+  const el = document.getElementById("season");
+  if (!DATA || !DATA.games) {
+    el.innerHTML = "";
     return;
   }
 
-  const rows = DATA.games.map((g) => {
-    const o = g.oracle || {};
-    const pWin = o.pregame_expected_win_rate ?? null;
-    const conf = o.pregame_confidence ?? null;
-    const pick = o.pregame_pick ?? pickFromPwin(pWin);
-
-    const pickTxt = pick == null ? "—" : (pick === "W" ? "WIN" : "LOSS");
-    const expTxt  = pWin == null ? "—" : pct(pWin);
-    const confTxt = conf == null ? "—" : `${Math.round(conf)}/100`;
-    const resTxt  = g.result ?? "TBD";
-
-    const lock = o.reality_lock ?? "—";
-    const coh  = o.coherence ?? "—";
+  const rows = DATA.games.map(g => {
+    const res = g.result ?? "TBD";
+    const opp = g.opponent ?? "???";
+    const wk = g.week ?? "?";
+    const score = g.score ?? "";
+    const pick = g.oracle?.pregame_pick ?? "—";
+    const pwin = g.oracle?.pregame_expected_win_rate;
+    const conf = g.oracle?.pregame_confidence;
+    const lock = g.oracle?.reality_lock ?? "—";
 
     return `
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${g.week}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${g.opponent}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${pickTxt}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${expTxt}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${confTxt}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${resTxt}</td>
+        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${wk}</td>
+        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${opp}</td>
+        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${res}</td>
+        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${safeText(score)}</td>
+        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${pick}</td>
+        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${pwin == null ? "—" : pct(pwin)}</td>
+        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${conf == null ? "—" : Math.round(conf)}</td>
         <td style="padding:6px 8px; border-bottom:1px solid #eee;">${lock}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${coh}</td>
       </tr>
     `;
   }).join("");
 
-  box.innerHTML = `
+  el.innerHTML = `
     <table style="width:100%; border-collapse:collapse; font-size:14px;">
       <thead>
-        <tr>
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Week</th>
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Opp</th>
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Pick</th>
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Exp Win%</th>
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Conf</th>
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Result</th>
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Reality</th>
-          <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Coh</th>
+        <tr style="text-align:left;">
+          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Week</th>
+          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Opp</th>
+          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Result</th>
+          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Score</th>
+          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Pick</th>
+          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Exp W%</th>
+          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Conf</th>
+          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Reality</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
     </table>
-    <div style="padding:10px 12px; font-size:12px; opacity:.7;">
-      Pick/Exp/Conf are pregame (if enough similar-history exists). Reality/Coh are postgame signals.
-    </div>
   `;
 }
 
 function renderNextGame() {
-  const box = $("nextgame");
-  if (!box) return;
-
-  box.innerHTML = `<div style="opacity:.75;">Loading next game…</div>`;
-
-  if (!DATA || !Array.isArray(DATA.games) || DATA.games.length === 0) {
-    box.innerHTML = "No games found.";
+  const box = document.getElementById("nextgame");
+  if (!DATA || !DATA.games) {
+    box.innerHTML = "";
     return;
   }
 
-  const idx = findNextGameIndex(DATA.games);
-  const g = DATA.games[idx];
-  const o = g.oracle || {};
+  const next = DATA.games.find(g => g.result == null);
+  if (!next) {
+    box.innerHTML = `<div>Season complete (no upcoming games found).</div>`;
+    return;
+  }
 
-  const pWin = o.pregame_expected_win_rate ?? null;
-  const conf = o.pregame_confidence ?? null;
-  const hist = o.pregame_historical_map ?? null;
-  const pick = o.pregame_pick ?? pickFromPwin(pWin);
+  const o = next.oracle || {};
+  const pick = o.pregame_pick ?? "—";
+  const pwin = o.pregame_expected_win_rate;
+  const conf = o.pregame_confidence;
+  const hm = o.pregame_historical_map;
 
-  const expText =
-    pWin == null
-      ? "Expected win rate: — (withholding; insufficient similar-history)"
-      : `Expected win rate: ${pct(pWin)} (n=${hist?.n ?? "?"})`;
-
-  const confText =
-    conf == null
-      ? "Confidence: —"
-      : `Confidence: ${Math.round(conf)}/100  ${bars(conf)}`;
-
-  const pickText =
-    pick == null
-      ? "Oracle pick: —"
-      : `Oracle pick: ${pick === "W" ? "WIN" : "LOSS"}`;
-
-  const explain = o.explain_pregame ?? o.explain ?? "";
+  const expText = (pwin == null || !hm?.n)
+    ? "Oracle has insufficient similar-history; it withholds a win/loss confidence."
+    : `Expected win rate: ${pct(pwin)} (n=${hm.n}) • Confidence: ${Math.round(conf)}/100`;
 
   box.innerHTML = `
-    <div style="font-size:18px; font-weight:800; margin-bottom:6px;">
-      Week ${g.week} vs ${g.opponent} — ${outcomeLabel(g.result)}
+    <div style="font-size:18px; font-weight:700; margin-bottom:6px;">
+      Week ${next.week} vs ${next.opponent} — Upcoming
     </div>
-    <div style="margin:6px 0; font-weight:700;">${pickText}</div>
+    <div style="margin:6px 0;"><b>Pregame pick:</b> ${pick}</div>
     <div style="margin:6px 0;">${expText}</div>
-    <div style="margin:6px 0;">${confText}</div>
-    <div style="margin-top:10px; color:#333; line-height:1.35;">${explain}</div>
-    <div style="margin-top:12px;">
-      <button id="jumpNext" style="padding:8px 10px; border-radius:10px; border:1px solid #ccc; cursor:pointer;">
-        Jump to this game
-      </button>
-    </div>
+    <div style="margin-top:10px; color:#333;">${safeText(o.explain_pregame)}</div>
   `;
-
-  const btn = $("jumpNext");
-  if (btn) {
-    btn.onclick = () => {
-      const sel = $("game");
-      if (!sel) return;
-      sel.value = String(idx);
-      renderGame(DATA.games[idx]);
-    };
-  }
 }
 
 function renderGame(g) {
-  const out = $("gameout");
-  if (out) out.textContent = JSON.stringify(g, null, 2);
+  document.getElementById("gameout").textContent = JSON.stringify(g, null, 2);
 
   const oracle = g.oracle || {};
 
-  const pWin = oracle.pregame_expected_win_rate ?? null;
-  const conf = oracle.pregame_confidence ?? null;
-  const hist = oracle.pregame_historical_map ?? null;
-  const pick = oracle.pregame_pick ?? pickFromPwin(pWin);
-
-  const expText = pWin == null
-    ? "Pregame expected win rate: —"
-    : `Pregame expected win rate: ${pct(pWin)} (n=${hist?.n ?? "?"})`;
-
-  const confText = conf == null
-    ? "Pregame confidence: —"
-    : `Pregame confidence: ${Math.round(conf)}/100  ${bars(conf)}`;
-
-  const pickText = pick == null
-    ? "Pregame pick: —"
-    : `Pregame pick: ${pick === "W" ? "WIN" : "LOSS"}`;
+  // Support both old + new schema names
+  const hm = oracle.pregame_historical_map || oracle.historical_map;
+  const exp = wlExpectation(oracle);
+  const expText = (exp === null || !hm?.n)
+    ? "No similar-history yet (Oracle makes no claim)."
+    : `Expected win rate in similar states: ${pct(exp)} (n=${hm.n})`;
 
   const coh = oracle.coherence;
-  const cohText = coh == null
-    ? "Coherence: —"
-    : `Coherence: ${coh}  ${bars(coh)}`;
-
-  const lock = oracle.reality_lock ? `Reality lock: ${oracle.reality_lock}` : "Reality lock: —";
+  const cohText = coh == null ? "Coherence: —" : `Coherence: ${coh}  ${bars(coh)}  (team internal consistency)`;
 
   const wlc = oracle.win_loss_coherence;
-  const wlcText = wlc == null
-    ? "Win/Loss coherence: —"
-    : `Win/Loss coherence: ${wlc.grade} (${wlc.label}) [predicted: ${wlc.predicted}]`;
+  const wlcText = wlc == null ? "Win/Loss coherence: —" : `Win/Loss coherence: ${wlc.grade} (${wlc.label})`;
 
-  const expl = oracle.explain ?? "";
+  const lock = oracle.reality_lock ? `Reality lock: ${oracle.reality_lock}` : "Reality lock: —";
+  const expl = oracle.explain ?? oracle.explain_pregame ?? "";
 
-  const read = $("read");
-  if (!read) return;
+  const pick = oracle.pregame_pick ?? "—";
+  const pwin = oracle.pregame_expected_win_rate;
+  const conf = oracle.pregame_confidence;
 
-  read.innerHTML = `
-    <div style="font-size:18px; font-weight:800; margin-bottom:6px;">
+  const preLine = (pwin == null || conf == null)
+    ? `Pregame pick: ${pick} — Expected win rate: — — Confidence: —`
+    : `Pregame pick: ${pick} — Expected win rate: ${pct(pwin)} — Confidence: ${Math.round(conf)}/100`;
+
+  document.getElementById("read").innerHTML = `
+    <div style="font-size:18px; font-weight:700; margin-bottom:6px;">
       Week ${g.week} vs ${g.opponent} — ${outcomeLabel(g.result)} ${g.score ? `(${g.score})` : ""}
     </div>
-
-    <div style="margin:6px 0; font-weight:700;">${pickText}</div>
-    <div style="margin:6px 0;">${expText}</div>
-    <div style="margin:6px 0;">${confText}</div>
-
-    <hr style="border:none; border-top:1px solid #eee; margin:10px 0;" />
-
+    <div style="margin:6px 0;">${preLine}</div>
     <div style="margin:6px 0;">${cohText}</div>
+    <div style="margin:6px 0;">${expText}</div>
     <div style="margin:6px 0;">${lock}</div>
     <div style="margin:6px 0;">${wlcText}</div>
-
-    <div style="margin-top:10px; color:#333; line-height:1.35;">${expl}</div>
+    <div style="margin-top:10px; color:#333;">${safeText(expl)}</div>
   `;
 }
 
 async function loadTeam(teamKey) {
-  setStatus("Loading…");
+  const statusEl = document.getElementById("status");
+  statusEl.textContent = "Loading...";
 
+  // IMPORTANT:
+  // If your JSON files live inside /docs on Pages, use `./docs/${teamKey}.json` instead.
   const res = await fetch(`./${teamKey}.json`, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Fetch failed for ${teamKey}.json (${res.status})`);
+
   DATA = await res.json();
+  statusEl.textContent = `Loaded ✅ ${DATA.summary.team} ${DATA.summary.season}`;
 
-  $("app").style.display = "block";
-  setStatus(`Loaded ✅ ${DATA.summary.team} ${DATA.summary.season}`);
+  document.getElementById("summary").textContent = JSON.stringify(DATA.summary, null, 2);
 
-  $("summary").textContent = JSON.stringify(DATA.summary, null, 2);
+  renderSeasonView();
+  renderNextGame();
 
-  // build game dropdown
-  const sel = $("game");
+  const sel = document.getElementById("game");
   sel.innerHTML = "";
   DATA.games.forEach((g, i) => {
     const opt = document.createElement("option");
@@ -274,44 +182,17 @@ async function loadTeam(teamKey) {
   });
 
   sel.onchange = () => renderGame(DATA.games[Number(sel.value)]);
-
-  const nextIdx = findNextGameIndex(DATA.games);
-  sel.value = String(nextIdx);
-
-  renderSeasonTable();
-  renderNextGame();
-  renderGame(DATA.games[nextIdx]);
+  renderGame(DATA.games[0]);
 }
 
-function showError(err) {
-  console.error(err);
-  setStatus("Failed ❌ " + (err?.message || err));
-  const box = $("nextgame");
-  if (box) box.innerHTML = `<b style="color:#b00;">Error:</b> ${String(err?.message || err)}`;
-}
+// Hook controls (ONLY ONCE)
+document.getElementById("team").addEventListener("change", (e) => loadTeam(e.target.value));
+document.getElementById("refresh").addEventListener("click", () => {
+  const teamKey = document.getElementById("team").value;
+  loadTeam(teamKey);
+});
 
-(async function boot() {
-  try {
-    await loadTeams();
-  } catch (e) {
-    // fallback is okay
-    TEAMS = null;
-  }
-
-  // Populate dropdown from teams.json (or fallback)
-  populateTeamDropdown("gb");
-
-  // Refresh button
-  const btn = $("refresh");
-  if (btn) {
-    btn.onclick = () => loadTeam($("team").value).catch(showError);
-  }
-
-  // Changing team loads new JSON
-  $("team").addEventListener("change", (e) => {
-    loadTeam(e.target.value).catch(showError);
-  });
-
-  // Initial load
-  loadTeam($("team").value || "gb").catch(showError);
-})();
+// Boot
+loadTeam("gb").catch(err => {
+  document.getElementById("status").textContent = "Failed ❌ " + err.message;
+});
