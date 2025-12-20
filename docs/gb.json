@@ -1,0 +1,306 @@
+{
+  "summary": {
+    "team": "GB",
+    "season": 2025,
+    "record": "9-4-1",
+    "win_pct": 0.679,
+    "calibration_score": 3,
+    "calibration_trail": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  "generated_at": "2025-12-20T15:39:49.253376+00:00",
+  "games": [
+    {
+      "week": 1,
+      "opponent": "DET",
+      "result": "W",
+      "score": "27-13",
+      "oracle": {
+        "coherence": 78.5,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "B",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 79. Oracle had no similar historical games to form an expectation. The team won this game."
+      }
+    },
+    {
+      "week": 2,
+      "opponent": "WAS",
+      "result": "W",
+      "score": "27-18",
+      "oracle": {
+        "coherence": 88.8,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "A",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 89. Oracle had no similar historical games to form an expectation. The team won this game."
+      }
+    },
+    {
+      "week": 3,
+      "opponent": "CLE",
+      "result": "L",
+      "score": "10-13",
+      "oracle": {
+        "coherence": 60.9,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "D",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 61. Oracle had no similar historical games to form an expectation. The team lost this game."
+      }
+    },
+    {
+      "week": 4,
+      "opponent": "DAL",
+      "result": "T",
+      "score": "40-40",
+      "oracle": {
+        "coherence": 48.8,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "F",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 49. Oracle had no similar historical games to form an expectation. The game ended in a tie."
+      }
+    },
+    {
+      "week": 6,
+      "opponent": "CIN",
+      "result": "W",
+      "score": "27-18",
+      "oracle": {
+        "coherence": 88.8,
+        "historical_map": {
+          "n": 1,
+          "W": 1.0,
+          "L": 0.0,
+          "T": 0.0
+        },
+        "reality_lock": "MATCH",
+        "win_loss_coherence": {
+          "grade": "A",
+          "label": "Aligned Win"
+        },
+        "explain": "Performance coherence was 89. Historically similar games won about 100% of the time. The team won this game."
+      }
+    },
+    {
+      "week": 7,
+      "opponent": "ARI",
+      "result": "W",
+      "score": "27-23",
+      "oracle": {
+        "coherence": 86.0,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "A",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 86. Oracle had no similar historical games to form an expectation. The team won this game."
+      }
+    },
+    {
+      "week": 8,
+      "opponent": "PIT",
+      "result": "W",
+      "score": "35-25",
+      "oracle": {
+        "coherence": 70.1,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "C",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 70. Oracle had no similar historical games to form an expectation. The team won this game."
+      }
+    },
+    {
+      "week": 9,
+      "opponent": "CAR",
+      "result": "L",
+      "score": "13-16",
+      "oracle": {
+        "coherence": 67.5,
+        "historical_map": {
+          "n": 1,
+          "W": 0.0,
+          "L": 1.0,
+          "T": 0.0
+        },
+        "reality_lock": "MATCH",
+        "win_loss_coherence": {
+          "grade": "C",
+          "label": "Aligned Loss"
+        },
+        "explain": "Performance coherence was 68. Historically similar games won about 0% of the time. The team lost this game."
+      }
+    },
+    {
+      "week": 10,
+      "opponent": "PHI",
+      "result": "L",
+      "score": "7-10",
+      "oracle": {
+        "coherence": 55.0,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "F",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 55. Oracle had no similar historical games to form an expectation. The team lost this game."
+      }
+    },
+    {
+      "week": 11,
+      "opponent": "NYG",
+      "result": "W",
+      "score": "27-20",
+      "oracle": {
+        "coherence": 90.6,
+        "historical_map": {
+          "n": 2,
+          "W": 1.0,
+          "L": 0.0,
+          "T": 0.0
+        },
+        "reality_lock": "MATCH",
+        "win_loss_coherence": {
+          "grade": "A",
+          "label": "Aligned Win"
+        },
+        "explain": "Performance coherence was 91. Historically similar games won about 100% of the time. The team won this game."
+      }
+    },
+    {
+      "week": 12,
+      "opponent": "MIN",
+      "result": "W",
+      "score": "23-6",
+      "oracle": {
+        "coherence": 66.4,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "C",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 66. Oracle had no similar historical games to form an expectation. The team won this game."
+      }
+    },
+    {
+      "week": 13,
+      "opponent": "DET",
+      "result": "W",
+      "score": "31-24",
+      "oracle": {
+        "coherence": 78.0,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "B",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 78. Oracle had no similar historical games to form an expectation. The team won this game."
+      }
+    },
+    {
+      "week": 14,
+      "opponent": "CHI",
+      "result": "W",
+      "score": "28-21",
+      "oracle": {
+        "coherence": 87.6,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "A",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 88. Oracle had no similar historical games to form an expectation. The team won this game."
+      }
+    },
+    {
+      "week": 15,
+      "opponent": "DEN",
+      "result": "L",
+      "score": "26-34",
+      "oracle": {
+        "coherence": 65.6,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": {
+          "grade": "C",
+          "label": "Uncalibrated"
+        },
+        "explain": "Performance coherence was 66. Oracle had no similar historical games to form an expectation. The team lost this game."
+      }
+    },
+    {
+      "week": 16,
+      "opponent": "CHI",
+      "result": null,
+      "score": null,
+      "oracle": {
+        "coherence": null,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Upcoming game. Oracle has not evaluated performance yet."
+      }
+    },
+    {
+      "week": 17,
+      "opponent": "BAL",
+      "result": null,
+      "score": null,
+      "oracle": {
+        "coherence": null,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Upcoming game. Oracle has not evaluated performance yet."
+      }
+    },
+    {
+      "week": 18,
+      "opponent": "MIN",
+      "result": null,
+      "score": null,
+      "oracle": {
+        "coherence": null,
+        "historical_map": null,
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Upcoming game. Oracle has not evaluated performance yet."
+      }
+    }
+  ]
+}
