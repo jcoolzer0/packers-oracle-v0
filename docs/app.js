@@ -1,4 +1,5 @@
 let DATA = null;
+let TEAMS = [];
 
 function pct(x) {
   if (x === null || x === undefined) return "—";
@@ -11,12 +12,8 @@ function bars(score) {
   return "▮".repeat(n) + "▯".repeat(5 - n);
 }
 
-function wlExpectation(oracle) {
-  const hm = oracle?.pregame_historical_map || oracle?.historical_map;
-  if (!hm || !hm.n) return null;
-  const w = hm.W ?? 0;
-  const t = hm.T ?? 0;
-  return w + 0.5 * t;
+function safeText(x) {
+  return (x === null || x === undefined || x === "") ? "—" : String(x);
 }
 
 function outcomeLabel(result) {
@@ -24,10 +21,6 @@ function outcomeLabel(result) {
   if (result === "L") return "Loss";
   if (result === "T") return "Tie";
   return "Upcoming";
-}
-
-function safeText(x) {
-  return (x === null || x === undefined || x === "") ? "—" : String(x);
 }
 
 function renderSeasonView() {
@@ -42,6 +35,7 @@ function renderSeasonView() {
     const opp = g.opponent ?? "???";
     const wk = g.week ?? "?";
     const score = g.score ?? "";
+
     const pick = g.oracle?.pregame_pick ?? "—";
     const pwin = g.oracle?.pregame_expected_win_rate;
     const conf = g.oracle?.pregame_confidence;
@@ -117,14 +111,6 @@ function renderGame(g) {
   document.getElementById("gameout").textContent = JSON.stringify(g, null, 2);
 
   const oracle = g.oracle || {};
-
-  // Support both old + new schema names
-  const hm = oracle.pregame_historical_map || oracle.historical_map;
-  const exp = wlExpectation(oracle);
-  const expText = (exp === null || !hm?.n)
-    ? "No similar-history yet (Oracle makes no claim)."
-    : `Expected win rate in similar states: ${pct(exp)} (n=${hm.n})`;
-
   const coh = oracle.coherence;
   const cohText = coh == null ? "Coherence: —" : `Coherence: ${coh}  ${bars(coh)}  (team internal consistency)`;
 
@@ -137,30 +123,51 @@ function renderGame(g) {
   const pick = oracle.pregame_pick ?? "—";
   const pwin = oracle.pregame_expected_win_rate;
   const conf = oracle.pregame_confidence;
+  const hm = oracle.pregame_historical_map;
 
-  const preLine = (pwin == null || conf == null)
-    ? `Pregame pick: ${pick} — Expected win rate: — — Confidence: —`
-    : `Pregame pick: ${pick} — Expected win rate: ${pct(pwin)} — Confidence: ${Math.round(conf)}/100`;
+  const expText = (pwin == null || conf == null || !hm?.n)
+    ? "Expected win rate: — — Confidence: —"
+    : `Expected win rate: ${pct(pwin)} (n=${hm.n}) — Confidence: ${Math.round(conf)}/100`;
 
   document.getElementById("read").innerHTML = `
     <div style="font-size:18px; font-weight:700; margin-bottom:6px;">
       Week ${g.week} vs ${g.opponent} — ${outcomeLabel(g.result)} ${g.score ? `(${g.score})` : ""}
     </div>
-    <div style="margin:6px 0;">${preLine}</div>
+    <div style="margin:6px 0;"><b>Pregame pick:</b> ${pick} • ${expText}</div>
     <div style="margin:6px 0;">${cohText}</div>
-    <div style="margin:6px 0;">${expText}</div>
     <div style="margin:6px 0;">${lock}</div>
     <div style="margin:6px 0;">${wlcText}</div>
     <div style="margin-top:10px; color:#333;">${safeText(expl)}</div>
   `;
 }
 
+function populateTeamDropdown() {
+  const teamSel = document.getElementById("team");
+  teamSel.innerHTML = "";
+
+  TEAMS.forEach(t => {
+    const opt = document.createElement("option");
+    opt.value = t.key;                  // e.g. "gb", "phi", "sf", etc.
+    opt.textContent = `${t.team}`;      // e.g. "GB"
+    teamSel.appendChild(opt);
+  });
+}
+
+async function loadTeams() {
+  const res = await fetch(`./teams.json`, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Fetch failed for teams.json (${res.status})`);
+  const payload = await res.json();
+  TEAMS = (payload.teams || []).slice();
+
+  // Nice: sort alphabetically by team code
+  TEAMS.sort((a, b) => (a.team || "").localeCompare(b.team || ""));
+  populateTeamDropdown();
+}
+
 async function loadTeam(teamKey) {
   const statusEl = document.getElementById("status");
   statusEl.textContent = "Loading...";
 
-  // IMPORTANT:
-  // If your JSON files live inside /docs on Pages, use `./docs/${teamKey}.json` instead.
   const res = await fetch(`./${teamKey}.json`, { cache: "no-store" });
   if (!res.ok) throw new Error(`Fetch failed for ${teamKey}.json (${res.status})`);
 
@@ -185,14 +192,27 @@ async function loadTeam(teamKey) {
   renderGame(DATA.games[0]);
 }
 
-// Hook controls (ONLY ONCE)
-document.getElementById("team").addEventListener("change", (e) => loadTeam(e.target.value));
-document.getElementById("refresh").addEventListener("click", () => {
-  const teamKey = document.getElementById("team").value;
-  loadTeam(teamKey);
-});
+async function boot() {
+  // 1) load teams list
+  await loadTeams();
+
+  // 2) pick default (try GB if present)
+  const teamSel = document.getElementById("team");
+  const hasGB = TEAMS.find(t => t.key === "gb");
+  const defaultKey = hasGB ? "gb" : (TEAMS[0]?.key || "gb");
+  teamSel.value = defaultKey;
+
+  // 3) wire controls
+  teamSel.addEventListener("change", (e) => loadTeam(e.target.value));
+  document.getElementById("refresh").addEventListener("click", () => {
+    loadTeam(document.getElementById("team").value);
+  });
+
+  // 4) load initial team
+  await loadTeam(defaultKey);
+}
 
 // Boot
-loadTeam("gb").catch(err => {
+boot().catch(err => {
   document.getElementById("status").textContent = "Failed ❌ " + err.message;
 });
