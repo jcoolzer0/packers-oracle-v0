@@ -1,0 +1,133 @@
+{
+  "season": 2025,
+  "teams": [
+    {
+      "team": "ARI",
+      "key": "ari"
+    },
+    {
+      "team": "ATL",
+      "key": "atl"
+    },
+    {
+      "team": "BAL",
+      "key": "bal"
+    },
+    {
+      "team": "BUF",
+      "key": "buf"
+    },
+    {
+      "team": "CAR",
+      "key": "car"
+    },
+    {
+      "team": "CHI",
+      "key": "chi"
+    },
+    {
+      "team": "CIN",
+      "key": "cin"
+    },
+    {
+      "team": "CLE",
+      "key": "cle"
+    },
+    {
+      "team": "DAL",
+      "key": "dal"
+    },
+    {
+      "team": "DEN",
+      "key": "den"
+    },
+    {
+      "team": "DET",
+      "key": "det"
+    },
+    {
+      "team": "GB",
+      "key": "gb"
+    },
+    {
+      "team": "HOU",
+      "key": "hou"
+    },
+    {
+      "team": "IND",
+      "key": "ind"
+    },
+    {
+      "team": "JAX",
+      "key": "jax"
+    },
+    {
+      "team": "KC",
+      "key": "kc"
+    },
+    {
+      "team": "LA",
+      "key": "la"
+    },
+    {
+      "team": "LAC",
+      "key": "lac"
+    },
+    {
+      "team": "LV",
+      "key": "lv"
+    },
+    {
+      "team": "MIA",
+      "key": "mia"
+    },
+    {
+      "team": "MIN",
+      "key": "min"
+    },
+    {
+      "team": "NE",
+      "key": "ne"
+    },
+    {
+      "team": "NO",
+      "key": "no"
+    },
+    {
+      "team": "NYG",
+      "key": "nyg"
+    },
+    {
+      "team": "NYJ",
+      "key": "nyj"
+    },
+    {
+      "team": "PHI",
+      "key": "phi"
+    },
+    {
+      "team": "PIT",
+      "key": "pit"
+    },
+    {
+      "team": "SEA",
+      "key": "sea"
+    },
+    {
+      "team": "SF",
+      "key": "sf"
+    },
+    {
+      "team": "TB",
+      "key": "tb"
+    },
+    {
+      "team": "TEN",
+      "key": "ten"
+    },
+    {
+      "team": "WAS",
+      "key": "was"
+    }
+  ]
+}
