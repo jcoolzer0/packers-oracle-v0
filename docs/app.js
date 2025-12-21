@@ -74,6 +74,11 @@ function renderSeasonView() {
   `;
 }
 
+/**
+ * Next Game Oracle (recommended behavior)
+ * - Always show a speculative lean (even if no data / n=0)
+ * - Show a separate "Committed Oracle" line only when evidence exists
+ */
 function renderNextGame() {
   const box = document.getElementById("nextgame");
   if (!DATA || !DATA.games) {
@@ -81,28 +86,62 @@ function renderNextGame() {
     return;
   }
 
-  const next = DATA.games.find(g => g.result == null);
+  // Pick the next upcoming game by week (safer than .find if JSON isn't sorted)
+  const upcoming = DATA.games
+    .filter(g => g.result == null)
+    .sort((a, b) => (a.week ?? 999) - (b.week ?? 999));
+
+  const next = upcoming[0];
+
   if (!next) {
     box.innerHTML = `<div>Season complete (no upcoming games found).</div>`;
     return;
   }
 
   const o = next.oracle || {};
-  const pick = o.pregame_pick ?? "—";
-  const pwin = o.pregame_expected_win_rate;
-  const conf = o.pregame_confidence;
-  const hm = o.pregame_historical_map;
+  const hm = o.pregame_historical_map || {};
+  const n = Number.isFinite(hm.n) ? hm.n : 0;
 
-  const expText = (pwin == null || !hm?.n)
-    ? "Oracle has insufficient similar-history; it withholds a win/loss confidence."
-    : `Expected win rate: ${pct(pwin)} (n=${hm.n}) • Confidence: ${Math.round(conf)}/100`;
+  // Speculative defaults: always show something.
+  // If generator provided pwin/conf, use them; otherwise fall back to coin flip + 0 confidence.
+  const pwin = (o.pregame_expected_win_rate == null) ? 0.50 : o.pregame_expected_win_rate;
+  const conf = (o.pregame_confidence == null) ? 0 : o.pregame_confidence;
+
+  // If pick missing, derive a minimal lean from pwin
+  const pick =
+    (o.pregame_pick != null && o.pregame_pick !== "")
+      ? o.pregame_pick
+      : (pwin > 0.52 ? "W" : (pwin < 0.48 ? "L" : "No Edge"));
+
+  const confLabel =
+    conf >= 75 ? "HIGH" :
+    conf >= 60 ? "MED" :
+    conf >= 45 ? "LOW" : "VERY LOW";
+
+  // Committed line: only if evidence exists AND generator gave pwin+conf
+  const committedOk = n > 0 && o.pregame_expected_win_rate != null && o.pregame_confidence != null;
+
+  const committedText = committedOk
+    ? `Expected win rate: ${pct(o.pregame_expected_win_rate)} (n=${n}) • Confidence: ${Math.round(o.pregame_confidence)}/100`
+    : `Committed call withheld (insufficient similar-history: n=${n}).`;
 
   box.innerHTML = `
     <div style="font-size:18px; font-weight:700; margin-bottom:6px;">
-      Week ${next.week} vs ${next.opponent} — Upcoming
+      Week ${safeText(next.week)} vs ${safeText(next.opponent)} — Upcoming
     </div>
-    <div style="margin:6px 0;"><b>Pregame pick:</b> ${pick}</div>
-    <div style="margin:6px 0;">${expText}</div>
+
+    <div style="margin:8px 0; padding:10px; border-radius:10px; background:#f6f6f6;">
+      <div style="font-weight:700; margin-bottom:4px;">Speculative line (always shown)</div>
+      <div><b>Lean:</b> ${pick}</div>
+      <div><b>Win prob:</b> ${pct(pwin)} • <b>Confidence:</b> ${Math.round(conf)}/100 (${confLabel})</div>
+      <div style="color:#444; margin-top:4px;"><b>Evidence:</b> similar-history n=${n}</div>
+    </div>
+
+    <div style="margin:8px 0; padding:10px; border-radius:10px; border:1px solid #ddd;">
+      <div style="font-weight:700; margin-bottom:4px;">Committed Oracle (only when evidence exists)</div>
+      <div>${committedText}</div>
+    </div>
+
     <div style="margin-top:10px; color:#333;">${safeText(o.explain_pregame)}</div>
   `;
 }
@@ -147,8 +186,8 @@ function populateTeamDropdown() {
 
   TEAMS.forEach(t => {
     const opt = document.createElement("option");
-    opt.value = t.key;                  // e.g. "gb", "phi", "sf", etc.
-    opt.textContent = `${t.team}`;      // e.g. "GB"
+    opt.value = t.key;
+    opt.textContent = `${t.team}`;
     teamSel.appendChild(opt);
   });
 }
@@ -159,7 +198,6 @@ async function loadTeams() {
   const payload = await res.json();
   TEAMS = (payload.teams || []).slice();
 
-  // Nice: sort alphabetically by team code
   TEAMS.sort((a, b) => (a.team || "").localeCompare(b.team || ""));
   populateTeamDropdown();
 }
@@ -193,26 +231,21 @@ async function loadTeam(teamKey) {
 }
 
 async function boot() {
-  // 1) load teams list
   await loadTeams();
 
-  // 2) pick default (try GB if present)
   const teamSel = document.getElementById("team");
   const hasGB = TEAMS.find(t => t.key === "gb");
   const defaultKey = hasGB ? "gb" : (TEAMS[0]?.key || "gb");
   teamSel.value = defaultKey;
 
-  // 3) wire controls
   teamSel.addEventListener("change", (e) => loadTeam(e.target.value));
   document.getElementById("refresh").addEventListener("click", () => {
     loadTeam(document.getElementById("team").value);
   });
 
-  // 4) load initial team
   await loadTeam(defaultKey);
 }
 
-// Boot
 boot().catch(err => {
   document.getElementById("status").textContent = "Failed ❌ " + err.message;
 });
