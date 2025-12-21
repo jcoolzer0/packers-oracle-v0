@@ -2,8 +2,8 @@
   "summary": {
     "team": "PHI",
     "season": 2025,
-    "record": "9-5-0",
-    "win_pct": 0.643,
+    "record": "10-5-0",
+    "win_pct": 0.667,
     "calibration_score": -1,
     "calibration_trail": [
       0,
@@ -19,11 +19,12 @@
       -1,
       -1,
       -1,
+      -1,
       -1
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2025-12-20T17:11:06.918386+00:00",
+  "generated_at": "2025-12-21T03:33:08.369496+00:00",
   "games": [
     {
       "week": 1,
@@ -307,8 +308,8 @@
     {
       "week": 16,
       "opponent": "WAS",
-      "result": null,
-      "score": null,
+      "result": "W",
+      "score": "29-18",
       "oracle": {
         "pregame_pick": null,
         "pregame_expected_win_rate": null,
@@ -316,10 +317,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: PHI (away) vs WAS. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": null,
+        "coherence": 79.5,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
+        "explain": "Postgame: coherence 79.5. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -346,12 +347,17 @@
       "result": null,
       "score": null,
       "oracle": {
-        "pregame_pick": null,
-        "pregame_expected_win_rate": null,
-        "pregame_confidence": null,
-        "pregame_historical_map": null,
+        "pregame_pick": "W",
+        "pregame_expected_win_rate": 1.0,
+        "pregame_confidence": 52.6,
+        "pregame_historical_map": {
+          "n": 1,
+          "W": 1.0,
+          "L": 0.0,
+          "T": 0.0
+        },
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: PHI (home) vs WAS. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "explain_pregame": "Pregame read: PHI (home) vs WAS. In 1 historically similar situations (league-wide), teams won about 100% of the time. Confidence: 53/100.",
         "coherence": null,
         "reality_lock": null,
         "win_loss_coherence": null,
