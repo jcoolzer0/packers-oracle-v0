@@ -2,10 +2,11 @@
   "summary": {
     "team": "DET",
     "season": 2025,
-    "record": "8-6-0",
-    "win_pct": 0.571,
+    "record": "8-7-0",
+    "win_pct": 0.533,
     "calibration_score": 0,
     "calibration_trail": [
+      0,
       0,
       0,
       0,
@@ -23,7 +24,7 @@
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2025-12-21T10:46:07.172172+00:00",
+  "generated_at": "2025-12-22T10:51:40.142328+00:00",
   "games": [
     {
       "week": 1,
@@ -280,8 +281,8 @@
     {
       "week": 16,
       "opponent": "PIT",
-      "result": null,
-      "score": null,
+      "result": "L",
+      "score": "24-29",
       "oracle": {
         "pregame_pick": null,
         "pregame_expected_win_rate": null,
@@ -289,10 +290,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: DET (home) vs PIT. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": null,
+        "coherence": 80.4,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
+        "explain": "Postgame: coherence 80.4. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
