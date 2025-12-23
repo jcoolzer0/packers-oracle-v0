@@ -2,10 +2,11 @@
   "summary": {
     "team": "IND",
     "season": 2025,
-    "record": "8-6-0",
-    "win_pct": 0.571,
+    "record": "8-7-0",
+    "win_pct": 0.533,
     "calibration_score": 0,
     "calibration_trail": [
+      0,
       0,
       0,
       0,
@@ -23,7 +24,7 @@
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2025-12-22T10:51:40.143426+00:00",
+  "generated_at": "2025-12-23T10:52:29.998919+00:00",
   "games": [
     {
       "week": 1,
@@ -280,8 +281,8 @@
     {
       "week": 16,
       "opponent": "SF",
-      "result": null,
-      "score": null,
+      "result": "L",
+      "score": "27-48",
       "oracle": {
         "pregame_pick": null,
         "pregame_expected_win_rate": null,
@@ -289,10 +290,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: IND (home) vs SF. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": null,
+        "coherence": 59.7,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
+        "explain": "Postgame: coherence 59.7. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
