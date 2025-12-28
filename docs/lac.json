@@ -2,8 +2,8 @@
   "summary": {
     "team": "LAC",
     "season": 2025,
-    "record": "11-4-0",
-    "win_pct": 0.733,
+    "record": "11-5-0",
+    "win_pct": 0.688,
     "calibration_score": 1,
     "calibration_trail": [
       0,
@@ -20,11 +20,12 @@
       1,
       1,
       1,
+      1,
       1
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2025-12-27T10:46:20.484269+00:00",
+  "generated_at": "2025-12-28T10:47:43.751213+00:00",
   "games": [
     {
       "week": 1,
@@ -308,8 +309,8 @@
     {
       "week": 17,
       "opponent": "HOU",
-      "result": null,
-      "score": null,
+      "result": "L",
+      "score": "16-20",
       "oracle": {
         "pregame_pick": null,
         "pregame_expected_win_rate": null,
@@ -317,10 +318,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: LAC (home) vs HOU. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": null,
+        "coherence": 77.7,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
+        "explain": "Postgame: coherence 77.7. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -329,17 +330,12 @@
       "result": null,
       "score": null,
       "oracle": {
-        "pregame_pick": "W",
-        "pregame_expected_win_rate": 1.0,
-        "pregame_confidence": 52.6,
-        "pregame_historical_map": {
-          "n": 1,
-          "W": 1.0,
-          "L": 0.0,
-          "T": 0.0
-        },
+        "pregame_pick": null,
+        "pregame_expected_win_rate": null,
+        "pregame_confidence": null,
+        "pregame_historical_map": null,
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: LAC (away) vs DEN. In 1 historically similar situations (league-wide), teams won about 100% of the time. Confidence: 53/100.",
+        "explain_pregame": "Pregame read: LAC (away) vs DEN. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
         "coherence": null,
         "reality_lock": null,
         "win_loss_coherence": null,

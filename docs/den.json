@@ -25,7 +25,7 @@
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2025-12-27T10:46:20.481150+00:00",
+  "generated_at": "2025-12-28T10:47:43.748160+00:00",
   "games": [
     {
       "week": 1,
@@ -339,17 +339,12 @@
       "result": null,
       "score": null,
       "oracle": {
-        "pregame_pick": "L",
-        "pregame_expected_win_rate": 0.0,
-        "pregame_confidence": 52.6,
-        "pregame_historical_map": {
-          "n": 1,
-          "W": 0.0,
-          "L": 1.0,
-          "T": 0.0
-        },
+        "pregame_pick": null,
+        "pregame_expected_win_rate": null,
+        "pregame_confidence": null,
+        "pregame_historical_map": null,
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: DEN (home) vs LAC. In 1 historically similar situations (league-wide), teams won about 0% of the time. Confidence: 53/100.",
+        "explain_pregame": "Pregame read: DEN (home) vs LAC. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
         "coherence": null,
         "reality_lock": null,
         "win_loss_coherence": null,
