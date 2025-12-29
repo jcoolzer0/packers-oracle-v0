@@ -2,9 +2,9 @@
   "summary": {
     "team": "MIA",
     "season": 2025,
-    "record": "6-9-0",
-    "win_pct": 0.4,
-    "calibration_score": 0,
+    "record": "7-9-0",
+    "win_pct": 0.438,
+    "calibration_score": 1,
     "calibration_trail": [
       0,
       0,
@@ -20,11 +20,12 @@
       0,
       0,
       0,
-      0
+      0,
+      1
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2025-12-28T10:47:43.751981+00:00",
+  "generated_at": "2025-12-29T10:53:09.835484+00:00",
   "games": [
     {
       "week": 1,
@@ -299,8 +300,8 @@
     {
       "week": 17,
       "opponent": "TB",
-      "result": null,
-      "score": null,
+      "result": "W",
+      "score": "20-17",
       "oracle": {
         "pregame_pick": "W",
         "pregame_expected_win_rate": 1.0,
@@ -313,10 +314,14 @@
         },
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: MIA (home) vs TB. In 1 historically similar situations (league-wide), teams won about 100% of the time. Confidence: 53/100.",
-        "coherence": null,
-        "reality_lock": null,
-        "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
+        "coherence": 80.2,
+        "reality_lock": "MATCH",
+        "win_loss_coherence": {
+          "grade": "C",
+          "label": "Aligned",
+          "predicted": "W"
+        },
+        "explain": "Postgame: coherence 80.2. Pregame expected win rate was ~100% (n=1), and reality lock is MATCH."
       }
     },
     {
@@ -325,17 +330,12 @@
       "result": null,
       "score": null,
       "oracle": {
-        "pregame_pick": "L",
-        "pregame_expected_win_rate": 0.0,
-        "pregame_confidence": 52.6,
-        "pregame_historical_map": {
-          "n": 1,
-          "W": 0.0,
-          "L": 1.0,
-          "T": 0.0
-        },
+        "pregame_pick": null,
+        "pregame_expected_win_rate": null,
+        "pregame_confidence": null,
+        "pregame_historical_map": null,
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: MIA (away) vs NE. In 1 historically similar situations (league-wide), teams won about 0% of the time. Confidence: 53/100.",
+        "explain_pregame": "Pregame read: MIA (away) vs NE. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
         "coherence": null,
         "reality_lock": null,
         "win_loss_coherence": null,

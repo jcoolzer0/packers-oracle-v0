@@ -2,9 +2,9 @@
   "summary": {
     "team": "TB",
     "season": 2025,
-    "record": "7-8-0",
-    "win_pct": 0.467,
-    "calibration_score": 1,
+    "record": "7-9-0",
+    "win_pct": 0.438,
+    "calibration_score": 2,
     "calibration_trail": [
       0,
       0,
@@ -20,11 +20,12 @@
       1,
       1,
       1,
-      1
+      1,
+      2
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2025-12-28T10:47:43.755845+00:00",
+  "generated_at": "2025-12-29T10:53:09.839224+00:00",
   "games": [
     {
       "week": 1,
@@ -308,6 +309,33 @@
     {
       "week": 17,
       "opponent": "MIA",
+      "result": "L",
+      "score": "17-20",
+      "oracle": {
+        "pregame_pick": "L",
+        "pregame_expected_win_rate": 0.0,
+        "pregame_confidence": 52.6,
+        "pregame_historical_map": {
+          "n": 1,
+          "W": 0.0,
+          "L": 1.0,
+          "T": 0.0
+        },
+        "pregame_bucket": null,
+        "explain_pregame": "Pregame read: TB (away) vs MIA. In 1 historically similar situations (league-wide), teams won about 0% of the time. Confidence: 53/100.",
+        "coherence": 75.2,
+        "reality_lock": "MATCH",
+        "win_loss_coherence": {
+          "grade": "C",
+          "label": "Aligned",
+          "predicted": "L"
+        },
+        "explain": "Postgame: coherence 75.2. Pregame expected win rate was ~0% (n=1), and reality lock is MATCH."
+      }
+    },
+    {
+      "week": 18,
+      "opponent": "CAR",
       "result": null,
       "score": null,
       "oracle": {
@@ -321,25 +349,7 @@
           "T": 0.0
         },
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: TB (away) vs MIA. In 1 historically similar situations (league-wide), teams won about 0% of the time. Confidence: 53/100.",
-        "coherence": null,
-        "reality_lock": null,
-        "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
-      }
-    },
-    {
-      "week": 18,
-      "opponent": "CAR",
-      "result": null,
-      "score": null,
-      "oracle": {
-        "pregame_pick": null,
-        "pregame_expected_win_rate": null,
-        "pregame_confidence": null,
-        "pregame_historical_map": null,
-        "pregame_bucket": null,
-        "explain_pregame": "Pregame read: TB (home) vs CAR. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "explain_pregame": "Pregame read: TB (home) vs CAR. In 1 historically similar situations (league-wide), teams won about 0% of the time. Confidence: 53/100.",
         "coherence": null,
         "reality_lock": null,
         "win_loss_coherence": null,
