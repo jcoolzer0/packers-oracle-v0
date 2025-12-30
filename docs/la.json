@@ -2,8 +2,8 @@
   "summary": {
     "team": "LA",
     "season": 2025,
-    "record": "11-4-0",
-    "win_pct": 0.733,
+    "record": "11-5-0",
+    "win_pct": 0.688,
     "calibration_score": 1,
     "calibration_trail": [
       0,
@@ -20,11 +20,12 @@
       1,
       1,
       1,
+      1,
       1
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2025-12-29T10:53:09.834378+00:00",
+  "generated_at": "2025-12-30T10:57:57.923693+00:00",
   "games": [
     {
       "week": 1,
@@ -308,8 +309,8 @@
     {
       "week": 17,
       "opponent": "ATL",
-      "result": null,
-      "score": null,
+      "result": "L",
+      "score": "24-27",
       "oracle": {
         "pregame_pick": null,
         "pregame_expected_win_rate": null,
@@ -317,10 +318,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: LA (away) vs ATL. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": null,
+        "coherence": 76.5,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
+        "explain": "Postgame: coherence 76.5. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
