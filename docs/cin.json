@@ -2,8 +2,8 @@
   "summary": {
     "team": "CIN",
     "season": 2025,
-    "record": "6-10-0",
-    "win_pct": 0.375,
+    "record": "6-11-0",
+    "win_pct": 0.353,
     "calibration_score": 0,
     "calibration_trail": [
       0,
@@ -21,11 +21,12 @@
       0,
       0,
       0,
+      0,
       0
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-04T10:46:57.633383+00:00",
+  "generated_at": "2026-01-05T10:56:17.002413+00:00",
   "games": [
     {
       "week": 1,
@@ -336,8 +337,8 @@
     {
       "week": 18,
       "opponent": "CLE",
-      "result": null,
-      "score": null,
+      "result": "L",
+      "score": "18-20",
       "oracle": {
         "pregame_pick": null,
         "pregame_expected_win_rate": null,
@@ -345,10 +346,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: CIN (home) vs CLE. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": null,
+        "coherence": 75.5,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
+        "explain": "Postgame: coherence 75.5. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     }
   ]

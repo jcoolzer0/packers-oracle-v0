@@ -2,8 +2,8 @@
   "summary": {
     "team": "GB",
     "season": 2025,
-    "record": "9-6-1",
-    "win_pct": 0.594,
+    "record": "9-7-1",
+    "win_pct": 0.559,
     "calibration_score": 1,
     "calibration_trail": [
       0,
@@ -21,11 +21,12 @@
       1,
       1,
       1,
+      1,
       1
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-04T10:46:57.635216+00:00",
+  "generated_at": "2026-01-05T10:56:17.004330+00:00",
   "games": [
     {
       "week": 1,
@@ -327,6 +328,24 @@
     {
       "week": 18,
       "opponent": "MIN",
+      "result": "L",
+      "score": "3-16",
+      "oracle": {
+        "pregame_pick": null,
+        "pregame_expected_win_rate": null,
+        "pregame_confidence": null,
+        "pregame_historical_map": null,
+        "pregame_bucket": null,
+        "explain_pregame": "Pregame read: GB (away) vs MIN. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "coherence": 59.8,
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Postgame: coherence 59.8. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+      }
+    },
+    {
+      "week": 19,
+      "opponent": "CHI",
       "result": null,
       "score": null,
       "oracle": {
@@ -335,7 +354,7 @@
         "pregame_confidence": null,
         "pregame_historical_map": null,
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: GB (away) vs MIN. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "explain_pregame": "Pregame read: GB (away) vs CHI. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
         "coherence": null,
         "reality_lock": null,
         "win_loss_coherence": null,

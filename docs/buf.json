@@ -2,8 +2,8 @@
   "summary": {
     "team": "BUF",
     "season": 2025,
-    "record": "11-5-0",
-    "win_pct": 0.688,
+    "record": "12-5-0",
+    "win_pct": 0.706,
     "calibration_score": 2,
     "calibration_trail": [
       0,
@@ -21,11 +21,12 @@
       1,
       2,
       2,
+      2,
       2
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-04T10:46:57.631440+00:00",
+  "generated_at": "2026-01-05T10:56:17.001116+00:00",
   "games": [
     {
       "week": 1,
@@ -336,6 +337,24 @@
     {
       "week": 18,
       "opponent": "NYJ",
+      "result": "W",
+      "score": "35-8",
+      "oracle": {
+        "pregame_pick": null,
+        "pregame_expected_win_rate": null,
+        "pregame_confidence": null,
+        "pregame_historical_map": null,
+        "pregame_bucket": null,
+        "explain_pregame": "Pregame read: BUF (home) vs NYJ. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "coherence": 66.7,
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Postgame: coherence 66.7. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+      }
+    },
+    {
+      "week": 19,
+      "opponent": "JAX",
       "result": null,
       "score": null,
       "oracle": {
@@ -344,7 +363,7 @@
         "pregame_confidence": null,
         "pregame_historical_map": null,
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: BUF (home) vs NYJ. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "explain_pregame": "Pregame read: BUF (away) vs JAX. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
         "coherence": null,
         "reality_lock": null,
         "win_loss_coherence": null,
