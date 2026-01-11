@@ -2,8 +2,8 @@
   "summary": {
     "team": "CAR",
     "season": 2025,
-    "record": "8-9-0",
-    "win_pct": 0.471,
+    "record": "8-10-0",
+    "win_pct": 0.444,
     "calibration_score": -1,
     "calibration_trail": [
       0,
@@ -22,11 +22,12 @@
       0,
       0,
       0,
+      -1,
       -1
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-10T10:51:56.914987+00:00",
+  "generated_at": "2026-01-11T10:53:36.217996+00:00",
   "games": [
     {
       "week": 1,
@@ -346,8 +347,8 @@
     {
       "week": 19,
       "opponent": "LA",
-      "result": null,
-      "score": null,
+      "result": "L",
+      "score": "31-34",
       "oracle": {
         "pregame_pick": null,
         "pregame_expected_win_rate": null,
@@ -355,10 +356,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: CAR (home) vs LA. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": null,
+        "coherence": 62.9,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
+        "explain": "Postgame: coherence 62.9. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     }
   ]
