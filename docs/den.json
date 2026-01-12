@@ -26,7 +26,7 @@
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-11T10:53:36.220042+00:00",
+  "generated_at": "2026-01-12T10:56:35.374413+00:00",
   "games": [
     {
       "week": 1,
@@ -350,6 +350,29 @@
         "reality_lock": null,
         "win_loss_coherence": null,
         "explain": "Postgame: coherence 64.9. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+      }
+    },
+    {
+      "week": 20,
+      "opponent": "BUF",
+      "result": null,
+      "score": null,
+      "oracle": {
+        "pregame_pick": "L",
+        "pregame_expected_win_rate": 0.0,
+        "pregame_confidence": 52.6,
+        "pregame_historical_map": {
+          "n": 1,
+          "W": 0.0,
+          "L": 1.0,
+          "T": 0.0
+        },
+        "pregame_bucket": null,
+        "explain_pregame": "Pregame read: DEN (home) vs BUF. In 1 historically similar situations (league-wide), teams won about 0% of the time. Confidence: 53/100.",
+        "coherence": null,
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
       }
     }
   ]

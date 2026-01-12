@@ -2,8 +2,8 @@
   "summary": {
     "team": "BUF",
     "season": 2025,
-    "record": "12-5-0",
-    "win_pct": 0.706,
+    "record": "13-5-0",
+    "win_pct": 0.722,
     "calibration_score": 2,
     "calibration_trail": [
       0,
@@ -22,11 +22,12 @@
       2,
       2,
       2,
+      2,
       2
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-11T10:53:36.217545+00:00",
+  "generated_at": "2026-01-12T10:56:35.371773+00:00",
   "games": [
     {
       "week": 1,
@@ -355,8 +356,8 @@
     {
       "week": 19,
       "opponent": "JAX",
-      "result": null,
-      "score": null,
+      "result": "W",
+      "score": "27-24",
       "oracle": {
         "pregame_pick": null,
         "pregame_expected_win_rate": null,
@@ -364,6 +365,29 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: BUF (away) vs JAX. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "coherence": 89.0,
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Postgame: coherence 89.0. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+      }
+    },
+    {
+      "week": 20,
+      "opponent": "DEN",
+      "result": null,
+      "score": null,
+      "oracle": {
+        "pregame_pick": "W",
+        "pregame_expected_win_rate": 1.0,
+        "pregame_confidence": 52.6,
+        "pregame_historical_map": {
+          "n": 1,
+          "W": 1.0,
+          "L": 0.0,
+          "T": 0.0
+        },
+        "pregame_bucket": null,
+        "explain_pregame": "Pregame read: BUF (away) vs DEN. In 1 historically similar situations (league-wide), teams won about 100% of the time. Confidence: 53/100.",
         "coherence": null,
         "reality_lock": null,
         "win_loss_coherence": null,
