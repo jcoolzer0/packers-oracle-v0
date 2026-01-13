@@ -2,8 +2,8 @@
   "summary": {
     "team": "HOU",
     "season": 2025,
-    "record": "12-5-0",
-    "win_pct": 0.706,
+    "record": "13-5-0",
+    "win_pct": 0.722,
     "calibration_score": 1,
     "calibration_trail": [
       0,
@@ -22,11 +22,12 @@
       1,
       1,
       1,
+      1,
       1
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-12T10:56:35.375651+00:00",
+  "generated_at": "2026-01-13T10:55:01.134128+00:00",
   "games": [
     {
       "week": 1,
@@ -346,6 +347,24 @@
     {
       "week": 19,
       "opponent": "PIT",
+      "result": "W",
+      "score": "30-6",
+      "oracle": {
+        "pregame_pick": null,
+        "pregame_expected_win_rate": null,
+        "pregame_confidence": null,
+        "pregame_historical_map": null,
+        "pregame_bucket": null,
+        "explain_pregame": "Pregame read: HOU (away) vs PIT. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "coherence": 64.9,
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Postgame: coherence 64.9. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+      }
+    },
+    {
+      "week": 20,
+      "opponent": "NE",
       "result": null,
       "score": null,
       "oracle": {
@@ -354,7 +373,7 @@
         "pregame_confidence": null,
         "pregame_historical_map": null,
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: HOU (away) vs PIT. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "explain_pregame": "Pregame read: HOU (away) vs NE. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
         "coherence": null,
         "reality_lock": null,
         "win_loss_coherence": null,
