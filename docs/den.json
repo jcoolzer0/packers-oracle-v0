@@ -2,9 +2,9 @@
   "summary": {
     "team": "DEN",
     "season": 2025,
-    "record": "14-3-0",
-    "win_pct": 0.824,
-    "calibration_score": 2,
+    "record": "15-3-0",
+    "win_pct": 0.833,
+    "calibration_score": 1,
     "calibration_trail": [
       0,
       0,
@@ -22,11 +22,12 @@
       2,
       2,
       2,
-      2
+      2,
+      1
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-17T10:46:25.820948+00:00",
+  "generated_at": "2026-01-18T10:47:34.061682+00:00",
   "games": [
     {
       "week": 1,
@@ -355,8 +356,8 @@
     {
       "week": 20,
       "opponent": "BUF",
-      "result": null,
-      "score": null,
+      "result": "W",
+      "score": "33-30",
       "oracle": {
         "pregame_pick": "L",
         "pregame_expected_win_rate": 0.0,
@@ -369,10 +370,14 @@
         },
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: DEN (home) vs BUF. In 1 historically similar situations (league-wide), teams won about 0% of the time. Confidence: 53/100.",
-        "coherence": null,
-        "reality_lock": null,
-        "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
+        "coherence": 63.6,
+        "reality_lock": "DIVERGE",
+        "win_loss_coherence": {
+          "grade": "C",
+          "label": "Diverged",
+          "predicted": "L"
+        },
+        "explain": "Postgame: coherence 63.6. Pregame expected win rate was ~0% (n=1), and reality lock is DIVERGE."
       }
     }
   ]
