@@ -27,7 +27,7 @@
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-18T10:47:34.061682+00:00",
+  "generated_at": "2026-01-19T10:59:42.964278+00:00",
   "games": [
     {
       "week": 1,
@@ -378,6 +378,24 @@
           "predicted": "L"
         },
         "explain": "Postgame: coherence 63.6. Pregame expected win rate was ~0% (n=1), and reality lock is DIVERGE."
+      }
+    },
+    {
+      "week": 21,
+      "opponent": "NE",
+      "result": null,
+      "score": null,
+      "oracle": {
+        "pregame_pick": null,
+        "pregame_expected_win_rate": null,
+        "pregame_confidence": null,
+        "pregame_historical_map": null,
+        "pregame_bucket": null,
+        "explain_pregame": "Pregame read: DEN (home) vs NE. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "coherence": null,
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
       }
     }
   ]
