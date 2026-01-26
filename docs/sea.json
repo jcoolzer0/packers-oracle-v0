@@ -2,10 +2,11 @@
   "summary": {
     "team": "SEA",
     "season": 2025,
-    "record": "15-3-0",
-    "win_pct": 0.833,
+    "record": "16-3-0",
+    "win_pct": 0.842,
     "calibration_score": 0,
     "calibration_trail": [
+      0,
       0,
       0,
       0,
@@ -27,7 +28,7 @@
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-25T10:39:59.586704+00:00",
+  "generated_at": "2026-01-26T10:47:08.254056+00:00",
   "games": [
     {
       "week": 1,
@@ -356,6 +357,24 @@
     {
       "week": 21,
       "opponent": "LA",
+      "result": "W",
+      "score": "31-27",
+      "oracle": {
+        "pregame_pick": null,
+        "pregame_expected_win_rate": null,
+        "pregame_confidence": null,
+        "pregame_historical_map": null,
+        "pregame_bucket": null,
+        "explain_pregame": "Pregame read: SEA (home) vs LA. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "coherence": 73.8,
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Postgame: coherence 73.8. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+      }
+    },
+    {
+      "week": 22,
+      "opponent": "NE",
       "result": null,
       "score": null,
       "oracle": {
@@ -364,7 +383,7 @@
         "pregame_confidence": null,
         "pregame_historical_map": null,
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: SEA (home) vs LA. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "explain_pregame": "Pregame read: SEA (away) vs NE. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
         "coherence": null,
         "reality_lock": null,
         "win_loss_coherence": null,

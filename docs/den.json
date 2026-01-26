@@ -2,8 +2,8 @@
   "summary": {
     "team": "DEN",
     "season": 2025,
-    "record": "15-3-0",
-    "win_pct": 0.833,
+    "record": "15-4-0",
+    "win_pct": 0.789,
     "calibration_score": 1,
     "calibration_trail": [
       0,
@@ -23,11 +23,12 @@
       2,
       2,
       2,
+      1,
       1
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-25T10:39:59.579037+00:00",
+  "generated_at": "2026-01-26T10:47:08.246540+00:00",
   "games": [
     {
       "week": 1,
@@ -383,8 +384,8 @@
     {
       "week": 21,
       "opponent": "NE",
-      "result": null,
-      "score": null,
+      "result": "L",
+      "score": "7-10",
       "oracle": {
         "pregame_pick": null,
         "pregame_expected_win_rate": null,
@@ -392,10 +393,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: DEN (home) vs NE. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": null,
+        "coherence": 59.6,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Upcoming game. Postgame coherence will appear after the game is played."
+        "explain": "Postgame: coherence 59.6. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     }
   ]
