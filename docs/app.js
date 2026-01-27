@@ -36,76 +36,61 @@ function isoNow() {
   return new Date().toISOString();
 }
 
-// Keyed by: season|team|week|opp
+// Snapshot storage
 function snapshotKey(team, season, week, opp) {
   return `oracleSnap|${safeText(season)}|${safeText(team)}|wk${safeText(week)}|${safeText(opp)}`;
 }
 
 function saveSnapshot(key, payload) {
-  try { localStorage.setItem(key, JSON.stringify(payload)); } catch (e) {}
+  try { localStorage.setItem(key, JSON.stringify(payload)); } catch {}
 }
 
 function loadSnapshot(key) {
   try {
     const raw = localStorage.getItem(key);
-    if (!raw) return null;
-    return JSON.parse(raw);
-  } catch (e) {
+    return raw ? JSON.parse(raw) : null;
+  } catch {
     return null;
   }
 }
 
-function resultFromScoreStr(scoreStr) {
-  if (!scoreStr || typeof scoreStr !== "string") return null;
-  const m = scoreStr.match(/(\d+)\s*-\s*(\d+)/);
-  if (!m) return null;
-  const a = Number(m[1]), b = Number(m[2]);
-  if (!Number.isFinite(a) || !Number.isFinite(b)) return null;
-  if (a > b) return "W";
-  if (a < b) return "L";
-  return "T";
-}
-
-function pickMatchesResult(pick, result) {
-  if (!pick || !result) return null;
-  const p = String(pick).toUpperCase();
-  const r = String(result).toUpperCase();
-  if (p === "NO EDGE" || p === "—") return null;
-  if (p === "W" && r === "W") return true;
-  if (p === "L" && r === "L") return true;
-  if (p === "T" && r === "T") return true;
-  return false;
-}
-
-// ---- NEW: alias fallback for team keys (prevents Rams vanishing) ----
+// -------------------- Rams + alias fallback --------------------
 const TEAM_KEY_FALLBACKS = {
   "lar": ["la", "LA"],
   "la": ["lar", "LA"],
   "LA": ["lar", "la"],
-
-  // optional extra safety:
   "wsh": ["was"],
   "was": ["wsh"],
 };
 
 async function fetchTeamJsonWithFallback(teamKey) {
-  const tryKeys = [teamKey].concat(TEAM_KEY_FALLBACKS[teamKey] || []);
+  const keys = [teamKey].concat(TEAM_KEY_FALLBACKS[teamKey] || []);
   let lastErr = null;
 
-  for (const k of tryKeys) {
+  for (const k of keys) {
     try {
       const res = await fetch(`./${k}.json`, { cache: "no-store" });
       if (!res.ok) throw new Error(`Fetch failed for ${k}.json (${res.status})`);
-      const data = await res.json();
-      return { data, usedKey: k };
+      return { data: await res.json(), usedKey: k };
     } catch (e) {
       lastErr = e;
     }
   }
-  throw lastErr || new Error("Fetch failed.");
+  throw lastErr || new Error("All team fetches failed");
 }
 
 // -------------------- UI renderers --------------------
+function populateTeamDropdown() {
+  const sel = document.getElementById("team");
+  sel.innerHTML = "";
+  TEAMS.forEach(t => {
+    const opt = document.createElement("option");
+    opt.value = t.key;
+    opt.textContent = t.team;
+    sel.appendChild(opt);
+  });
+}
+
 function renderSeasonView() {
   const el = document.getElementById("season");
   if (!DATA || !DATA.games) {
@@ -114,55 +99,30 @@ function renderSeasonView() {
   }
 
   const rows = DATA.games.map(g => {
-    const res = g.result ?? "TBD";
-    const opp = g.opponent ?? "???";
-    const wk = g.week ?? "?";
-    const score = g.score ?? "";
-
-    const pick = g.oracle?.pregame_pick ?? "—";
-    const pwin = g.oracle?.pregame_expected_win_rate;
-    const conf = g.oracle?.pregame_confidence;
-    const lock = g.oracle?.reality_lock ?? "—";
-
     const hm = g.oracle?.pregame_historical_map || {};
     const n = Number.isFinite(hm.n) ? hm.n : 0;
-    const grade = evidenceGradeFromN(n);
-
-    const teamCode = DATA?.summary?.team ?? "";
-    const season = DATA?.summary?.season ?? "";
-    const snap = loadSnapshot(snapshotKey(teamCode, season, wk, opp));
-    const snapTag = snap ? `SNAP ${safeText(snap.evidence_grade)} (${safeText(snap.evidence_n)})` : "—";
 
     return `
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${wk}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${opp}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${res}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${safeText(score)}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${pick}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${pwin == null ? "—" : pct(pwin)}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${conf == null ? "—" : Math.round(conf)}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">n=${n} • ${grade}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${lock}</td>
-        <td style="padding:6px 8px; border-bottom:1px solid #eee;">${snapTag}</td>
+        <td>${g.week}</td>
+        <td>${safeText(g.opponent)}</td>
+        <td>${outcomeLabel(g.result)}</td>
+        <td>${safeText(g.score)}</td>
+        <td>${safeText(g.oracle?.pregame_pick)}</td>
+        <td>${pct(g.oracle?.pregame_expected_win_rate)}</td>
+        <td>${safeText(g.oracle?.pregame_confidence)}</td>
+        <td>n=${n} • ${evidenceGradeFromN(n)}</td>
+        <td>${safeText(g.oracle?.reality_lock)}</td>
       </tr>
     `;
   }).join("");
 
   el.innerHTML = `
-    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+    <table style="width:100%; border-collapse:collapse;">
       <thead>
-        <tr style="text-align:left;">
-          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Week</th>
-          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Opp</th>
-          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Result</th>
-          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Score</th>
-          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Pick</th>
-          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Exp W%</th>
-          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Conf</th>
-          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Evidence</th>
-          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Reality</th>
-          <th style="padding:6px 8px; border-bottom:2px solid #ddd;">Snapshot</th>
+        <tr>
+          <th>Week</th><th>Opp</th><th>Result</th><th>Score</th>
+          <th>Pick</th><th>Exp</th><th>Conf</th><th>Evidence</th><th>Reality</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
@@ -170,42 +130,87 @@ function renderSeasonView() {
   `;
 }
 
-// (everything else unchanged until loadTeam) ...
+function renderNextGame() {
+  const box = document.getElementById("nextgame");
+  if (!DATA || !DATA.games) return;
 
+  const next = DATA.games.find(g => g.result == null);
+  if (!next) {
+    box.innerHTML = "Season complete.";
+    return;
+  }
+
+  const o = next.oracle || {};
+  const pwin = o.pregame_expected_win_rate ?? 0.5;
+  const conf = o.pregame_confidence ?? 0;
+  const pick = o.pregame_pick ?? (pwin > 0.52 ? "W" : pwin < 0.48 ? "L" : "No Edge");
+
+  box.innerHTML = `
+    <b>Week ${next.week} vs ${next.opponent}</b><br>
+    Lean: ${pick}<br>
+    Win prob: ${pct(pwin)}<br>
+    Confidence: ${Math.round(conf)}/100
+  `;
+}
+
+function renderGame(g) {
+  document.getElementById("gameout").textContent =
+    JSON.stringify(g, null, 2);
+}
+
+// -------------------- loaders --------------------
 async function loadTeams() {
-  const res = await fetch(`./teams.json`, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Fetch failed for teams.json (${res.status})`);
+  const res = await fetch("./teams.json", { cache: "no-store" });
+  if (!res.ok) throw new Error("teams.json failed");
   const payload = await res.json();
-  TEAMS = (payload.teams || []).slice();
-
-  TEAMS.sort((a, b) => (a.team || "").localeCompare(b.team || ""));
+  TEAMS = payload.teams || [];
   populateTeamDropdown();
 }
 
 async function loadTeam(teamKey) {
-  const statusEl = document.getElementById("status");
-  statusEl.textContent = "Loading...";
+  const status = document.getElementById("status");
+  status.textContent = "Loading…";
 
-  // NEW: resilient fetch
   const { data, usedKey } = await fetchTeamJsonWithFallback(teamKey);
   DATA = data;
 
-  statusEl.textContent = `Loaded ✅ ${DATA.summary.team} ${DATA.summary.season} (file: ${usedKey}.json)`;
+  status.textContent = `Loaded ${DATA.summary.team} (${usedKey}.json)`;
 
-  document.getElementById("summary").textContent = JSON.stringify(DATA.summary, null, 2);
+  document.getElementById("summary").textContent =
+    JSON.stringify(DATA.summary, null, 2);
 
   renderSeasonView();
   renderNextGame();
 
-  const sel = document.getElementById("game");
-  sel.innerHTML = "";
+  const gameSel = document.getElementById("game");
+  gameSel.innerHTML = "";
   DATA.games.forEach((g, i) => {
     const opt = document.createElement("option");
     opt.value = i;
-    opt.textContent = `Week ${g.week} vs ${g.opponent} — ${g.result ?? "TBD"}`;
-    sel.appendChild(opt);
+    opt.textContent = `Week ${g.week} vs ${g.opponent}`;
+    gameSel.appendChild(opt);
   });
 
-  sel.onchange = () => renderGame(DATA.games[Number(sel.value)]);
+  gameSel.onchange = () => renderGame(DATA.games[gameSel.value]);
   renderGame(DATA.games[0]);
 }
+
+// -------------------- BOOT (THIS WAS MISSING) --------------------
+async function boot() {
+  await loadTeams();
+
+  const teamSel = document.getElementById("team");
+  const defaultKey = TEAMS[0]?.key;
+  teamSel.value = defaultKey;
+
+  teamSel.addEventListener("change", e => loadTeam(e.target.value));
+  document.getElementById("refresh")
+    .addEventListener("click", () => loadTeam(teamSel.value));
+
+  await loadTeam(defaultKey);
+}
+
+boot().catch(err => {
+  console.error(err);
+  document.getElementById("status").textContent = "Failed ❌ " + err.message;
+});
