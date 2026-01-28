@@ -2,9 +2,9 @@
   "summary": {
     "team": "SF",
     "season": 2025,
-    "record": "13-6-0",
-    "win_pct": 0.684,
-    "calibration_score": -1,
+    "record": "12-5-0",
+    "win_pct": 0.706,
+    "calibration_score": 0,
     "calibration_trail": [
       0,
       0,
@@ -21,14 +21,12 @@
       -1,
       -1,
       -1,
-      -1,
-      -1,
-      -1,
-      -1
+      0,
+      0
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-27T10:49:21.662396+00:00",
+  "generated_at": "2026-01-28T10:49:03.347429+00:00",
   "games": [
     {
       "week": 1,
@@ -112,24 +110,6 @@
       }
     },
     {
-      "week": 5,
-      "opponent": "LA",
-      "result": "W",
-      "score": "26-23",
-      "oracle": {
-        "pregame_pick": null,
-        "pregame_expected_win_rate": null,
-        "pregame_confidence": null,
-        "pregame_historical_map": null,
-        "pregame_bucket": null,
-        "explain_pregame": "Pregame read: SF (away) vs LA. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 69.9,
-        "reality_lock": null,
-        "win_loss_coherence": null,
-        "explain": "Postgame: coherence 69.9. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
-      }
-    },
-    {
       "week": 6,
       "opponent": "TB",
       "result": "L",
@@ -141,10 +121,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (away) vs TB. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 69.0,
+        "coherence": 70.4,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 69.0. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 70.4. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -159,10 +139,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (home) vs ATL. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 69.9,
+        "coherence": 72.7,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 69.9. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 72.7. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -195,28 +175,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (away) vs NYG. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 61.0,
+        "coherence": 58.9,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 61.0. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
-      }
-    },
-    {
-      "week": 10,
-      "opponent": "LA",
-      "result": "L",
-      "score": "26-42",
-      "oracle": {
-        "pregame_pick": null,
-        "pregame_expected_win_rate": null,
-        "pregame_confidence": null,
-        "pregame_historical_map": null,
-        "pregame_bucket": null,
-        "explain_pregame": "Pregame read: SF (home) vs LA. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 59.8,
-        "reality_lock": null,
-        "win_loss_coherence": null,
-        "explain": "Postgame: coherence 59.8. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 58.9. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -231,10 +193,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (away) vs ARI. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 60.4,
+        "coherence": 59.3,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 60.4. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 59.3. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -249,10 +211,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (home) vs CAR. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 67.3,
+        "coherence": 67.9,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 67.3. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 67.9. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -267,10 +229,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (away) vs CLE. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 68.6,
+        "coherence": 68.7,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 68.6. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 68.7. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -285,10 +247,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (home) vs TEN. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 64.0,
+        "coherence": 63.2,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 64.0. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 63.2. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -303,10 +265,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (away) vs IND. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 57.3,
+        "coherence": 56.8,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 57.3. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 56.8. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -321,10 +283,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (home) vs CHI. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 54.7,
+        "coherence": 55.4,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 54.7. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 55.4. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -339,10 +301,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (home) vs SEA. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 59.3,
+        "coherence": 61.2,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 59.3. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 61.2. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -351,16 +313,25 @@
       "result": "W",
       "score": "23-19",
       "oracle": {
-        "pregame_pick": null,
-        "pregame_expected_win_rate": null,
-        "pregame_confidence": null,
-        "pregame_historical_map": null,
+        "pregame_pick": "W",
+        "pregame_expected_win_rate": 0.667,
+        "pregame_confidence": 50.2,
+        "pregame_historical_map": {
+          "n": 3,
+          "W": 0.667,
+          "L": 0.333,
+          "T": 0.0
+        },
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: SF (away) vs PHI. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 87.7,
-        "reality_lock": null,
-        "win_loss_coherence": null,
-        "explain": "Postgame: coherence 87.7. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain_pregame": "Pregame read: SF (away) vs PHI. In 3 historically similar situations (league-wide), teams won about 67% of the time. Confidence: 50/100.",
+        "coherence": 89.8,
+        "reality_lock": "MATCH",
+        "win_loss_coherence": {
+          "grade": "C",
+          "label": "Aligned",
+          "predicted": "W"
+        },
+        "explain": "Postgame: coherence 89.8. Pregame expected win rate was ~67% (n=3), and reality lock is MATCH."
       }
     },
     {
@@ -375,10 +346,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: SF (away) vs SEA. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 53.2,
+        "coherence": 53.3,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 53.2. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 53.3. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     }
   ]

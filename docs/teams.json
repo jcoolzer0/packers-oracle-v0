@@ -66,10 +66,6 @@
       "key": "kc"
     },
     {
-      "team": "LA",
-      "key": "la"
-    },
-    {
       "team": "LAC",
       "key": "lac"
     },
@@ -127,7 +123,7 @@
     },
     {
       "team": "WAS",
-      "key": "was"
+      "key": "wsh"
     }
   ]
 }

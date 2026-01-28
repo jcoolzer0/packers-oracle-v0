@@ -2,9 +2,9 @@
   "summary": {
     "team": "ATL",
     "season": 2025,
-    "record": "8-9-0",
-    "win_pct": 0.471,
-    "calibration_score": 1,
+    "record": "7-9-0",
+    "win_pct": 0.438,
+    "calibration_score": 2,
     "calibration_trail": [
       0,
       0,
@@ -16,17 +16,16 @@
       1,
       1,
       1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-27T10:49:21.653404+00:00",
+  "generated_at": "2026-01-28T10:49:03.336346+00:00",
   "games": [
     {
       "week": 1,
@@ -107,24 +106,24 @@
       "score": "24-14",
       "oracle": {
         "pregame_pick": "W",
-        "pregame_expected_win_rate": 1.0,
-        "pregame_confidence": 52.6,
+        "pregame_expected_win_rate": 0.5,
+        "pregame_confidence": 39.2,
         "pregame_historical_map": {
-          "n": 1,
-          "W": 1.0,
-          "L": 0.0,
+          "n": 2,
+          "W": 0.5,
+          "L": 0.5,
           "T": 0.0
         },
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: ATL (home) vs BUF. In 1 historically similar situations (league-wide), teams won about 100% of the time. Confidence: 53/100.",
+        "explain_pregame": "Pregame read: ATL (home) vs BUF. In 2 historically similar situations (league-wide), teams won about 50% of the time. Confidence: 39/100.",
         "coherence": 78.9,
         "reality_lock": "MATCH",
         "win_loss_coherence": {
-          "grade": "C",
+          "grade": "D",
           "label": "Aligned",
           "predicted": "W"
         },
-        "explain": "Postgame: coherence 78.9. Pregame expected win rate was ~100% (n=1), and reality lock is MATCH."
+        "explain": "Postgame: coherence 78.9. Pregame expected win rate was ~50% (n=2), and reality lock is MATCH."
       }
     },
     {
@@ -223,16 +222,25 @@
       "result": "W",
       "score": "24-10",
       "oracle": {
-        "pregame_pick": null,
-        "pregame_expected_win_rate": null,
-        "pregame_confidence": null,
-        "pregame_historical_map": null,
+        "pregame_pick": "W",
+        "pregame_expected_win_rate": 1.0,
+        "pregame_confidence": 62.8,
+        "pregame_historical_map": {
+          "n": 2,
+          "W": 1.0,
+          "L": 0.0,
+          "T": 0.0
+        },
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: ATL (away) vs NO. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
+        "explain_pregame": "Pregame read: ATL (away) vs NO. In 2 historically similar situations (league-wide), teams won about 100% of the time. Confidence: 63/100.",
         "coherence": 66.5,
-        "reality_lock": null,
-        "win_loss_coherence": null,
-        "explain": "Postgame: coherence 66.5. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "reality_lock": "MATCH",
+        "win_loss_coherence": {
+          "grade": "C",
+          "label": "Aligned",
+          "predicted": "W"
+        },
+        "explain": "Postgame: coherence 66.5. Pregame expected win rate was ~100% (n=2), and reality lock is MATCH."
       }
     },
     {
@@ -308,24 +316,6 @@
       }
     },
     {
-      "week": 17,
-      "opponent": "LA",
-      "result": "W",
-      "score": "27-24",
-      "oracle": {
-        "pregame_pick": null,
-        "pregame_expected_win_rate": null,
-        "pregame_confidence": null,
-        "pregame_historical_map": null,
-        "pregame_bucket": null,
-        "explain_pregame": "Pregame read: ATL (home) vs LA. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 81.6,
-        "reality_lock": null,
-        "win_loss_coherence": null,
-        "explain": "Postgame: coherence 81.6. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
-      }
-    },
-    {
       "week": 18,
       "opponent": "NO",
       "result": "W",
@@ -337,10 +327,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: ATL (home) vs NO. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 77.2,
+        "coherence": 78.2,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 77.2. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 78.2. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     }
   ]

@@ -2,11 +2,10 @@
   "summary": {
     "team": "DET",
     "season": 2025,
-    "record": "9-8-0",
-    "win_pct": 0.529,
+    "record": "9-7-0",
+    "win_pct": 0.562,
     "calibration_score": 0,
     "calibration_trail": [
-      0,
       0,
       0,
       0,
@@ -26,7 +25,7 @@
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-27T10:49:21.656300+00:00",
+  "generated_at": "2026-01-28T10:49:03.340271+00:00",
   "games": [
     {
       "week": 1,
@@ -263,24 +262,6 @@
       }
     },
     {
-      "week": 15,
-      "opponent": "LA",
-      "result": "L",
-      "score": "34-41",
-      "oracle": {
-        "pregame_pick": null,
-        "pregame_expected_win_rate": null,
-        "pregame_confidence": null,
-        "pregame_historical_map": null,
-        "pregame_bucket": null,
-        "explain_pregame": "Pregame read: DET (away) vs LA. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 64.0,
-        "reality_lock": null,
-        "win_loss_coherence": null,
-        "explain": "Postgame: coherence 64.0. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
-      }
-    },
-    {
       "week": 16,
       "opponent": "PIT",
       "result": "L",
@@ -292,10 +273,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: DET (home) vs PIT. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 80.4,
+        "coherence": 78.3,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 80.4. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 78.3. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -310,10 +291,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: DET (away) vs MIN. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 68.0,
+        "coherence": 69.4,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 68.0. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 69.4. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
@@ -328,10 +309,10 @@
         "pregame_historical_map": null,
         "pregame_bucket": null,
         "explain_pregame": "Pregame read: DET (away) vs CHI. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 69.0,
+        "coherence": 69.3,
         "reality_lock": null,
         "win_loss_coherence": null,
-        "explain": "Postgame: coherence 69.0. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
+        "explain": "Postgame: coherence 69.3. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     }
   ]

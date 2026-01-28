@@ -2,8 +2,8 @@
   "summary": {
     "team": "CHI",
     "season": 2025,
-    "record": "12-7-0",
-    "win_pct": 0.632,
+    "record": "12-6-0",
+    "win_pct": 0.667,
     "calibration_score": 1,
     "calibration_trail": [
       0,
@@ -23,12 +23,11 @@
       1,
       1,
       1,
-      1,
       1
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-27T10:49:21.654729+00:00",
+  "generated_at": "2026-01-28T10:49:03.338112+00:00",
   "games": [
     {
       "week": 1,
@@ -361,24 +360,6 @@
         "reality_lock": null,
         "win_loss_coherence": null,
         "explain": "Postgame: coherence 79.1. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
-      }
-    },
-    {
-      "week": 20,
-      "opponent": "LA",
-      "result": "L",
-      "score": "17-20",
-      "oracle": {
-        "pregame_pick": null,
-        "pregame_expected_win_rate": null,
-        "pregame_confidence": null,
-        "pregame_historical_map": null,
-        "pregame_bucket": null,
-        "explain_pregame": "Pregame read: CHI (home) vs LA. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
-        "coherence": 71.7,
-        "reality_lock": null,
-        "win_loss_coherence": null,
-        "explain": "Postgame: coherence 71.7. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     }
   ]

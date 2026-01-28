@@ -4,7 +4,7 @@
     "season": 2025,
     "record": "9-8-1",
     "win_pct": 0.528,
-    "calibration_score": 1,
+    "calibration_score": 0,
     "calibration_trail": [
       0,
       0,
@@ -14,20 +14,20 @@
       0,
       0,
       0,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "note": "Pregame confidence is learned league-wide from prior weeks only (no same-week leakage)."
   },
-  "generated_at": "2026-01-27T10:49:21.656580+00:00",
+  "generated_at": "2026-01-28T10:49:03.340691+00:00",
   "games": [
     {
       "week": 1,
@@ -179,25 +179,16 @@
       "result": "L",
       "score": "7-10",
       "oracle": {
-        "pregame_pick": "L",
-        "pregame_expected_win_rate": 0.0,
-        "pregame_confidence": 52.6,
-        "pregame_historical_map": {
-          "n": 1,
-          "W": 0.0,
-          "L": 1.0,
-          "T": 0.0
-        },
+        "pregame_pick": null,
+        "pregame_expected_win_rate": null,
+        "pregame_confidence": null,
+        "pregame_historical_map": null,
         "pregame_bucket": null,
-        "explain_pregame": "Pregame read: GB (home) vs PHI. In 1 historically similar situations (league-wide), teams won about 0% of the time. Confidence: 53/100.",
+        "explain_pregame": "Pregame read: GB (home) vs PHI. Oracle has insufficient similar-history, so it withholds a win/loss confidence.",
         "coherence": 60.2,
-        "reality_lock": "MATCH",
-        "win_loss_coherence": {
-          "grade": "C",
-          "label": "Aligned",
-          "predicted": "L"
-        },
-        "explain": "Postgame: coherence 60.2. Pregame expected win rate was ~0% (n=1), and reality lock is MATCH."
+        "reality_lock": null,
+        "win_loss_coherence": null,
+        "explain": "Postgame: coherence 60.2. Oracle had insufficient similar-history pregame, so no reality lock was claimed."
       }
     },
     {
