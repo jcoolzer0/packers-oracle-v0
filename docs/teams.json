@@ -1,129 +1,166 @@
 {
-  "season": 2025,
+  "schema_version": 2,
+  "season": 2026,
   "teams": [
     {
-      "team": "ARI",
-      "key": "ari"
+      "key": "ari",
+      "name": "Arizona Cardinals",
+      "team": "ARI"
     },
     {
-      "team": "ATL",
-      "key": "atl"
+      "key": "atl",
+      "name": "Atlanta Falcons",
+      "team": "ATL"
     },
     {
-      "team": "BAL",
-      "key": "bal"
+      "key": "bal",
+      "name": "Baltimore Ravens",
+      "team": "BAL"
     },
     {
-      "team": "BUF",
-      "key": "buf"
+      "key": "buf",
+      "name": "Buffalo Bills",
+      "team": "BUF"
     },
     {
-      "team": "CAR",
-      "key": "car"
+      "key": "car",
+      "name": "Carolina Panthers",
+      "team": "CAR"
     },
     {
-      "team": "CHI",
-      "key": "chi"
+      "key": "chi",
+      "name": "Chicago Bears",
+      "team": "CHI"
     },
     {
-      "team": "CIN",
-      "key": "cin"
+      "key": "cin",
+      "name": "Cincinnati Bengals",
+      "team": "CIN"
     },
     {
-      "team": "CLE",
-      "key": "cle"
+      "key": "cle",
+      "name": "Cleveland Browns",
+      "team": "CLE"
     },
     {
-      "team": "DAL",
-      "key": "dal"
+      "key": "dal",
+      "name": "Dallas Cowboys",
+      "team": "DAL"
     },
     {
-      "team": "DEN",
-      "key": "den"
+      "key": "den",
+      "name": "Denver Broncos",
+      "team": "DEN"
     },
     {
-      "team": "DET",
-      "key": "det"
+      "key": "det",
+      "name": "Detroit Lions",
+      "team": "DET"
     },
     {
-      "team": "GB",
-      "key": "gb"
+      "key": "gb",
+      "name": "Green Bay Packers",
+      "team": "GB"
     },
     {
-      "team": "HOU",
-      "key": "hou"
+      "key": "hou",
+      "name": "Houston Texans",
+      "team": "HOU"
     },
     {
-      "team": "IND",
-      "key": "ind"
+      "key": "ind",
+      "name": "Indianapolis Colts",
+      "team": "IND"
     },
     {
-      "team": "JAX",
-      "key": "jax"
+      "key": "jax",
+      "name": "Jacksonville Jaguars",
+      "team": "JAX"
     },
     {
-      "team": "KC",
-      "key": "kc"
+      "key": "kc",
+      "name": "Kansas City Chiefs",
+      "team": "KC"
     },
     {
-      "team": "LAC",
-      "key": "lac"
+      "key": "lac",
+      "name": "Los Angeles Chargers",
+      "team": "LAC"
     },
     {
-      "team": "LV",
-      "key": "lv"
+      "key": "lar",
+      "name": "Los Angeles Rams",
+      "team": "LAR"
     },
     {
-      "team": "MIA",
-      "key": "mia"
+      "key": "lv",
+      "name": "Las Vegas Raiders",
+      "team": "LV"
     },
     {
-      "team": "MIN",
-      "key": "min"
+      "key": "mia",
+      "name": "Miami Dolphins",
+      "team": "MIA"
     },
     {
-      "team": "NE",
-      "key": "ne"
+      "key": "min",
+      "name": "Minnesota Vikings",
+      "team": "MIN"
     },
     {
-      "team": "NO",
-      "key": "no"
+      "key": "ne",
+      "name": "New England Patriots",
+      "team": "NE"
     },
     {
-      "team": "NYG",
-      "key": "nyg"
+      "key": "no",
+      "name": "New Orleans Saints",
+      "team": "NO"
     },
     {
-      "team": "NYJ",
-      "key": "nyj"
+      "key": "nyg",
+      "name": "New York Giants",
+      "team": "NYG"
     },
     {
-      "team": "PHI",
-      "key": "phi"
+      "key": "nyj",
+      "name": "New York Jets",
+      "team": "NYJ"
     },
     {
-      "team": "PIT",
-      "key": "pit"
+      "key": "phi",
+      "name": "Philadelphia Eagles",
+      "team": "PHI"
     },
     {
-      "team": "SEA",
-      "key": "sea"
+      "key": "pit",
+      "name": "Pittsburgh Steelers",
+      "team": "PIT"
     },
     {
-      "team": "SF",
-      "key": "sf"
+      "key": "sea",
+      "name": "Seattle Seahawks",
+      "team": "SEA"
     },
     {
-      "team": "TB",
-      "key": "tb"
+      "key": "sf",
+      "name": "San Francisco 49ers",
+      "team": "SF"
     },
     {
-      "team": "TEN",
-      "key": "ten"
+      "key": "tb",
+      "name": "Tampa Bay Buccaneers",
+      "team": "TB"
     },
     {
-      "team": "WAS",
-      "key": "wsh"
+      "key": "ten",
+      "name": "Tennessee Titans",
+      "team": "TEN"
+    },
+    {
+      "key": "wsh",
+      "name": "Washington Commanders",
+      "team": "WSH"
     }
   ]
 }
