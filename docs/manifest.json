@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-10-13T17:36:24.168606+00:00",
+  "collected_at": "2026-10-14T15:10:03.274890+00:00",
   "completed_games": 79,
   "files_sha256": {
     "LA.json": "19b07132a5a9dddd1e951d861ab6a455eccc31ce1faec50c67981f0584c9a451",
@@ -10,9 +10,9 @@
     "car.json": "005e4df5a39930956133d8974bc39a74f58dc2187ba26583ce190f41d89af9cf",
     "chi.json": "cad3c85d8855f867d53f19cbc6bf4ec85934f46e5d51da01876b9e3909634f35",
     "cin.json": "b6f644eb31ba878d8a7bd88370e5df65bfcbfad98bfba190d0486171a14004cd",
-    "cle.json": "ada89c9cc3ddd8bf4b4756e21d316decaf1ec7550e1c94efc76f53e9d61d0887",
+    "cle.json": "1d0c2655a036e73a9b11cfe93c141138de738433be93b49cfec9c0da321ae868",
     "dal.json": "f906411d30e3cc0eb0bcf3f094280215dfec550cfbc88d32a5afe89730c90117",
-    "data.json": "e97fa19b669ee8bc3460ff2e0956e3254b8f8b59f4e0f899af56e5f244762ca5",
+    "data.json": "4a257e854342ec5021960e09cd82a1adcb13e0ec932e6dcabf6d1e14314ae064",
     "den.json": "5860c86cc85b33ac53076420ee9b659b6d3f60a152ebbfc62da374fcf7d0e4be",
     "det.json": "b53cbdd25d14e1b31f2505d570dc42d2ce31291418b83108f850067b2463c4a5",
     "gb.json": "d35b8b602d6ce3525a055668134626152c70e20207326d56ec095888a976294f",
@@ -29,14 +29,14 @@
     "ne.json": "a49c7a52e083aa3bbda868e9928ef103513b03da3d9a22733e83182c50f2af23",
     "no.json": "71ca5209ea9d1f495382f1ed39ae2c22ff2f4d2de5954a8ab3ee8932e85d681e",
     "nyg.json": "89fc7449368b293a3e01d2aa16062025169eb4bd2bec3bbb748ba466263d9007",
-    "nyj.json": "210d47bf6166369fa1521b29ae166ee7815b423785ed3da3123f2283e5a7361d",
+    "nyj.json": "5e6d299cb21a9b618692869ce0298696d80cde6ec573e8c60a87af7784de0d4b",
     "phi.json": "9ac65c40c1417cd1eb653cb65bfed13c23472f6f145b5dd5d072d3855da532ca",
     "pit.json": "da62095aab65442b27f55a962cb1b57d64899f429adc2764641d28b95f9c7f9d",
-    "schedule.json": "9233d97d6404437c9ecdcb6310be64c73cd2095a80ac353b8b06276bd66d0720",
+    "schedule.json": "4b399780aba5747496fd51cd911a9951f511a771b14d4f4111b003c0c1b46dde",
     "sea.json": "83bd003916a4815a1f0e00fca913ee76613ce7e3574e563242b419074b44a09c",
     "sf.json": "1434e452a0730ced8845a8e657505f715e3df01cb3b8f0c58646f270f6a90d36",
     "tb.json": "5b34dc0e91fc53000d25f488b011e2db969775b50df32ef6759a4023ae2382f5",
-    "team_stats.json": "338443f7f413822a3de2fce36ebb07c235a0420656a81af8e69732f39127fdd1",
+    "team_stats.json": "eef936b54b5da6bcecdb636bd82a35043481c3b3191e5d842a2895906d1651e8",
     "teams.json": "1f0c0f906ed30a59b212b5367c034dc4af9a5cde9521da829646975e30f191ea",
     "ten.json": "40762415a55a2c72694f00183741f0cb35cf45a60279e0cb3558c6cda27dbb98",
     "was.json": "760add8e3c453f9bd7453830e0aacd0cc48fc3da6942a6c1ebc20cb4127ce67e",
@@ -53,17 +53,17 @@
   "season_type": "REG",
   "sources": [
     {
-      "sha256": "76416032694e3a41eb788bcbc2ffb5038764e632096b4a1d57f1b753ad04e5e0",
+      "sha256": "48594ec51875f34c0ab8616df6d0385f3270559745e926c18d560aeb45ddda69",
       "status": "available",
       "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
     },
     {
-      "sha256": "16dd6beebe0eb11b77cb29c837a78dd038a3e716dc74c646a2a6cb24bd6c00cf",
+      "sha256": "354c2f6e50fbe7431b3034d0ef815a76a98c322bff9989bea733b5d4d6c9b8d0",
       "status": "available",
       "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2026.csv"
     },
     {
-      "sha256": "ecd68eb7f8c9cb83a9c5af840a6cadfba1984c08c3bdc28c2bc772afe8d075c1",
+      "sha256": "396dbc0cf075973477a7147c62bc5bddccd40d07f2526b2256592c77dc5815af",
       "status": "available",
       "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_reg_2026.csv"
     }
