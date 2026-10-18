@@ -1496,13 +1496,13 @@
       "is_home": false,
       "opponent": "LAR",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 16,
+      "points_for": 18,
+      "result": "W",
+      "score": "18-16",
       "source_game_id": "2026_06_ARI_LA",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 6
     },
     {
@@ -1822,12 +1822,12 @@
     "timeouts": 19
   },
   "summary": {
-    "games_played": 5,
-    "points_against": 162,
-    "points_for": 108,
-    "record": "1-4-0",
+    "games_played": 6,
+    "points_against": 178,
+    "points_for": 126,
+    "record": "2-4-0",
     "season": 2026,
     "team": "ARI",
-    "win_pct": 0.2
+    "win_pct": 0.333
   }
 }
