@@ -1496,13 +1496,13 @@
       "is_home": true,
       "opponent": "CAR",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 25,
+      "points_for": 14,
+      "result": "L",
+      "score": "14-25",
       "source_game_id": "2026_06_CAR_PHI",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 6
     },
     {
@@ -1822,12 +1822,12 @@
     "timeouts": 21
   },
   "summary": {
-    "games_played": 5,
-    "points_against": 112,
-    "points_for": 92,
-    "record": "2-3-0",
+    "games_played": 6,
+    "points_against": 137,
+    "points_for": 106,
+    "record": "2-4-0",
     "season": 2026,
     "team": "PHI",
-    "win_pct": 0.4
+    "win_pct": 0.333
   }
 }

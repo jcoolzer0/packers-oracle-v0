@@ -1496,13 +1496,13 @@
       "is_home": false,
       "opponent": "NYG",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 27,
+      "points_for": 34,
+      "result": "W",
+      "score": "34-27",
       "source_game_id": "2026_06_NO_NYG",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 6
     },
     {
@@ -1822,12 +1822,12 @@
     "timeouts": 15
   },
   "summary": {
-    "games_played": 5,
-    "points_against": 151,
-    "points_for": 118,
-    "record": "1-4-0",
+    "games_played": 6,
+    "points_against": 178,
+    "points_for": 152,
+    "record": "2-4-0",
     "season": 2026,
     "team": "NO",
-    "win_pct": 0.2
+    "win_pct": 0.333
   }
 }

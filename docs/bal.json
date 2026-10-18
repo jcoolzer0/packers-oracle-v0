@@ -1496,13 +1496,13 @@
       "is_home": false,
       "opponent": "CLE",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 13,
+      "points_for": 10,
+      "result": "L",
+      "score": "10-13",
       "source_game_id": "2026_06_BAL_CLE",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 6
     },
     {
@@ -1822,12 +1822,12 @@
     "timeouts": 24
   },
   "summary": {
-    "games_played": 5,
-    "points_against": 119,
-    "points_for": 146,
-    "record": "4-1-0",
+    "games_played": 6,
+    "points_against": 132,
+    "points_for": 156,
+    "record": "4-2-0",
     "season": 2026,
     "team": "BAL",
-    "win_pct": 0.8
+    "win_pct": 0.667
   }
 }
