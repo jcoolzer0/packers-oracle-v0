@@ -1496,13 +1496,13 @@
       "is_home": false,
       "opponent": "JAX",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 31,
+      "points_for": 34,
+      "result": "W",
+      "score": "34-31",
       "source_game_id": "2026_06_HOU_JAX",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 6
     },
     {
@@ -1822,12 +1822,12 @@
     "timeouts": 23
   },
   "summary": {
-    "games_played": 5,
-    "points_against": 112,
-    "points_for": 110,
-    "record": "1-4-0",
+    "games_played": 6,
+    "points_against": 143,
+    "points_for": 144,
+    "record": "2-4-0",
     "season": 2026,
     "team": "HOU",
-    "win_pct": 0.2
+    "win_pct": 0.333
   }
 }
