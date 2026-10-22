@@ -5206,7 +5206,7 @@
     },
     {
       "away_coach": "Mike McCarthy",
-      "away_moneyline": -180,
+      "away_moneyline": -175,
       "away_qb_id": "00-0023459",
       "away_qb_name": "Aaron Rodgers",
       "away_rest": 7,
@@ -5222,7 +5222,7 @@
       "gametime": "09:30",
       "gsis": null,
       "home_coach": "Kellen Moore",
-      "home_moneyline": 150,
+      "home_moneyline": 145,
       "home_qb_id": "00-0040743",
       "home_qb_name": "Tyler Shough",
       "home_rest": 7,
