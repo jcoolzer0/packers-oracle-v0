@@ -1792,13 +1792,13 @@
       "is_home": true,
       "opponent": "PIT",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 16,
+      "points_for": 10,
+      "result": "L",
+      "score": "10-16",
       "source_game_id": "2026_07_PIT_NO",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 7
     },
     {
@@ -2102,12 +2102,12 @@
     "timeouts": 18
   },
   "summary": {
-    "games_played": 6,
-    "points_against": 178,
-    "points_for": 152,
-    "record": "2-4-0",
+    "games_played": 7,
+    "points_against": 194,
+    "points_for": 162,
+    "record": "2-5-0",
     "season": 2026,
     "team": "NO",
-    "win_pct": 0.333
+    "win_pct": 0.286
   }
 }
