@@ -2088,13 +2088,13 @@
       "is_home": true,
       "opponent": "CLE",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 6,
+      "points_for": 27,
+      "result": "W",
+      "score": "27-6",
       "source_game_id": "2026_08_CLE_PIT",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 8
     },
     {
@@ -2382,12 +2382,12 @@
     "timeouts": 33
   },
   "summary": {
-    "games_played": 7,
-    "points_against": 138,
-    "points_for": 153,
-    "record": "5-2-0",
+    "games_played": 8,
+    "points_against": 144,
+    "points_for": 180,
+    "record": "6-2-0",
     "season": 2026,
     "team": "PIT",
-    "win_pct": 0.714
+    "win_pct": 0.75
   }
 }

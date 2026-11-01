@@ -1792,13 +1792,13 @@
       "is_home": true,
       "opponent": "MIN",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 15,
+      "points_for": 19,
+      "result": "W",
+      "score": "19-15",
       "source_game_id": "2026_08_MIN_DET",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 8
     },
     {
@@ -2102,12 +2102,12 @@
     "timeouts": 16
   },
   "summary": {
-    "games_played": 6,
-    "points_against": 165,
-    "points_for": 184,
-    "record": "4-2-0",
+    "games_played": 7,
+    "points_against": 180,
+    "points_for": 203,
+    "record": "5-2-0",
     "season": 2026,
     "team": "DET",
-    "win_pct": 0.667
+    "win_pct": 0.714
   }
 }

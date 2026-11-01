@@ -1,50 +1,212 @@
 {
-  "collected_at": "2026-11-01T18:25:40.132514+00:00",
-  "completed_games": 108,
+  "collected_at": "2026-11-01T22:46:02.978680+00:00",
+  "completed_games": 116,
   "files_sha256": {
     "LA.json": "9f75786ce077db63b45a54bacbc5f7b763a274714799f4b66f8e1be0dae34f1f",
-    "ari.json": "2be004eb222a3febef7a4e7618f953d323a3fa28033a790885bd61611751c532",
-    "atl.json": "5ddb3dffb120f0fc352ed3f8f91cb9566e9584547a33820dd164325499392159",
-    "bal.json": "4be9563a6ee599be7c3a0b34b7165a5b84bbdfa0eafd43ccecb8967d09b8edd7",
-    "buf.json": "76b1ee32e3092b7aeb7e3597e76980f684e2eba5f1b099dbbd66aa9d416d1f63",
+    "ari.json": "9ebf6808be7b0d4fc7851071915e9c55f129a24e5044d3a5519b992a362749f5",
+    "atl.json": "bb4444e4a40271e18225bd2a5f05d9a7348163b2cd841ed7e47e51a45c4e1393",
+    "bal.json": "a1a6c596f26e10c5f8ba722e68ab49cea0e31fe27f14bd9f290861e53833bfb6",
+    "buf.json": "72d7f8aca9251178470474f998aea3914553613e172996c1da27dede168e88d8",
     "car.json": "c8c2759775a8e06f844b7df821464da345f1c0dd675215b42e085b86231e406c",
     "chi.json": "472ece6aba64dfd278b290666b142623f221863b462fa8674c59fcc4e38a4999",
-    "cin.json": "e4a4830e69cac55a204f8f85abc674bc853256a581727f4bafcbddcff574194e",
-    "cle.json": "b179724cd06524c1c0a8610d2abc8e669696baaffea52a2f0d4a05591d6acf4c",
-    "dal.json": "e6b476b108e4b3ee770743908a721ffce149e1c6c6ff36cebddd9af4210fa4b0",
-    "data.json": "5a73b385fb6529e59300c2bf28e868bc62d5eef94e26872d897602a3cced6432",
+    "cin.json": "f2f4d49bddd81ab4b73f1f532baa07e94bb5b466cdd35ea9b19b1ec36b98c981",
+    "cle.json": "f47b6a0c412bddfe2ed7468df2c2b99a06a1325efb50d5c6674f95c0589700d1",
+    "dal.json": "ce898ef0c7c8664bf4c72a54afca38548213bab82a4adf64cd671cadef9f17cd",
+    "data.json": "0fbac7320a252d734db4bf90b089f817c213a0c53edc5f5502dbbb871b45afa2",
     "den.json": "26781fddcac5875f033adaa1c961fb1df906efa1606a5e510d4c71fd94c38477",
-    "det.json": "31bb202bf519f9a3344ecfaa191942060e2387d84405fd768daeec1fde06f206",
+    "det.json": "ef25e2995ec11a32326bc71db8c423227ef0678f612019841617b494ac3309cb",
     "gb.json": "17a026a82891d5cde2b6e4a07bf61ce09c84ae47c1dac00a86b7265c838f43d5",
     "hou.json": "081c1820a4b8b5089945e05a62876c4b8df31ae706d251eb856de556ac455ea5",
-    "ind.json": "b67845ffe02e827f0b48520aad3924e9d8abfed1534972793d9cb315c8a542eb",
-    "jax.json": "9303a504f03904babd23df76ab12d42e6928ae35d485574742474b1cb606a03a",
+    "ind.json": "fda43a40f10ea840ddca645ad6b69e5cad2e7824fa2ab492fffecf489d3df460",
+    "jax.json": "45b9221a52077428fbf07bc7e25d712569d3fd3b2a4a3446689750611b4f04f8",
     "kc.json": "667f38571cf5bab4d9d422818b109ff1e9c72df1efabcf2127e9e57bedaf25ad",
     "la.json": "9f75786ce077db63b45a54bacbc5f7b763a274714799f4b66f8e1be0dae34f1f",
     "lac.json": "360cf5d052856b98be2f36aa040af1caa3e48f90bf68b70cf30e2c1843934d38",
     "lar.json": "9f75786ce077db63b45a54bacbc5f7b763a274714799f4b66f8e1be0dae34f1f",
-    "lv.json": "7bfe4afdbd9d6489a20091cb27e1af1c91b51b6fcc993b57e2670cfb5899226f",
+    "lv.json": "fd9ff9224dcdf7b5a0a40ccb072ea4d1bbdcee81304520022b970e115726900f",
     "mia.json": "5a7962d619e710669efbf739d0cdb17809d1a092df92078ed7dbae0a375aef42",
-    "min.json": "a676785f021146f08a542dc7a7f2f6580cdcbf3e255eb4af8b176417903c9ae2",
+    "min.json": "cd8e55b7ef63302f99c2122f00c644ad6511ae3ddd1b3e226abaec3ccd0bcc7e",
     "ne.json": "c12541c0308ba971c9377527d1e1140242091a05bdacf887705705dc313280d6",
     "no.json": "f09b9ee7237ad3010186106537f05bbaa017254b9b350ef43a1b32dd0c1cae0a",
     "nyg.json": "3734cc6ba353a2758e2635a8b39fd4eb3d16f884994aa109c26898d73aa6fddc",
-    "nyj.json": "4824280472cd13fc68fea4f1fe5ff352c5c9e9a198fa66d4ee03ac703dfaeb16",
+    "nyj.json": "0bade4f7709e0a5dc94359c3df5de5807f83589561489c42c56b2ac89c60419a",
     "phi.json": "97102a820ea0419d1f356c5ca6fe75883732928fa19414b6104bcb3ab2888c85",
-    "pit.json": "2a265facb666427948c470aca2c3f90896234133d0fd5bef9fec17b7a2b01fd4",
-    "schedule.json": "06b2b790cd96f24dea35e0be1a8ab6631bf9d59aecd5c1a1dd205be4170e763b",
+    "pit.json": "f81ffd39d1e7dbe813089609dfe26f498b8aeed55995d6da31ae166e31b4e06b",
+    "schedule.json": "589f48c74e3b5d3eb2da0f875efcb6d110c4f1c80f48862a05492b436fa63427",
     "sea.json": "de58d5a789018a0dc2ce504532b7b08e7f4f65be8606a6512aab24cce9e9c6e4",
     "sf.json": "813eb262ef57f045fbc2e6f543d59913b7fb2fa22cb0fec2c3ded18821f71c65",
-    "tb.json": "58107735d657264ebacb92a0779bba56b58466faace5b1d884041d5b1f96b63f",
+    "tb.json": "3980f0d973f92dcb2044f549db3bd761066f693c3dd9b4ec8852e70764a3a480",
     "team_stats.json": "8ca8f11175cba6cf56c690b3bf1ffe793f35d029630538fdd43d8e4bbb8ab62d",
     "teams.json": "1f0c0f906ed30a59b212b5367c034dc4af9a5cde9521da829646975e30f191ea",
-    "ten.json": "4c833ca0cc5cb787015b05b1e88eb9fcdc4de6fbe01c0d649c03ef53b140e157",
+    "ten.json": "ec59b06817391c781e4de9caf10110ca53dea16d04c37fd4630ce274ffef6ec0",
     "was.json": "a0d1fcc4312d9f7b97469841c4ff11d9c98adb03182d38fd6249556b57680017",
     "wsh.json": "a0d1fcc4312d9f7b97469841c4ff11d9c98adb03182d38fd6249556b57680017"
   },
   "quality": {
-    "missing_game_statistics": [],
-    "statistics_coverage_mismatches": []
+    "missing_game_statistics": [
+      {
+        "game_id": "2026_08_ARI_DAL",
+        "team": "DAL"
+      },
+      {
+        "game_id": "2026_08_ARI_DAL",
+        "team": "ARI"
+      },
+      {
+        "game_id": "2026_08_ATL_TB",
+        "team": "TB"
+      },
+      {
+        "game_id": "2026_08_ATL_TB",
+        "team": "ATL"
+      },
+      {
+        "game_id": "2026_08_BAL_BUF",
+        "team": "BUF"
+      },
+      {
+        "game_id": "2026_08_BAL_BUF",
+        "team": "BAL"
+      },
+      {
+        "game_id": "2026_08_CLE_PIT",
+        "team": "PIT"
+      },
+      {
+        "game_id": "2026_08_CLE_PIT",
+        "team": "CLE"
+      },
+      {
+        "game_id": "2026_08_IND_JAX",
+        "team": "JAX"
+      },
+      {
+        "game_id": "2026_08_IND_JAX",
+        "team": "IND"
+      },
+      {
+        "game_id": "2026_08_LV_NYJ",
+        "team": "NYJ"
+      },
+      {
+        "game_id": "2026_08_LV_NYJ",
+        "team": "LV"
+      },
+      {
+        "game_id": "2026_08_MIN_DET",
+        "team": "DET"
+      },
+      {
+        "game_id": "2026_08_MIN_DET",
+        "team": "MIN"
+      },
+      {
+        "game_id": "2026_08_TEN_CIN",
+        "team": "CIN"
+      },
+      {
+        "game_id": "2026_08_TEN_CIN",
+        "team": "TEN"
+      }
+    ],
+    "statistics_coverage_mismatches": [
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "ARI",
+        "weekly_stat_games": 7
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "ATL",
+        "weekly_stat_games": 7
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "BAL",
+        "weekly_stat_games": 7
+      },
+      {
+        "schedule_games": 7,
+        "season_stat_games": 6,
+        "team": "BUF",
+        "weekly_stat_games": 6
+      },
+      {
+        "schedule_games": 7,
+        "season_stat_games": 6,
+        "team": "CIN",
+        "weekly_stat_games": 6
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "CLE",
+        "weekly_stat_games": 7
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "DAL",
+        "weekly_stat_games": 7
+      },
+      {
+        "schedule_games": 7,
+        "season_stat_games": 6,
+        "team": "DET",
+        "weekly_stat_games": 6
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "IND",
+        "weekly_stat_games": 7
+      },
+      {
+        "schedule_games": 7,
+        "season_stat_games": 6,
+        "team": "JAX",
+        "weekly_stat_games": 6
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "LV",
+        "weekly_stat_games": 7
+      },
+      {
+        "schedule_games": 7,
+        "season_stat_games": 6,
+        "team": "MIN",
+        "weekly_stat_games": 6
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "NYJ",
+        "weekly_stat_games": 7
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "PIT",
+        "weekly_stat_games": 7
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "TB",
+        "weekly_stat_games": 7
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "TEN",
+        "weekly_stat_games": 7
+      }
+    ]
   },
   "schedule_games": 272,
   "schema_version": 2,
@@ -53,7 +215,7 @@
   "season_type": "REG",
   "sources": [
     {
-      "sha256": "ccc62d84c87edb5b3da720fe45a4b2d837d85f2a4a6296fbbbaf4ae2d9ef5b39",
+      "sha256": "56988e8e073b05851fe27f3e3d2626ca3cf530788d08e779031ac7327a1bde0a",
       "status": "available",
       "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
     },
@@ -68,7 +230,7 @@
       "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_reg_2026.csv"
     }
   ],
-  "statistics_status": "available",
+  "statistics_status": "partial",
   "team_count": 32,
   "weekly_stat_records": 216
 }

@@ -2088,13 +2088,13 @@
       "is_home": true,
       "opponent": "ATL",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 0,
+      "points_for": 16,
+      "result": "W",
+      "score": "16-0",
       "source_game_id": "2026_08_ATL_TB",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 8
     },
     {
@@ -2382,12 +2382,12 @@
     "timeouts": 27
   },
   "summary": {
-    "games_played": 7,
+    "games_played": 8,
     "points_against": 151,
-    "points_for": 162,
-    "record": "2-5-0",
+    "points_for": 178,
+    "record": "3-5-0",
     "season": 2026,
     "team": "TB",
-    "win_pct": 0.286
+    "win_pct": 0.375
   }
 }

@@ -1792,13 +1792,13 @@
       "is_home": true,
       "opponent": "BAL",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 10,
+      "points_for": 36,
+      "result": "W",
+      "score": "36-10",
       "source_game_id": "2026_08_BAL_BUF",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 8
     },
     {
@@ -2102,12 +2102,12 @@
     "timeouts": 18
   },
   "summary": {
-    "games_played": 6,
-    "points_against": 171,
-    "points_for": 197,
-    "record": "5-1-0",
+    "games_played": 7,
+    "points_against": 181,
+    "points_for": 233,
+    "record": "6-1-0",
     "season": 2026,
     "team": "BUF",
-    "win_pct": 0.833
+    "win_pct": 0.857
   }
 }

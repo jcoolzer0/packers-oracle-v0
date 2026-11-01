@@ -2088,13 +2088,13 @@
       "is_home": false,
       "opponent": "CIN",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 43,
+      "points_for": 36,
+      "result": "L",
+      "score": "36-43",
       "source_game_id": "2026_08_TEN_CIN",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 8
     },
     {
@@ -2382,12 +2382,12 @@
     "timeouts": 23
   },
   "summary": {
-    "games_played": 7,
-    "points_against": 156,
-    "points_for": 108,
-    "record": "1-6-0",
+    "games_played": 8,
+    "points_against": 199,
+    "points_for": 144,
+    "record": "1-7-0",
     "season": 2026,
     "team": "TEN",
-    "win_pct": 0.143
+    "win_pct": 0.125
   }
 }

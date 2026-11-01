@@ -2088,13 +2088,13 @@
       "is_home": false,
       "opponent": "JAX",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 42,
+      "points_for": 7,
+      "result": "L",
+      "score": "7-42",
       "source_game_id": "2026_08_IND_JAX",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 8
     },
     {
@@ -2382,12 +2382,12 @@
     "timeouts": 30
   },
   "summary": {
-    "games_played": 7,
-    "points_against": 180,
-    "points_for": 154,
-    "record": "2-5-0",
+    "games_played": 8,
+    "points_against": 222,
+    "points_for": 161,
+    "record": "2-6-0",
     "season": 2026,
     "team": "IND",
-    "win_pct": 0.286
+    "win_pct": 0.25
   }
 }

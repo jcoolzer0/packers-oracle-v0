@@ -2088,13 +2088,13 @@
       "is_home": true,
       "opponent": "ARI",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 33,
+      "points_for": 30,
+      "result": "L",
+      "score": "30-33",
       "source_game_id": "2026_08_ARI_DAL",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 8
     },
     {
@@ -2382,12 +2382,12 @@
     "timeouts": 32
   },
   "summary": {
-    "games_played": 7,
-    "points_against": 180,
-    "points_for": 189,
-    "record": "3-4-0",
+    "games_played": 8,
+    "points_against": 213,
+    "points_for": 219,
+    "record": "3-5-0",
     "season": 2026,
     "team": "DAL",
-    "win_pct": 0.429
+    "win_pct": 0.375
   }
 }

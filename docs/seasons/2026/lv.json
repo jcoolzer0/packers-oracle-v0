@@ -2088,13 +2088,13 @@
       "is_home": false,
       "opponent": "NYJ",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 33,
+      "points_for": 38,
+      "result": "W",
+      "score": "38-33",
       "source_game_id": "2026_08_LV_NYJ",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 8
     },
     {
@@ -2382,12 +2382,12 @@
     "timeouts": 30
   },
   "summary": {
-    "games_played": 7,
-    "points_against": 197,
-    "points_for": 183,
-    "record": "3-4-0",
+    "games_played": 8,
+    "points_against": 230,
+    "points_for": 221,
+    "record": "4-4-0",
     "season": 2026,
     "team": "LV",
-    "win_pct": 0.429
+    "win_pct": 0.5
   }
 }
