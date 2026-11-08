@@ -1,18 +1,18 @@
 {
-  "collected_at": "2026-11-08T15:07:26.947075+00:00",
-  "completed_games": 122,
+  "collected_at": "2026-11-08T19:38:12.343453+00:00",
+  "completed_games": 123,
   "files_sha256": {
     "LA.json": "b19789efd2fb9826fc39b7ac18858f983969a8c60939b043f9307c71449e19e4",
     "ari.json": "9e736eed81ee3d9b0ae7d79ad90d8899b298ce25d55f4b0ab0aa3fcf548569ec",
-    "atl.json": "17c11732383ed820b294b21ed151844630bc7d66ab56132893bfccd49cdaabba",
+    "atl.json": "8240f40627342268e7b4e2c679734f4dca8c4329ba8f31b8802d49187473964f",
     "bal.json": "6de682ac4e1fd19de2db6cf919e9f927a55a3e636bbcf01fd70c6b28944edf61",
     "buf.json": "fdc624efda853426e8a402d3d62d6fbe6fc6a8472a19207980fff716a49a4427",
     "car.json": "c8c2759775a8e06f844b7df821464da345f1c0dd675215b42e085b86231e406c",
     "chi.json": "3dea9ee379e211ad2f4bf8c75dca3234a050b5cdc76fbe334842ba6bf8bd5cfe",
-    "cin.json": "0bbf7e20975be9ca42b5491f50c877c16d0a407d833d530fbd9988396bd4dbe6",
+    "cin.json": "a2e168c3adca7718d2b13f79a3a8aa74e95a72e01ef8984307fc96c760249933",
     "cle.json": "dc46707f037e3105b0f2f76363a994ee6f47e12b62bc01e1f281c6fa023dba58",
     "dal.json": "10e4c404280e0494998d2e03d6b51d28d98a5e32e107a27eedfd0d2010998b1e",
-    "data.json": "81d9cc0b21f7838b1b80a5bb76b721cb1026cf9ecfe12a98477a8600e11aa7d8",
+    "data.json": "dedc4be586cf2d4dcd4e09c0d3fd3b77b454235e95345e598aaa2f1d4f945984",
     "den.json": "5e3d1d4813c0e7fa7dbb3f644987c50059141d5e4c0bf26e5654ef94eb8c7ff0",
     "det.json": "715c46106fca3d1a3a840281dfdf41d2bf9738950a5b11106698245a770c3e4d",
     "gb.json": "17a026a82891d5cde2b6e4a07bf61ce09c84ae47c1dac00a86b7265c838f43d5",
@@ -32,7 +32,7 @@
     "nyj.json": "03b18655b6304e3a354ddacb16a226b1720f8dc3b89431e345f0dca67bdbec12",
     "phi.json": "9613934e7fa9f733ade0b08810035bb5533ce327552fe75d30c3bca7fd5e81f3",
     "pit.json": "f554dbd4db9e4c5384d5df0c07e1ef7b68f9094fc4e3843b81c9b5d99c3db2ed",
-    "schedule.json": "0285d4b12dd3b36eae14f2ab77bd27678a14676c93666116fba417ab05ffe81d",
+    "schedule.json": "cf2bae226dd1999db95386e1a44bc675db4562caa404dee3fd11e2c0dfee9238",
     "sea.json": "52f77608b6ab4bd64b17eda9c386ee166fe9c840d4623b638fe8f5ca53a5bab1",
     "sf.json": "813eb262ef57f045fbc2e6f543d59913b7fb2fa22cb0fec2c3ded18821f71c65",
     "tb.json": "3234626fcf56ba56b867786d4b1809560256787824b33446192a8c91c59711b5",
@@ -43,8 +43,30 @@
     "wsh.json": "033e006254b3f9746cde14c4f8de30fecc0e13e4266ece80ec9494f6e8728091"
   },
   "quality": {
-    "missing_game_statistics": [],
-    "statistics_coverage_mismatches": []
+    "missing_game_statistics": [
+      {
+        "game_id": "2026_09_CIN_ATL",
+        "team": "ATL"
+      },
+      {
+        "game_id": "2026_09_CIN_ATL",
+        "team": "CIN"
+      }
+    ],
+    "statistics_coverage_mismatches": [
+      {
+        "schedule_games": 9,
+        "season_stat_games": 8,
+        "team": "ATL",
+        "weekly_stat_games": 8
+      },
+      {
+        "schedule_games": 8,
+        "season_stat_games": 7,
+        "team": "CIN",
+        "weekly_stat_games": 7
+      }
+    ]
   },
   "schedule_games": 272,
   "schema_version": 2,
@@ -53,7 +75,7 @@
   "season_type": "REG",
   "sources": [
     {
-      "sha256": "fb9234e63dbd7b90d212046e594fbe7bc4cd9decd69e58ac8f559225562aa8c3",
+      "sha256": "2957e4c0d23993a77388b765771acd537719a1585ed07e3ee775c229cc99be8f",
       "status": "available",
       "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
     },
@@ -68,7 +90,7 @@
       "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_reg_2026.csv"
     }
   ],
-  "statistics_status": "available",
+  "statistics_status": "partial",
   "team_count": 32,
   "weekly_stat_records": 244
 }

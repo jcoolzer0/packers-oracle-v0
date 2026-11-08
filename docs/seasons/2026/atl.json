@@ -2384,13 +2384,13 @@
       "is_home": true,
       "opponent": "CIN",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 34,
+      "points_for": 17,
+      "result": "L",
+      "score": "17-34",
       "source_game_id": "2026_09_CIN_ATL",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 9
     },
     {
@@ -2662,12 +2662,12 @@
     "timeouts": 29
   },
   "summary": {
-    "games_played": 8,
-    "points_against": 189,
-    "points_for": 171,
-    "record": "3-5-0",
+    "games_played": 9,
+    "points_against": 223,
+    "points_for": 188,
+    "record": "3-6-0",
     "season": 2026,
     "team": "ATL",
-    "win_pct": 0.375
+    "win_pct": 0.333
   }
 }
