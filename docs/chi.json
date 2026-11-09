@@ -2384,13 +2384,13 @@
       "is_home": true,
       "opponent": "TB",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 24,
+      "points_for": 27,
+      "result": "W",
+      "score": "27-24",
       "source_game_id": "2026_09_TB_CHI",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 9
     },
     {
@@ -2662,12 +2662,12 @@
     "timeouts": 21
   },
   "summary": {
-    "games_played": 8,
-    "points_against": 160,
-    "points_for": 214,
-    "record": "6-2-0",
+    "games_played": 9,
+    "points_against": 184,
+    "points_for": 241,
+    "record": "7-2-0",
     "season": 2026,
     "team": "CHI",
-    "win_pct": 0.75
+    "win_pct": 0.778
   }
 }
