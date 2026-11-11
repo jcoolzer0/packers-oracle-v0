@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-11-10T17:51:14.932743+00:00",
+  "collected_at": "2026-11-11T17:54:04.524677+00:00",
   "completed_games": 136,
   "files_sha256": {
-    "LA.json": "24cee3b2cfa26a92373a676a3d00f9fa7a77951cb552128853862fff03689d5e",
+    "LA.json": "d13f4bd24017b558474f1710858a6622e8be4037e35fa1d7859c4485fc1cc52e",
     "ari.json": "ec646bc5930e48b676ec21465f540279ebea4e8ccdc8530c9af318daed0f7bf3",
     "atl.json": "0fa30b117bb7bf722e0d7d5b443c63360f95d53d68f2ef5a95ec8e106d9ad5be",
     "bal.json": "6de682ac4e1fd19de2db6cf919e9f927a55a3e636bbcf01fd70c6b28944edf61",
@@ -12,35 +12,35 @@
     "cin.json": "071a0962bb1be463a99496a1a50bab797ba48e21b9366ca206d01870f735cefe",
     "cle.json": "86cfefe85ce24aac2bc3e1beab3d4dbeed8baf5a6e248952091acf6385584bdf",
     "dal.json": "08e402b8fa49a472d571a5a1cb4183ff54824192dc33773b8f7a7ba0e09490a5",
-    "data.json": "82bf7714ea5f68519f46da0e9ec406922b2b21548372c6ec578db1e930ee8cc9",
+    "data.json": "7a78178a899e2c4e16485206b07a77dca7b89d685b11d9e9f234c5b62e3f574d",
     "den.json": "1cbb483bbc9410d8943eba73afb252bde09e283bb290ea9b755cf091617f770a",
-    "det.json": "a90b55fff4a36b080b22c0ba1ff753d604b1b5be715f5065de82b36c18e04bde",
+    "det.json": "11981a9d773d6d64d5181be7290627b1ab38247cd61e6ea189a03262b6ea71c5",
     "gb.json": "c615049bd7c13aaa404831f9cd2170656235232601fa4a0028492c04429f9598",
-    "hou.json": "04edd1714375de97f9e45405c737c1ed1b444406dc02cd65ddb7d1337b1ce076",
+    "hou.json": "b151be851c40ef9871023f20c04897183119dcb4978ad63ce616fd63877c8f94",
     "ind.json": "f98285ae1d67d48f3e837f2c1a412006b66255b69d4bd10159c78a4c3fb06d82",
     "jax.json": "7c09a5952f9ec3dc9df826d16320c65ce8e9642050ec7dcd6207533bfd14b2dd",
     "kc.json": "ba9091b0ff63778fa1816456ff2cc76ed77372ad36b49415d8727c62f3cb30de",
-    "la.json": "24cee3b2cfa26a92373a676a3d00f9fa7a77951cb552128853862fff03689d5e",
+    "la.json": "d13f4bd24017b558474f1710858a6622e8be4037e35fa1d7859c4485fc1cc52e",
     "lac.json": "63c1b8aaf467d79a7551637af68e17b36d27906ce485512c936eb336ad35503c",
-    "lar.json": "24cee3b2cfa26a92373a676a3d00f9fa7a77951cb552128853862fff03689d5e",
-    "lv.json": "b4487c9add6db52aef9bfafa1f2502d280bc46c5b405f8a078dbb9c84135b86c",
+    "lar.json": "d13f4bd24017b558474f1710858a6622e8be4037e35fa1d7859c4485fc1cc52e",
+    "lv.json": "a8d2d83baca6cd2c0e54dbbba2746a9580e0d1439e5016407fbccffc2b2860d7",
     "mia.json": "40fb64a577eb89213fd057bd1254b44aa6c0de8f11c4306d1611e47b282c9382",
-    "min.json": "5001afed74d59f21ca86267e48e0533389d1ecbfea01086f94d07de8c3beb8ff",
+    "min.json": "4ec09057b7f2d66ff4e1416946d46de388703a7ae2d068a729fdc76ff8bbb5da",
     "ne.json": "a4e4acf327e4bacaa685e1645a3d5384493ef1801488bbddda4f315ad3d8d486",
     "no.json": "bc6efa62e0d7730ff13cf348b3bbd549fb6533d384af501a0b54eb32e776143c",
-    "nyg.json": "be77728668e20fccb22703acfbe24d33a0bff4a824250b5c1c95ea20d45ba6b1",
+    "nyg.json": "0fef24bc81df95d60fde5173f98300b11786bc52bed20292554f037626e50a1b",
     "nyj.json": "f0ae4ffc8b5b687d3c6dd20ced2db4590cd92da8238e616f144ac5399da40612",
     "phi.json": "29e4833bbce9f8840e05556d0a55860a8cdb2d802a1be0b4d694a3e9be41795d",
     "pit.json": "f554dbd4db9e4c5384d5df0c07e1ef7b68f9094fc4e3843b81c9b5d99c3db2ed",
-    "schedule.json": "a95d5a5da5f28c55c72542c61dec3f8e0797142b45c3fbf95f93b3c7f4a73fe9",
+    "schedule.json": "0685881cc09b043541e9448e0762b6892a51cddafda00572dce8144c76884476",
     "sea.json": "4a0c12e16f22585dcc6fd5c95d14e20541dd985399750204eb96f5f8fb885160",
-    "sf.json": "9cd5b65023d5ecaecec4c7acda6a237a4934ae48d65ebc2bafc9556e553dd4b9",
+    "sf.json": "f7f49eec47aac56baf6b1a63a7bf2e4854de0a5485c975d488999be18c8fe946",
     "tb.json": "635a3f075167d37b7fcda9bc4f9ab59c972a934077037b0f6f9425ccf603c249",
-    "team_stats.json": "9cfc069c956894f6f16148eeca9fc7f274552865200ed69c3ce4620bbede8421",
+    "team_stats.json": "eb9bf687a045dfac7714f4a24617832e937224594b2acc2f55b336c132274c25",
     "teams.json": "1f0c0f906ed30a59b212b5367c034dc4af9a5cde9521da829646975e30f191ea",
     "ten.json": "2d2b396d23440d977551ab2356f196066468c0200fb69a602f86cc57fa318665",
-    "was.json": "a44c2b7c5be3fa7dcea3768c025c8048f74516269e19e3fdb21a1bb320b3cc25",
-    "wsh.json": "a44c2b7c5be3fa7dcea3768c025c8048f74516269e19e3fdb21a1bb320b3cc25"
+    "was.json": "77b216b954461e1ba5cc3f6aeb8d51113eff013452142d048d45cfbc81e4aa92",
+    "wsh.json": "77b216b954461e1ba5cc3f6aeb8d51113eff013452142d048d45cfbc81e4aa92"
   },
   "quality": {
     "missing_game_statistics": [],
@@ -53,17 +53,17 @@
   "season_type": "REG",
   "sources": [
     {
-      "sha256": "c781b126a5c331c563d4bc0572aaac5306556525fa1800f7e30dda395e234643",
+      "sha256": "5099a02fd6131ebebff35beb20a2aef39119b2b4e3d8d6fc6e65f021d1018a72",
       "status": "available",
       "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
     },
     {
-      "sha256": "34c294f1383fc532c035029583d45a474bc01bab4784f704f2028b97bd698a0a",
+      "sha256": "b87aa50dd275feda741c267004f9d28e6975768637288d3740ef96772d888527",
       "status": "available",
       "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2026.csv"
     },
     {
-      "sha256": "70c3bda6e021c8bd2eeb14caba9277848ce1ea402c7714ce6a8c6aa7d673aeca",
+      "sha256": "b9e063da4bd2c859bf5590da770ea21f424037c4cb302e1076edb33ca95b4b94",
       "status": "available",
       "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_reg_2026.csv"
     }
