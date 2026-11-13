@@ -1,6 +1,6 @@
 {
-  "collected_at": "2026-11-13T02:37:52.060180+00:00",
-  "completed_games": 136,
+  "collected_at": "2026-11-13T10:52:31.280571+00:00",
+  "completed_games": 137,
   "files_sha256": {
     "LA.json": "d13f4bd24017b558474f1710858a6622e8be4037e35fa1d7859c4485fc1cc52e",
     "ari.json": "ec646bc5930e48b676ec21465f540279ebea4e8ccdc8530c9af318daed0f7bf3",
@@ -12,7 +12,7 @@
     "cin.json": "071a0962bb1be463a99496a1a50bab797ba48e21b9366ca206d01870f735cefe",
     "cle.json": "86cfefe85ce24aac2bc3e1beab3d4dbeed8baf5a6e248952091acf6385584bdf",
     "dal.json": "08e402b8fa49a472d571a5a1cb4183ff54824192dc33773b8f7a7ba0e09490a5",
-    "data.json": "00e85c9aea9c46dc98a48dd9b7270413b8b7f3a05111ebd2903ae1f3050f6a6f",
+    "data.json": "abe64a3ffc831b353c9e5de577c87140cfc1b8b4393a90adafd0529cdb555717",
     "den.json": "1cbb483bbc9410d8943eba73afb252bde09e283bb290ea9b755cf091617f770a",
     "det.json": "11981a9d773d6d64d5181be7290627b1ab38247cd61e6ea189a03262b6ea71c5",
     "gb.json": "c615049bd7c13aaa404831f9cd2170656235232601fa4a0028492c04429f9598",
@@ -28,19 +28,19 @@
     "min.json": "4ec09057b7f2d66ff4e1416946d46de388703a7ae2d068a729fdc76ff8bbb5da",
     "ne.json": "a4e4acf327e4bacaa685e1645a3d5384493ef1801488bbddda4f315ad3d8d486",
     "no.json": "bc6efa62e0d7730ff13cf348b3bbd549fb6533d384af501a0b54eb32e776143c",
-    "nyg.json": "0fef24bc81df95d60fde5173f98300b11786bc52bed20292554f037626e50a1b",
+    "nyg.json": "c2735a36eb82d478cf7ca1dae30ae104f60453c0427e8d711b8f715a38c72f01",
     "nyj.json": "f0ae4ffc8b5b687d3c6dd20ced2db4590cd92da8238e616f144ac5399da40612",
     "phi.json": "29e4833bbce9f8840e05556d0a55860a8cdb2d802a1be0b4d694a3e9be41795d",
     "pit.json": "f554dbd4db9e4c5384d5df0c07e1ef7b68f9094fc4e3843b81c9b5d99c3db2ed",
-    "schedule.json": "465c0c7aeef9ef152031e982c10111a8a0e1940c555bcb64e90ec78ce9307590",
+    "schedule.json": "bc0439942fbcfef93e39f738b22925342b8ad052aa3aaaaf3fecd189cfaa507a",
     "sea.json": "4a0c12e16f22585dcc6fd5c95d14e20541dd985399750204eb96f5f8fb885160",
     "sf.json": "f7f49eec47aac56baf6b1a63a7bf2e4854de0a5485c975d488999be18c8fe946",
     "tb.json": "635a3f075167d37b7fcda9bc4f9ab59c972a934077037b0f6f9425ccf603c249",
-    "team_stats.json": "eb9bf687a045dfac7714f4a24617832e937224594b2acc2f55b336c132274c25",
+    "team_stats.json": "9534c2e8b02bdd3f64c10428ac43fd92f0c9ac80b7bec51eb57b6fb96a0f1686",
     "teams.json": "1f0c0f906ed30a59b212b5367c034dc4af9a5cde9521da829646975e30f191ea",
     "ten.json": "2d2b396d23440d977551ab2356f196066468c0200fb69a602f86cc57fa318665",
-    "was.json": "77b216b954461e1ba5cc3f6aeb8d51113eff013452142d048d45cfbc81e4aa92",
-    "wsh.json": "77b216b954461e1ba5cc3f6aeb8d51113eff013452142d048d45cfbc81e4aa92"
+    "was.json": "ab3f3440772506984c796e59bb9146dbbe072f75ab140ab2a878dc806d49549f",
+    "wsh.json": "ab3f3440772506984c796e59bb9146dbbe072f75ab140ab2a878dc806d49549f"
   },
   "quality": {
     "missing_game_statistics": [],
@@ -53,22 +53,22 @@
   "season_type": "REG",
   "sources": [
     {
-      "sha256": "fded5547200d892a372395b9281c405ee2416d785bd22ebe544d0b9cd55c7d06",
+      "sha256": "bb1c39189edc15121dde73b28b7794ec8dfd51c3405291719bf871e002bef4cb",
       "status": "available",
       "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
     },
     {
-      "sha256": "b87aa50dd275feda741c267004f9d28e6975768637288d3740ef96772d888527",
+      "sha256": "53e15e7c0f527824f127a4232f2a7cd88014e5bcb2461fd8972952103189d127",
       "status": "available",
       "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2026.csv"
     },
     {
-      "sha256": "b9e063da4bd2c859bf5590da770ea21f424037c4cb302e1076edb33ca95b4b94",
+      "sha256": "661dfdce59df38dd25086ee101fd11daaba8193e768f65639fcae8dbfa95aeed",
       "status": "available",
       "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_reg_2026.csv"
     }
   ],
   "statistics_status": "available",
   "team_count": 32,
-  "weekly_stat_records": 272
+  "weekly_stat_records": 274
 }
