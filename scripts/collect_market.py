@@ -125,16 +125,31 @@ def collect(season, docs, now=None):
         response.raise_for_status()
         return response.json()
     rows, errors = [], []
-    url = SCOREBOARD + '?dates=' + now.strftime('%Y%m%d') + '-' + (now+timedelta(days=14)).strftime('%Y%m%d') + '&limit=1000'
+    # NFL scoreboards support season/week queries, not the date ranges used
+    # by other ESPN sports. Include every eligible week in the polling horizon.
+    weeks = sorted({int(g['week']) for g in eligible.values()})
+    urls = [f'{SCOREBOARD}?dates={season}&seasontype=2&week={week}&limit=100'
+            for week in weeks]
+    events = []
+    event_sources = {}
     try:
-        events = get(url)['events']
-        if not isinstance(events, list):
-            raise ValueError('Invalid scoreboard events')
+        for url in urls:
+            try:
+                batch = get(url)['events']
+                if not isinstance(batch, list):
+                    raise ValueError('Invalid scoreboard events')
+                for event in batch:
+                    if str(event.get('id')) not in event_sources:
+                        events.append(event)
+                        event_sources[str(event.get('id'))] = url
+            except (requests.RequestException, ValueError, KeyError, TypeError) as exc:
+                errors.append(f'Scoreboard unavailable: {url}: {exc}')
         for event in events:
             game = eligible.get(str(event.get('id')))
             if not game:
                 continue
             try:
+                url = event_sources[str(event['id'])]
                 comp = event['competitions'][0]
                 start = instant(comp.get('date') or event['date'])
                 if start <= now or (comp.get('status') or event.get('status') or {}).get('type', {}).get('state') != 'pre':
@@ -160,16 +175,24 @@ def collect(season, docs, now=None):
     root = docs / 'market' / str(season)
     if rows:
         save(root, rows, now)
+    elif not (root / 'latest.json').exists():
+        # Keep the consumer URL valid on an initial outage, without inventing quotes.
+        write_if_changed(root / 'latest.json', json_bytes({'schema_version': 1, 'observations': []}))
     write_if_changed(root / 'status.json', json_bytes(dict(schema_version=1, attempted_at=now.isoformat(),
         observations_collected=len(rows), errors=errors, status='ok' if rows and not errors else 'partial' if rows else 'unavailable' if errors else 'no_available_odds')))
     print(f'Market: {len(rows)} pregame observations; {len(errors)} source errors')
     for error in errors:
         print(error, file=sys.stderr)
+    return len(rows), len(eligible)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--season', type=int, required=True)
     parser.add_argument('--docs', type=Path, default=Path('docs'))
+    parser.add_argument('--require-fresh', action='store_true',
+                        help='Fail when scheduled upcoming games produce no fresh observations')
     args = parser.parse_args()
-    collect(args.season, args.docs)
+    count, eligible = collect(args.season, args.docs)
+    if args.require_fresh and eligible and not count:
+        sys.exit('Upcoming games exist but no fresh market observations were collected')

@@ -108,9 +108,10 @@ other API credentials are needed beyond Actions' standard contents-write token.
 
 ## Independent Vegas market reference (schema version 1)
 
-`python scripts/collect_market.py --season 2026` runs separately after the raw
-collector in the existing workflow. No accounts, keys, or additional dependencies
-are required. It uses ESPN's public NFL scoreboard for event identity, kickoff
+`python scripts/collect_market.py --season 2026 --require-fresh` runs in the
+independent `market.yml` workflow, even if the statistics source fails. No accounts, keys, or additional dependencies
+are required. It queries ESPN's public NFL scoreboard by season, regular-season type and
+week (`?dates=2026&seasontype=2&week=11&limit=100`) for event identity, kickoff
 and pregame state, then the public per-game core odds collection for available
 books (scoreboard odds are the fallback on a per-game source failure). ESPN's
 undocumented endpoints can change; availability is never guaranteed. This
@@ -143,6 +144,20 @@ line; compare its timestamp to kickoff. An outage or missing odds never erases
 prior observations or substitutes historical nflverse prices as current odds.
 Consult `status.json` and observation age before comparisons. The existing
 hourly/daily in-season and weekly offseason schedules are retained. Collection
-failures do not fail the statistics job. Live ESPN verification in the development
-environment was blocked by its network allowlist; fixture tests cover parsing,
-identity checks, consensus, pregame filtering, persistence and source outages.
+failures do not fail the statistics job. A market run fails visibly if upcoming
+games exist but no fresh observations are collected; status and prior quotes
+are still published. On an initial outage, latest.json contains an empty array
+so consumers receive JSON rather than a missing resource.
+
+The market workflow runs on the same schedule as statistics, on manual dispatch,
+and when its collector or workflow changes on main. It commits only docs/market,
+then validates both the raw and Pages URLs against the exact generated JSON.
+The two workflows share a concurrency group to prevent commit races.
+
+Published consumer URLs (no docs prefix for Pages):
+- https://jcoolzer0.github.io/packers-oracle-v0/market/2026/latest.json
+- https://raw.githubusercontent.com/jcoolzer0/packers-oracle-v0/main/docs/market/2026/latest.json
+
+Run `python scripts/verify_market.py --season 2026 --repository
+jcoolzer0/packers-oracle-v0` to validate probabilities, pregame times, snapshots,
+fresh counts and both published URLs.

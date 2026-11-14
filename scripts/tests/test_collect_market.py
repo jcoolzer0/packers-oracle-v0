@@ -91,8 +91,10 @@ class MarketTests(unittest.TestCase):
             schedule.parent.mkdir(parents=True)
             schedule.write_text(json.dumps({'games':[GAME]}))
             responses = [Mock(json=lambda: {'events':[EVENT]}), Mock(json=lambda: {'items':[{'$ref':'http://sports.core.api.espn.com/book'}]}), Mock(json=lambda: ODDS)]
-            with patch.object(m.requests.Session, 'get', side_effect=responses):
+            with patch.object(m.requests.Session, 'get', side_effect=responses) as get:
                 m.collect(2026, docs, NOW)
+            self.assertEqual(get.call_args_list[0].args[0],
+                m.SCOREBOARD + '?dates=2026&seasontype=2&week=11&limit=100')
             data = json.loads((docs/'market/2026/latest.json').read_text())
             self.assertEqual(data['observations'][0]['game_id'], GAME['game_id'])
 
