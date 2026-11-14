@@ -105,3 +105,44 @@ collect a historical/future season without changing root files unless it matches
 `NFL_SEASON`. Scheduled workflows run from the default branch; this update must
 be reviewed and merged before the repaired automation is active. No tokens or
 other API credentials are needed beyond Actions' standard contents-write token.
+
+## Independent Vegas market reference (schema version 1)
+
+`python scripts/collect_market.py --season 2026` runs separately after the raw
+collector in the existing workflow. No accounts, keys, or additional dependencies
+are required. It uses ESPN's public NFL scoreboard for event identity, kickoff
+and pregame state, then the public per-game core odds collection for available
+books (scoreboard odds are the fallback on a per-game source failure). ESPN's
+undocumented endpoints can change; availability is never guaranteed. This
+collector is never imported or consumed by the statistical collector or Oracle.
+Historical files and existing statistical exports are unchanged.
+
+- `docs/market/2026/latest.json`: `schema_version`, `observations` array; last
+  successfully collected **pregame** observation for each canonical `game_id`.
+- `docs/market/2026/snapshots/<UTC timestamp>.json`: immutable observation batches,
+  including repeated prices at different polling times.
+- `docs/market/2026/status.json`: most recent attempt time, count, status and errors.
+
+Each observation includes `game_id`, `espn_event_id`, `season`, `week`,
+`home_team`, `away_team`, UTC `kickoff`, `market_favorite` (null for a tie),
+`home_probability`, `away_probability`, `home_spread` (negative favors home),
+`source`, `source_url`, UTC `observed_at`, `market_type`, `sportsbook_count`,
+`spread_sportsbook_count`, and `sportsbooks` with individual prices and normalized
+probabilities. Probabilities are fractions: convert American moneylines to
+implied probabilities, then divide each by their sum to remove bookmaker margin.
+Consensus is the equal-weight mean of available unique books' normalized
+probabilities and available home spreads; one book is `single_sportsbook`.
+No moneyline pair means no probability observation. No reported spread means null.
+
+Only matching ESPN IDs **and** canonical home/away teams are accepted. Only games
+explicitly marked pregame with a future ESPN kickoff can produce observations;
+no live or postgame odds are captured as pregame. Polling covers the next 14 days.
+`latest.json` retains the last successful pregame quote after kickoff, including
+through outages. This is a last-observed reference, not a guaranteed closing
+line; compare its timestamp to kickoff. An outage or missing odds never erases
+prior observations or substitutes historical nflverse prices as current odds.
+Consult `status.json` and observation age before comparisons. The existing
+hourly/daily in-season and weekly offseason schedules are retained. Collection
+failures do not fail the statistics job. Live ESPN verification in the development
+environment was blocked by its network allowlist; fixture tests cover parsing,
+identity checks, consensus, pregame filtering, persistence and source outages.

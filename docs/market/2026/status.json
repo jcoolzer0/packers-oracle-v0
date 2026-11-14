@@ -1,0 +1,9 @@
+{
+  "attempted_at": "2026-11-14T00:46:20.740004+00:00",
+  "errors": [
+    "Scoreboard unavailable: HTTPSConnectionPool(host='site.api.espn.com', port=443): Max retries exceeded with url: /apis/site/v2/sports/football/nfl/scoreboard?dates=20261114-20261128&limit=1000 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))"
+  ],
+  "observations_collected": 0,
+  "schema_version": 1,
+  "status": "unavailable"
+}
