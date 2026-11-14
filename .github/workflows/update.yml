@@ -54,13 +54,16 @@ jobs:
             args+=(--no-publish-latest)
           fi
           python scripts/build_data.py "${args[@]}"
+      - name: Collect independent market reference
+        continue-on-error: true
+        run: python scripts/collect_market.py --season "$SEASON"
       - name: Commit changed data only
         shell: bash
         run: |
           set -euo pipefail
           git config user.name oracle-bot
           git config user.email oracle-bot@users.noreply.github.com
-          git add docs/*.json docs/seasons/
+          git add docs/*.json docs/seasons/ docs/market/
           if ! git diff --staged --quiet; then
             git commit -m "Refresh NFL ${SEASON} raw data"
             git push origin "HEAD:${GITHUB_REF_NAME}"
