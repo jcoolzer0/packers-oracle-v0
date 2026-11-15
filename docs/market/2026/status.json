@@ -1,7 +1,7 @@
 {
-  "attempted_at": "2026-11-15T07:53:38.909987+00:00",
+  "attempted_at": "2026-11-15T15:40:30.076200+00:00",
   "errors": [],
-  "observations_collected": 26,
+  "observations_collected": 24,
   "schema_version": 1,
   "status": "ok"
 }
