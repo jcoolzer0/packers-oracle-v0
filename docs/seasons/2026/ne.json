@@ -2680,13 +2680,13 @@
       "is_home": false,
       "opponent": "DET",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 35,
+      "points_for": 10,
+      "result": "L",
+      "score": "10-35",
       "source_game_id": "2026_10_NE_DET",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 10
     },
     {
@@ -2942,12 +2942,12 @@
     "timeouts": 30
   },
   "summary": {
-    "games_played": 9,
-    "points_against": 207,
-    "points_for": 211,
-    "record": "5-4-0",
+    "games_played": 10,
+    "points_against": 242,
+    "points_for": 221,
+    "record": "5-5-0",
     "season": 2026,
     "team": "NE",
-    "win_pct": 0.556
+    "win_pct": 0.5
   }
 }
