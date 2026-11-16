@@ -2680,13 +2680,13 @@
       "is_home": true,
       "opponent": "SF",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 46,
+      "points_for": 40,
+      "result": "L",
+      "score": "40-46",
       "source_game_id": "2026_10_SF_DAL",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 10
     },
     {
@@ -2942,12 +2942,12 @@
     "timeouts": 44
   },
   "summary": {
-    "games_played": 9,
-    "points_against": 236,
-    "points_for": 246,
-    "record": "4-5-0",
+    "games_played": 10,
+    "points_against": 282,
+    "points_for": 286,
+    "record": "4-6-0",
     "season": 2026,
     "team": "DAL",
-    "win_pct": 0.444
+    "win_pct": 0.4
   }
 }

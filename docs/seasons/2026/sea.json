@@ -2680,13 +2680,13 @@
       "is_home": false,
       "opponent": "LV",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 13,
+      "points_for": 21,
+      "result": "W",
+      "score": "21-13",
       "source_game_id": "2026_10_SEA_LV",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 10
     },
     {
@@ -2942,12 +2942,12 @@
     "timeouts": 40
   },
   "summary": {
-    "games_played": 9,
-    "points_against": 162,
-    "points_for": 202,
-    "record": "5-4-0",
+    "games_played": 10,
+    "points_against": 175,
+    "points_for": 223,
+    "record": "6-4-0",
     "season": 2026,
     "team": "SEA",
-    "win_pct": 0.556
+    "win_pct": 0.6
   }
 }
