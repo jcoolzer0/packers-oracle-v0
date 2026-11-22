@@ -1,0 +1,845 @@
+{
+  "observations": [
+    {
+      "away_probability": 0.10015408320493069,
+      "away_team": "MIA",
+      "espn_event_id": "401873070",
+      "game_id": "2026_11_MIA_BUF",
+      "home_probability": 0.8998459167950693,
+      "home_spread": -16.5,
+      "home_team": "BUF",
+      "kickoff": "2026-11-22T18:00:00+00:00",
+      "market_favorite": "BUF",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873070/competitions/401873070/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 860.0,
+          "away_probability": 0.10015408320493066,
+          "home_moneyline": -1460.0,
+          "home_probability": 0.8998459167950693,
+          "home_spread": -16.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.17466174661746625,
+      "away_team": "NO",
+      "espn_event_id": "401873071",
+      "game_id": "2026_11_NO_CHI",
+      "home_probability": 0.8253382533825337,
+      "home_spread": -11.5,
+      "home_team": "CHI",
+      "kickoff": "2026-11-22T18:00:00+00:00",
+      "market_favorite": "CHI",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873071/competitions/401873071/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 450.0,
+          "away_probability": 0.17466174661746617,
+          "home_moneyline": -610.0,
+          "home_probability": 0.8253382533825337,
+          "home_spread": -11.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.25504342631312904,
+      "away_team": "TEN",
+      "espn_event_id": "401873073",
+      "game_id": "2026_11_TEN_DAL",
+      "home_probability": 0.744956573686871,
+      "home_spread": -7.5,
+      "home_team": "DAL",
+      "kickoff": "2026-11-22T18:00:00+00:00",
+      "market_favorite": "DAL",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873073/competitions/401873073/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 277.0,
+          "away_probability": 0.25504342631312904,
+          "home_moneyline": -344.0,
+          "home_probability": 0.744956573686871,
+          "home_spread": -7.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.3588516746411484,
+      "away_team": "TB",
+      "espn_event_id": "401873072",
+      "game_id": "2026_11_TB_DET",
+      "home_probability": 0.6411483253588516,
+      "home_spread": -3.5,
+      "home_team": "DET",
+      "kickoff": "2026-11-22T18:00:00+00:00",
+      "market_favorite": "DET",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873072/competitions/401873072/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 168.0,
+          "away_probability": 0.3588516746411483,
+          "home_moneyline": -200.0,
+          "home_probability": 0.6411483253588516,
+          "home_spread": -3.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.10676691729323307,
+      "away_team": "ARI",
+      "espn_event_id": "401873067",
+      "game_id": "2026_11_ARI_KC",
+      "home_probability": 0.8932330827067669,
+      "home_spread": -15.5,
+      "home_team": "KC",
+      "kickoff": "2026-11-22T18:00:00+00:00",
+      "market_favorite": "KC",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873067/competitions/401873067/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 800.0,
+          "away_probability": 0.10676691729323308,
+          "home_moneyline": -1320.0,
+          "home_probability": 0.8932330827067669,
+          "home_spread": -15.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.6301020408163265,
+      "away_team": "PIT",
+      "espn_event_id": "401873076",
+      "game_id": "2026_11_PIT_PHI",
+      "home_probability": 0.3698979591836735,
+      "home_spread": 3.5,
+      "home_team": "PHI",
+      "kickoff": "2026-11-22T18:00:00+00:00",
+      "market_favorite": "PIT",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873076/competitions/401873076/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": -190.0,
+          "away_probability": 0.6301020408163266,
+          "home_moneyline": 160.0,
+          "home_probability": 0.3698979591836735,
+          "home_spread": 3.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.4310724025688396,
+      "away_team": "BAL",
+      "espn_event_id": "401873068",
+      "game_id": "2026_11_BAL_CAR",
+      "home_probability": 0.5689275974311604,
+      "home_spread": -3.0,
+      "home_team": "CAR",
+      "kickoff": "2026-11-22T18:00:00+00:00",
+      "market_favorite": "CAR",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873068/competitions/401873068/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 123.0,
+          "away_probability": 0.43107240256883966,
+          "home_moneyline": -145.0,
+          "home_probability": 0.5689275974311604,
+          "home_spread": -3.0,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.3932454314133703,
+      "away_team": "NYJ",
+      "espn_event_id": "401873074",
+      "game_id": "2026_11_NYJ_LAC",
+      "home_probability": 0.6067545685866297,
+      "home_spread": -3.0,
+      "home_team": "LAC",
+      "kickoff": "2026-11-22T21:05:00+00:00",
+      "market_favorite": "LAC",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873074/competitions/401873074/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 144.0,
+          "away_probability": 0.39324543141337037,
+          "home_moneyline": -172.0,
+          "home_probability": 0.6067545685866297,
+          "home_spread": -3.0,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.1666481502055328,
+      "away_team": "LV",
+      "espn_event_id": "401873075",
+      "game_id": "2026_11_LV_DEN",
+      "home_probability": 0.8333518497944672,
+      "home_spread": -10.5,
+      "home_team": "DEN",
+      "kickoff": "2026-11-22T21:25:00+00:00",
+      "market_favorite": "DEN",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873075/competitions/401873075/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 477.0,
+          "away_probability": 0.1666481502055327,
+          "home_moneyline": -650.0,
+          "home_probability": 0.8333518497944672,
+          "home_spread": -10.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.6900916630292449,
+      "away_team": "JAX",
+      "espn_event_id": "401873069",
+      "game_id": "2026_11_JAX_NYG",
+      "home_probability": 0.3099083369707551,
+      "home_spread": 6.0,
+      "home_team": "NYG",
+      "kickoff": "2026-11-22T21:25:00+00:00",
+      "market_favorite": "JAX",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873069/competitions/401873069/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": -255.0,
+          "away_probability": 0.6900916630292449,
+          "home_moneyline": 210.0,
+          "home_probability": 0.3099083369707551,
+          "home_spread": 6.0,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.3952569169960475,
+      "away_team": "MIN",
+      "espn_event_id": "401873077",
+      "game_id": "2026_11_MIN_SF",
+      "home_probability": 0.6047430830039525,
+      "home_spread": -3.0,
+      "home_team": "SF",
+      "kickoff": "2026-11-23T01:20:00+00:00",
+      "market_favorite": "SF",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873077/competitions/401873077/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 143.0,
+          "away_probability": 0.3952569169960474,
+          "home_moneyline": -170.0,
+          "home_probability": 0.6047430830039525,
+          "home_spread": -3.0,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.7206703910614525,
+      "away_team": "CIN",
+      "espn_event_id": "401873078",
+      "game_id": "2026_11_CIN_WSH",
+      "home_probability": 0.27932960893854747,
+      "home_spread": 6.0,
+      "home_team": "WSH",
+      "kickoff": "2026-11-24T01:15:00+00:00",
+      "market_favorite": "CIN",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873078/competitions/401873078/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": -300.0,
+          "away_probability": 0.7206703910614525,
+          "home_moneyline": 244.0,
+          "home_probability": 0.27932960893854747,
+          "home_spread": 6.0,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 11
+    },
+    {
+      "away_probability": 0.41204842367521644,
+      "away_team": "GB",
+      "espn_event_id": "401873079",
+      "game_id": "2026_12_GB_LAR",
+      "home_probability": 0.5879515763247836,
+      "home_spread": -3.0,
+      "home_team": "LAR",
+      "kickoff": "2026-11-26T01:00:00+00:00",
+      "market_favorite": "LAR",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873079/competitions/401873079/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 133.0,
+          "away_probability": 0.41204842367521644,
+          "home_moneyline": -158.0,
+          "home_probability": 0.5879515763247836,
+          "home_spread": -3.0,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.5748967118516748,
+      "away_team": "CHI",
+      "espn_event_id": "401873081",
+      "game_id": "2026_12_CHI_DET",
+      "home_probability": 0.42510328814832515,
+      "home_spread": 2.5,
+      "home_team": "DET",
+      "kickoff": "2026-11-26T18:00:00+00:00",
+      "market_favorite": "CHI",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873081/competitions/401873081/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": -149.0,
+          "away_probability": 0.5748967118516747,
+          "home_moneyline": 126.0,
+          "home_probability": 0.42510328814832515,
+          "home_spread": 2.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.22934217398215218,
+      "away_team": "PHI",
+      "espn_event_id": "401873080",
+      "game_id": "2026_12_PHI_DAL",
+      "home_probability": 0.7706578260178478,
+      "home_spread": -8.5,
+      "home_team": "DAL",
+      "kickoff": "2026-11-26T21:30:00+00:00",
+      "market_favorite": "DAL",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873080/competitions/401873080/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 319.0,
+          "away_probability": 0.22934217398215215,
+          "home_moneyline": -405.0,
+          "home_probability": 0.7706578260178478,
+          "home_spread": -8.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.4104205622286311,
+      "away_team": "KC",
+      "espn_event_id": "401873082",
+      "game_id": "2026_12_KC_BUF",
+      "home_probability": 0.5895794377713689,
+      "home_spread": -3.0,
+      "home_team": "BUF",
+      "kickoff": "2026-11-27T01:20:00+00:00",
+      "market_favorite": "BUF",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873082/competitions/401873082/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 134.0,
+          "away_probability": 0.4104205622286312,
+          "home_moneyline": -159.0,
+          "home_probability": 0.5895794377713689,
+          "home_spread": -3.0,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.5475376728289576,
+      "away_team": "DEN",
+      "espn_event_id": "401873083",
+      "game_id": "2026_12_DEN_PIT",
+      "home_probability": 0.45246232717104246,
+      "home_spread": 2.5,
+      "home_team": "PIT",
+      "kickoff": "2026-11-27T20:00:00+00:00",
+      "market_favorite": "DEN",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873083/competitions/401873083/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": -133.0,
+          "away_probability": 0.5475376728289576,
+          "home_moneyline": 112.0,
+          "home_probability": 0.45246232717104246,
+          "home_spread": 2.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.18852386694508994,
+      "away_team": "NO",
+      "espn_event_id": "401873087",
+      "game_id": "2026_12_NO_CIN",
+      "home_probability": 0.8114761330549101,
+      "home_spread": -10.0,
+      "home_team": "CIN",
+      "kickoff": "2026-11-29T18:00:00+00:00",
+      "market_favorite": "CIN",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873087/competitions/401873087/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 410.0,
+          "away_probability": 0.18852386694508982,
+          "home_moneyline": -541.0,
+          "home_probability": 0.8114761330549101,
+          "home_spread": -10.0,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.7165054426626847,
+      "away_team": "NYG",
+      "espn_event_id": "401873088",
+      "game_id": "2026_12_NYG_IND",
+      "home_probability": 0.28349455733731527,
+      "home_spread": 6.5,
+      "home_team": "IND",
+      "kickoff": "2026-11-29T18:00:00+00:00",
+      "market_favorite": "NYG",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873088/competitions/401873088/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": -293.0,
+          "away_probability": 0.7165054426626848,
+          "home_moneyline": 239.0,
+          "home_probability": 0.28349455733731527,
+          "home_spread": 6.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.5949546441607245,
+      "away_team": "NYJ",
+      "espn_event_id": "401873089",
+      "game_id": "2026_12_NYJ_MIA",
+      "home_probability": 0.40504535583927553,
+      "home_spread": 3.0,
+      "home_team": "MIA",
+      "kickoff": "2026-11-29T18:00:00+00:00",
+      "market_favorite": "NYJ",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873089/competitions/401873089/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": -163.0,
+          "away_probability": 0.5949546441607244,
+          "home_moneyline": 137.0,
+          "home_probability": 0.40504535583927553,
+          "home_spread": 3.0,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.256942097719566,
+      "away_team": "ATL",
+      "espn_event_id": "401873084",
+      "game_id": "2026_12_ATL_MIN",
+      "home_probability": 0.743057902280434,
+      "home_spread": -7.0,
+      "home_team": "MIN",
+      "kickoff": "2026-11-29T18:00:00+00:00",
+      "market_favorite": "MIN",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873084/competitions/401873084/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 274.0,
+          "away_probability": 0.25694209771956605,
+          "home_moneyline": -341.0,
+          "home_probability": 0.743057902280434,
+          "home_spread": -7.0,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.11037169290699567,
+      "away_team": "TEN",
+      "espn_event_id": "401873090",
+      "game_id": "2026_12_TEN_JAX",
+      "home_probability": 0.8896283070930043,
+      "home_spread": -14.5,
+      "home_team": "JAX",
+      "kickoff": "2026-11-29T18:00:00+00:00",
+      "market_favorite": "JAX",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873090/competitions/401873090/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 770.0,
+          "away_probability": 0.1103716929069956,
+          "home_moneyline": -1260.0,
+          "home_probability": 0.8896283070930043,
+          "home_spread": -14.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.30026109660574407,
+      "away_team": "BAL",
+      "espn_event_id": "401873085",
+      "game_id": "2026_12_BAL_HOU",
+      "home_probability": 0.6997389033942559,
+      "home_spread": -6.5,
+      "home_team": "HOU",
+      "kickoff": "2026-11-29T18:00:00+00:00",
+      "market_favorite": "HOU",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873085/competitions/401873085/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 220.0,
+          "away_probability": 0.3002610966057441,
+          "home_moneyline": -268.0,
+          "home_probability": 0.6997389033942559,
+          "home_spread": -6.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.35047523988839246,
+      "away_team": "NE",
+      "espn_event_id": "401873093",
+      "game_id": "2026_12_NE_LAC",
+      "home_probability": 0.6495247601116075,
+      "home_spread": -4.5,
+      "home_team": "LAC",
+      "kickoff": "2026-11-29T21:05:00+00:00",
+      "market_favorite": "LAC",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873093/competitions/401873093/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 174.0,
+          "away_probability": 0.35047523988839235,
+          "home_moneyline": -209.0,
+          "home_probability": 0.6495247601116075,
+          "home_spread": -4.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.7300384176098016,
+      "away_team": "WSH",
+      "espn_event_id": "401873092",
+      "game_id": "2026_12_WSH_ARI",
+      "home_probability": 0.26996158239019835,
+      "home_spread": 6.5,
+      "home_team": "ARI",
+      "kickoff": "2026-11-29T21:25:00+00:00",
+      "market_favorite": "WSH",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873092/competitions/401873092/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": -316.0,
+          "away_probability": 0.7300384176098017,
+          "home_moneyline": 256.0,
+          "home_probability": 0.26996158239019835,
+          "home_spread": 6.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.4466313398940196,
+      "away_team": "SEA",
+      "espn_event_id": "401873091",
+      "game_id": "2026_12_SEA_SF",
+      "home_probability": 0.5533686601059804,
+      "home_spread": -2.5,
+      "home_team": "SF",
+      "kickoff": "2026-11-29T21:25:00+00:00",
+      "market_favorite": "SF",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873091/competitions/401873091/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 115.0,
+          "away_probability": 0.4466313398940197,
+          "home_moneyline": -136.0,
+          "home_probability": 0.5533686601059804,
+          "home_spread": -2.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.3626152249557415,
+      "away_team": "LV",
+      "espn_event_id": "401873086",
+      "game_id": "2026_12_LV_CLE",
+      "home_probability": 0.6373847750442585,
+      "home_spread": -4.5,
+      "home_team": "CLE",
+      "kickoff": "2026-11-30T01:20:00+00:00",
+      "market_favorite": "CLE",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873086/competitions/401873086/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 165.0,
+          "away_probability": 0.3626152249557414,
+          "home_moneyline": -197.0,
+          "home_probability": 0.6373847750442585,
+          "home_spread": -4.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    },
+    {
+      "away_probability": 0.4466313398940196,
+      "away_team": "CAR",
+      "espn_event_id": "401873094",
+      "game_id": "2026_12_CAR_TB",
+      "home_probability": 0.5533686601059804,
+      "home_spread": -2.5,
+      "home_team": "TB",
+      "kickoff": "2026-12-01T01:15:00+00:00",
+      "market_favorite": "TB",
+      "market_type": "single_sportsbook",
+      "observed_at": "2026-11-22T09:55:13.849411+00:00",
+      "season": 2026,
+      "source": "ESPN",
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873094/competitions/401873094/odds?limit=100",
+      "sportsbook_count": 1,
+      "sportsbooks": [
+        {
+          "away_moneyline": 115.0,
+          "away_probability": 0.4466313398940197,
+          "home_moneyline": -136.0,
+          "home_probability": 0.5533686601059804,
+          "home_spread": -2.5,
+          "sportsbook": "DraftKings",
+          "sportsbook_id": "100"
+        }
+      ],
+      "spread_sportsbook_count": 1,
+      "week": 12
+    }
+  ],
+  "schema_version": 1
+}
