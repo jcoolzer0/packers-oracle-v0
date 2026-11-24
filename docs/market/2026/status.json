@@ -1,7 +1,16 @@
 {
-  "attempted_at": "2026-11-24T05:20:13.507093+00:00",
-  "errors": [],
-  "observations_collected": 16,
+  "attempted_at": "2026-11-24T20:39:10.897269+00:00",
+  "errors": [
+    "401873096: per-game odds unavailable: 404 Client Error: Not Found for url: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873096/competitions/401873096/odds/100?lang=en&region=us",
+    "401873100: per-game odds unavailable: 404 Client Error: Not Found for url: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873100/competitions/401873100/odds/100?lang=en&region=us",
+    "401873097: per-game odds unavailable: 404 Client Error: Not Found for url: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873097/competitions/401873097/odds/100?lang=en&region=us",
+    "401873102: per-game odds unavailable: 404 Client Error: Not Found for url: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873102/competitions/401873102/odds/100?lang=en&region=us",
+    "401873099: per-game odds unavailable: 404 Client Error: Not Found for url: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873099/competitions/401873099/odds/100?lang=en&region=us",
+    "401873095: per-game odds unavailable: 404 Client Error: Not Found for url: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873095/competitions/401873095/odds/100?lang=en&region=us",
+    "401873103: per-game odds unavailable: 404 Client Error: Not Found for url: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873103/competitions/401873103/odds/100?lang=en&region=us",
+    "401873104: per-game odds unavailable: 404 Client Error: Not Found for url: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873104/competitions/401873104/odds/100?lang=en&region=us"
+  ],
+  "observations_collected": 18,
   "schema_version": 1,
-  "status": "ok"
+  "status": "partial"
 }
