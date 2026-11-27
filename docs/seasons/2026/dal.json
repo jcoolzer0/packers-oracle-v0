@@ -1420,7 +1420,7 @@
         "passing_40": 1,
         "passing_air_yards": 356,
         "passing_cpoe": -9.99228954315186,
-        "passing_epa": -3.18069310629214,
+        "passing_epa": -3.18069310629215,
         "passing_first_downs": 12,
         "passing_interceptions": 2,
         "passing_tds": 1,
@@ -1454,7 +1454,7 @@
         "receiving_2pt_conversions": 0,
         "receiving_40": 1,
         "receiving_air_yards": 356,
-        "receiving_epa": -3.18069310629214,
+        "receiving_epa": -3.18069310629215,
         "receiving_first_downs": 12,
         "receiving_fumbles": 0,
         "receiving_fumbles_lost": 0,
@@ -3050,7 +3050,7 @@
         "passing_40": 1,
         "passing_air_yards": 239,
         "passing_cpoe": 5.12303784489632,
-        "passing_epa": 1.99353659853627,
+        "passing_epa": 1.99353659853628,
         "passing_first_downs": 11,
         "passing_interceptions": 0,
         "passing_tds": 2,
@@ -3097,7 +3097,7 @@
         "rushing_20": 0,
         "rushing_2pt_conversions": 0,
         "rushing_40": 0,
-        "rushing_epa": 1.00564139677137,
+        "rushing_epa": 1.00564139677136,
         "rushing_first_downs": 11,
         "rushing_fumbles": 1,
         "rushing_fumbles_lost": 0,
@@ -3272,13 +3272,13 @@
       "is_home": true,
       "opponent": "PHI",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 39,
+      "points_for": 38,
+      "result": "L",
+      "score": "38-39",
       "source_game_id": "2026_12_PHI_DAL",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 12
     },
     {
@@ -3502,12 +3502,12 @@
     "timeouts": 52
   },
   "summary": {
-    "games_played": 11,
-    "points_against": 312,
-    "points_for": 337,
-    "record": "5-6-0",
+    "games_played": 12,
+    "points_against": 351,
+    "points_for": 375,
+    "record": "5-7-0",
     "season": 2026,
     "team": "DAL",
-    "win_pct": 0.455
+    "win_pct": 0.417
   }
 }

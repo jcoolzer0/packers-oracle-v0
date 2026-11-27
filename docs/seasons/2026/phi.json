@@ -2976,13 +2976,13 @@
       "is_home": false,
       "opponent": "DAL",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 38,
+      "points_for": 39,
+      "result": "W",
+      "score": "39-38",
       "source_game_id": "2026_12_PHI_DAL",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 12
     },
     {
@@ -3191,7 +3191,7 @@
     "receiving_2pt_conversions": 0,
     "receiving_40": 3,
     "receiving_air_yards": 2392,
-    "receiving_epa": -2.16460901370731,
+    "receiving_epa": -2.1646090137073,
     "receiving_first_downs": 88,
     "receiving_fumbles": 1,
     "receiving_fumbles_lost": 1,
@@ -3222,12 +3222,12 @@
     "timeouts": 40
   },
   "summary": {
-    "games_played": 10,
-    "points_against": 237,
-    "points_for": 167,
-    "record": "3-7-0",
+    "games_played": 11,
+    "points_against": 275,
+    "points_for": 206,
+    "record": "4-7-0",
     "season": 2026,
     "team": "PHI",
-    "win_pct": 0.3
+    "win_pct": 0.364
   }
 }
