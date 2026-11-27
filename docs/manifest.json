@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-11-27T10:47:01.404223+00:00",
+  "collected_at": "2026-11-27T19:55:12.184045+00:00",
   "completed_games": 167,
   "files_sha256": {
     "LA.json": "b49bae22cfb31e989fa348ae50376c8161654a2b6d1a421417af458026e6ee51",
@@ -12,7 +12,7 @@
     "cin.json": "4b80716aabae345a29d34dec0e50c7420754085ec4b0366a9f1b71e634f972ca",
     "cle.json": "0313b11f07f03605a13d5a8ee8d3aa944d6922365ff828ae34d968fa47c200fd",
     "dal.json": "d7e08181416bee100c07a4d323ecdd694462e2a0e7eacc1649558b8b1a70e3a2",
-    "data.json": "6556308339550c95105784a56f7cf401e39c54f2c0ade03c03b187b48f5a1fb4",
+    "data.json": "1e2cf4c0b6e2c580da70446c76c05970f04f607a909d5636ad07754b4994f01e",
     "den.json": "7e469af9463a0435f583dff3b79e0b671d0f48c622582ceb4d275eae76f6f801",
     "det.json": "d284e46a06d0266e5e4a0f95043e7dfa8be19827df083b56882c78e934025308",
     "gb.json": "f2e6ce41fc867d8a8f948274f8d3af33d5a6417a39ea26022c4ea0ae0bdcd6ae",
@@ -32,7 +32,7 @@
     "nyj.json": "d749486ddfcf01028fae62fe9dc8618d7c110bb45d2c0c1ef6375a00bf5da399",
     "phi.json": "572710d759c8e6db79100c5e550618eb6fab1dd694260e128d4f5e137578ccac",
     "pit.json": "0608b4866d28b4aa11c181fd5471637e6c267e9d23b64c190c21214089752a5d",
-    "schedule.json": "497280790c24e447267234caa6f8dab3eb457602ad6481b01b874286ee74af5e",
+    "schedule.json": "13be49928b88f6b54753af63f60c5f000d88a26c13a51b4a8d0ceacff890d588",
     "sea.json": "027c6d0cd9c4b8ac66073c07a3bb3bf69bbefbbdd80b42fc82080f5081688146",
     "sf.json": "31a05bd77bf515c7431ae6b9d6edd4c8f7f15942e09bf751f47984836b80e114",
     "tb.json": "61b2f44a59ba5037495d37fe96442ecacd03b06f7dff2c29af593c09c4532f61",
@@ -53,7 +53,7 @@
   "season_type": "REG",
   "sources": [
     {
-      "sha256": "b23134b2c23c51a7d611e961cfa183b4d79b07483ef94d79c6cb71480c0e6029",
+      "sha256": "39513abe868d46bc31a8c9027c99da5ed699313aef7ffbc6869dc9a99162fb4d",
       "status": "available",
       "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
     },
