@@ -2976,13 +2976,13 @@
       "is_home": false,
       "opponent": "PIT",
       "opponent_statistics": null,
-      "points_against": null,
-      "points_for": null,
-      "result": null,
-      "score": null,
+      "points_against": 27,
+      "points_for": 5,
+      "result": "L",
+      "score": "5-27",
       "source_game_id": "2026_12_DEN_PIT",
       "statistics": null,
-      "status": "scheduled",
+      "status": "final",
       "week": 12
     },
     {
@@ -3222,12 +3222,12 @@
     "timeouts": 40
   },
   "summary": {
-    "games_played": 10,
-    "points_against": 210,
-    "points_for": 236,
-    "record": "8-2-0",
+    "games_played": 11,
+    "points_against": 237,
+    "points_for": 241,
+    "record": "8-3-0",
     "season": 2026,
     "team": "DEN",
-    "win_pct": 0.8
+    "win_pct": 0.727
   }
 }
